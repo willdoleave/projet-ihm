@@ -8,5 +8,6 @@
         <file>img/search.png</file>
         <file>img/export.png</file>
         <file>img/import.png</file>
+        <file>img/question.png</file>
     </qresource>
 </RCC>

@@ -15,6 +15,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_actionImporter_triggered();
+
+    void on_action_propos_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

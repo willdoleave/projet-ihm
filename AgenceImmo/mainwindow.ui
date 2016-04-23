@@ -106,7 +106,14 @@
     </property>
     <addaction name="action_propos"/>
    </widget>
+   <widget class="QMenu" name="menuOutils">
+    <property name="title">
+     <string>Outils</string>
+    </property>
+    <addaction name="actionRecherche"/>
+   </widget>
    <addaction name="menuFichier"/>
+   <addaction name="menuOutils"/>
    <addaction name="menuAide"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
