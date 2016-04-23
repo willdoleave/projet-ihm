@@ -93,14 +93,21 @@
     <property name="title">
      <string>Fichier</string>
     </property>
-    <addaction name="actionOuvrir"/>
-    <addaction name="actionSauvegarder"/>
+    <addaction name="actionImporter"/>
+    <addaction name="actionExporter"/>
     <addaction name="separator"/>
     <addaction name="actionAjouter_une_annonce"/>
     <addaction name="separator"/>
     <addaction name="actionQuitter"/>
    </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="action_propos"/>
+   </widget>
    <addaction name="menuFichier"/>
+   <addaction name="menuAide"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBar_2">
@@ -119,8 +126,8 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionOuvrir"/>
-   <addaction name="actionSauvegarder"/>
+   <addaction name="actionImporter"/>
+   <addaction name="actionExporter"/>
    <addaction name="separator"/>
    <addaction name="actionAjouter_une_annonce"/>
    <addaction name="actionRecherche"/>
@@ -143,13 +150,16 @@
     <bool>true</bool>
    </property>
   </action>
-  <action name="actionOuvrir">
+  <action name="actionImporter">
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/images/img/open.png</normaloff>:/images/img/open.png</iconset>
+     <normaloff>:/images/img/import.png</normaloff>:/images/img/import.png</iconset>
    </property>
    <property name="text">
-    <string>Ouvrir</string>
+    <string>Importer</string>
+   </property>
+   <property name="toolTip">
+    <string>Importer</string>
    </property>
   </action>
   <action name="actionAjouter_une_annonce">
@@ -180,6 +190,23 @@
    </property>
    <property name="toolTip">
     <string>Rechercher une annonce</string>
+   </property>
+  </action>
+  <action name="actionExporter">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/export.png</normaloff>:/images/img/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exporter</string>
+   </property>
+   <property name="toolTip">
+    <string>Exporter</string>
+   </property>
+  </action>
+  <action name="action_propos">
+   <property name="text">
+    <string>À propos de AgenceImmo</string>
    </property>
   </action>
  </widget>
