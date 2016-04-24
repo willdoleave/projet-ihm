@@ -15,6 +15,9 @@ public:
     explicit rechercheDialog(QWidget *parent = 0);
     ~rechercheDialog();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::rechercheDialog *ui;
 };
