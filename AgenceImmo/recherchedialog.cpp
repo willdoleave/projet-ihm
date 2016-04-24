@@ -21,3 +21,8 @@ void rechercheDialog::on_pushButton_2_clicked()
 {
     close();
 }
+
+void rechercheDialog::on_annuler_clicked()
+{
+    close();
+}
