@@ -26,6 +26,8 @@ private slots:
 
     void on_actionAjouter_une_annonce_triggered();
 
+    void on_actionQuitter_triggered();
+
 private:
     Ui::MainWindow *ui;
     rechercheDialog recherche_dialog;

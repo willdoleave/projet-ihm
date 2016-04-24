@@ -12,3 +12,8 @@ ajoutDialog::~ajoutDialog()
 {
     delete ui;
 }
+
+void ajoutDialog::on_pushButton_2_clicked()
+{
+    close();
+}

@@ -60,3 +60,8 @@ void MainWindow::on_actionAjouter_une_annonce_triggered()
     ajout_dialog.setWindowTitle("Ajout d'une annonce");
     ajout_dialog.show();
 }
+
+void MainWindow::on_actionQuitter_triggered()
+{
+    close();
+}

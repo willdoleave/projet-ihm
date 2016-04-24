@@ -15,6 +15,9 @@ public:
     explicit ajoutDialog(QWidget *parent = 0);
     ~ajoutDialog();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::ajoutDialog *ui;
 };
