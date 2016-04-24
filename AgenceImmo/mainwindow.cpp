@@ -45,6 +45,13 @@ void MainWindow::on_actionImporter_triggered()
 void MainWindow::on_action_propos_triggered()
 {
     QMessageBox msgBox;
-    QMessageBox::StandardButton reply  = msgBox.information(this, "À Propos", "AgenceImmo Version 1.0", QMessageBox::Close);
+    /*QMessageBox::StandardButton reply  = */msgBox.information(this, "À Propos", "AgenceImmo Version 1.0", QMessageBox::Close);
     //QAbstractButton* pButtonClose = msgBox.addButton(tr("Fermer", QMessageBox::Close));
+}
+
+void MainWindow::on_actionRecherche_triggered()
+{
+    recherche_dialog.setWindowTitle("Recherche d'une annonce");
+    recherche_dialog.show();
+    //recherche_dialog.exec();
 }

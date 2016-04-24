@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <recherchedialog.h>
 
 namespace Ui {
 class MainWindow;
@@ -20,8 +21,11 @@ private slots:
 
     void on_action_propos_triggered();
 
+    void on_actionRecherche_triggered();
+
 private:
     Ui::MainWindow *ui;
+    rechercheDialog recherche_dialog;
 };
 
 #endif // MAINWINDOW_H
