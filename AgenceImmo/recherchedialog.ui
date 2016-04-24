@@ -35,10 +35,10 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="5" column="0" colspan="2">
-     <widget class="QCheckBox" name="chkPhoto">
-      <property name="text">
-       <string>Annonces contenant photo</string>
+    <item row="1" column="2">
+     <widget class="QSpinBox" name="superficieMax">
+      <property name="maximum">
+       <number>99999999</number>
       </property>
      </widget>
     </item>
@@ -49,124 +49,18 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QSpinBox" name="superficieMin"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="labelType">
+    <item row="5" column="0" colspan="2">
+     <widget class="QCheckBox" name="chkPhoto">
       <property name="text">
-       <string>Type du bien</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="1" column="0">
-       <widget class="QCheckBox" name="chkTerrain">
-        <property name="text">
-         <string>Terrain</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QCheckBox" name="chkFerme">
-        <property name="text">
-         <string>Ferme</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="chkBureau">
-        <property name="text">
-         <string>Bureau</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QCheckBox" name="chkAutre">
-        <property name="text">
-         <string>Autre</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="labelCodePostal">
-      <property name="text">
-       <string>Code Postal</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1" colspan="2">
-     <layout class="QGridLayout" name="gridLayout_5">
-      <item row="2" column="0" colspan="2">
-       <widget class="QDateEdit" name="dateAnnonce"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="radioDateApres">
-        <property name="text">
-         <string>Après</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="radioDateAvant">
-        <property name="text">
-         <string>Avant</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="2">
-     <widget class="QSpinBox" name="piecesMax">
-      <property name="maximum">
-       <number>99999999</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QSpinBox" name="prixMax">
-      <property name="maximum">
-       <number>99999999</number>
+       <string>Annonces contenant photo</string>
       </property>
      </widget>
     </item>
     <item row="2" column="1">
      <widget class="QSpinBox" name="piecesMin"/>
     </item>
-    <item row="4" column="1">
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="chkMaison">
-        <property name="text">
-         <string>Maison</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QCheckBox" name="chkChateak">
-        <property name="text">
-         <string>Château</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QCheckBox" name="chkAppt">
-        <property name="text">
-         <string>Appartement</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QCheckBox" name="ckCommerce">
-        <property name="text">
-         <string>Commerce</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+    <item row="6" column="1">
+     <widget class="QSpinBox" name="codePostal"/>
     </item>
     <item row="0" column="0">
      <widget class="QLabel" name="labelPrix">
@@ -175,12 +69,8 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QSpinBox" name="superficieMax">
-      <property name="maximum">
-       <number>99999999</number>
-      </property>
-     </widget>
+    <item row="0" column="1">
+     <widget class="QSpinBox" name="prixMin"/>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="labelPieces">
@@ -188,9 +78,6 @@
        <string>Pièces entre (min/max)</string>
       </property>
      </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QSpinBox" name="prixMin"/>
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="labelDate">
@@ -243,8 +130,136 @@
       </item>
      </layout>
     </item>
-    <item row="6" column="1">
-     <widget class="QSpinBox" name="codePostal"/>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelType">
+      <property name="text">
+       <string>Type du bien</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="superficieMin"/>
+    </item>
+    <item row="4" column="2">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="chkTerrain">
+        <property name="text">
+         <string>Terrain</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="chkFerme">
+        <property name="text">
+         <string>Ferme</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="chkBureau">
+        <property name="text">
+         <string>Bureau</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="chkAutre">
+        <property name="text">
+         <string>Autre</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <widget class="QSpinBox" name="prixMax">
+      <property name="maximum">
+       <number>99999999</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QSpinBox" name="piecesMax">
+      <property name="maximum">
+       <number>99999999</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="labelCodePostal">
+      <property name="text">
+       <string>Code Postal</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="2">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="radioDateApres">
+        <property name="text">
+         <string>Après</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="radioDateAvant">
+        <property name="text">
+         <string>Avant</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QDateEdit" name="dateAnnonce">
+        <property name="maximumDate">
+         <date>
+          <year>2099</year>
+          <month>12</month>
+          <day>31</day>
+         </date>
+        </property>
+        <property name="minimumDate">
+         <date>
+          <year>2014</year>
+          <month>1</month>
+          <day>1</day>
+         </date>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="1">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="chkMaison">
+        <property name="text">
+         <string>Maison</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="chkChateak">
+        <property name="text">
+         <string>Château</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="chkAppt">
+        <property name="text">
+         <string>Appartement</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="ckCommerce">
+        <property name="text">
+         <string>Commerce</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

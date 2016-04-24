@@ -14,13 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    recherchedialog.cpp
+    recherchedialog.cpp \
+    ajoutdialog.cpp
 
 HEADERS  += mainwindow.h \
-    recherchedialog.h
+    recherchedialog.h \
+    ajoutdialog.h
 
 FORMS    += mainwindow.ui \
-    recherchedialog.ui
+    recherchedialog.ui \
+    ajoutdialog.ui
 
 RESOURCES += \
     resources.qrc
