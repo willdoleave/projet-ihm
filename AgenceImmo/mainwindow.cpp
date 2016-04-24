@@ -53,5 +53,10 @@ void MainWindow::on_actionRecherche_triggered()
 {
     recherche_dialog.setWindowTitle("Recherche d'une annonce");
     recherche_dialog.show();
-    //recherche_dialog.exec();
+}
+
+void MainWindow::on_actionAjouter_une_annonce_triggered()
+{
+    ajout_dialog.setWindowTitle("Ajout d'une annonce");
+    ajout_dialog.show();
 }

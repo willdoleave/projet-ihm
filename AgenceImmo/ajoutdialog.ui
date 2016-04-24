@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>571</width>
-    <height>467</height>
+    <width>581</width>
+    <height>675</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>20</y>
+     <y>0</y>
      <width>401</width>
-     <height>61</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -37,7 +37,376 @@
     <string>Ajout d'une annonce</string>
    </property>
   </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>541</width>
+     <height>237</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="titre"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelPhotos">
+      <property name="text">
+       <string>Photos</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Informations annonce</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="description">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="image1">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/img/camera.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="image2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/img/camera.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="image3">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/img/camera.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="image4">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/img/camera.png</pixmap>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelDescription">
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="titreLabel">
+      <property name="text">
+       <string>Titre de l'annonce</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_15">
+      <property name="text">
+       <string>Prix</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEdit_8"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>300</y>
+     <width>541</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Adresse du bien</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Informations contact</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>340</y>
+     <width>251</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <item>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Adresse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_2"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Ville</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Code Postal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_3"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>340</y>
+     <width>271</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_8">
+    <item>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Téléphone</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_4"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_5"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_6"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Prénom</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Adresse mail</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_7"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>480</y>
+     <width>541</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_9">
+    <item>
+     <widget class="QLabel" name="label_12">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Informations sur le bien</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>520</y>
+     <width>541</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_14">
+      <property name="text">
+       <string>Superficie</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QSpinBox" name="spinBox"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="spinBox_2"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_16">
+      <property name="text">
+       <string>Nombre de pièces</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>630</y>
+     <width>541</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_10">
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Annuler</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Rechercher</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -9,5 +9,6 @@
         <file>img/export.png</file>
         <file>img/import.png</file>
         <file>img/question.png</file>
+        <file>img/camera.png</file>
     </qresource>
 </RCC>

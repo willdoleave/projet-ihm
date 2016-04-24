@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <recherchedialog.h>
+#include <ajoutdialog.h>
 
 namespace Ui {
 class MainWindow;
@@ -23,9 +24,12 @@ private slots:
 
     void on_actionRecherche_triggered();
 
+    void on_actionAjouter_une_annonce_triggered();
+
 private:
     Ui::MainWindow *ui;
     rechercheDialog recherche_dialog;
+    ajoutDialog ajout_dialog;
 };
 
 #endif // MAINWINDOW_H
