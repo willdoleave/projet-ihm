@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,11 +16,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     recherchedialog.cpp \
-    ajoutdialog.cpp
+    ajoutdialog.cpp \
+    xml_dom.cpp
 
 HEADERS  += mainwindow.h \
     recherchedialog.h \
-    ajoutdialog.h
+    ajoutdialog.h \
+    xml_dom.h
 
 FORMS    += mainwindow.ui \
     recherchedialog.ui \
@@ -27,3 +30,6 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     resources.qrc
+
+OTHER_FILES += \
+    data.xml
