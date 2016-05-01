@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ajoutdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -38,14 +38,14 @@ public:
     QLabel *label_15;
     QLabel *titreLabel;
     QGridLayout *gridLayout_2;
+    QLabel *image1;
     QLabel *image4;
-    QLabel *image4_4;
-    QLabel *image4_2;
-    QLabel *image4_3;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
+    QLabel *image2;
+    QLabel *image3;
+    QPushButton *upload_image1;
+    QPushButton *upload_image2;
+    QPushButton *upload_image3;
+    QPushButton *upload_image4;
     QTextEdit *description;
     QLabel *label_2;
     QLabel *labelPhotos;
@@ -85,9 +85,8 @@ public:
     QSpinBox *superficie;
     QLabel *label_16;
     QHBoxLayout *horizontalLayout;
-    QComboBox *comboBox;
+    QComboBox *etat;
     QComboBox *type;
-    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_10;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
@@ -139,53 +138,53 @@ public:
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        image1 = new QLabel(gridLayoutWidget);
+        image1->setObjectName(QStringLiteral("image1"));
+        image1->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+
+        gridLayout_2->addWidget(image1, 0, 0, 1, 1);
+
         image4 = new QLabel(gridLayoutWidget);
         image4->setObjectName(QStringLiteral("image4"));
         image4->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
 
-        gridLayout_2->addWidget(image4, 0, 0, 1, 1);
+        gridLayout_2->addWidget(image4, 0, 3, 1, 1);
 
-        image4_4 = new QLabel(gridLayoutWidget);
-        image4_4->setObjectName(QStringLiteral("image4_4"));
-        image4_4->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        image2 = new QLabel(gridLayoutWidget);
+        image2->setObjectName(QStringLiteral("image2"));
+        image2->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
 
-        gridLayout_2->addWidget(image4_4, 0, 3, 1, 1);
+        gridLayout_2->addWidget(image2, 0, 1, 1, 1);
 
-        image4_2 = new QLabel(gridLayoutWidget);
-        image4_2->setObjectName(QStringLiteral("image4_2"));
-        image4_2->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        image3 = new QLabel(gridLayoutWidget);
+        image3->setObjectName(QStringLiteral("image3"));
+        image3->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
 
-        gridLayout_2->addWidget(image4_2, 0, 1, 1, 1);
+        gridLayout_2->addWidget(image3, 0, 2, 1, 1);
 
-        image4_3 = new QLabel(gridLayoutWidget);
-        image4_3->setObjectName(QStringLiteral("image4_3"));
-        image4_3->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        upload_image1 = new QPushButton(gridLayoutWidget);
+        upload_image1->setObjectName(QStringLiteral("upload_image1"));
+        upload_image1->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_2->addWidget(image4_3, 0, 2, 1, 1);
+        gridLayout_2->addWidget(upload_image1, 1, 0, 1, 1);
 
-        pushButton_3 = new QPushButton(gridLayoutWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setMaximumSize(QSize(80, 16777215));
+        upload_image2 = new QPushButton(gridLayoutWidget);
+        upload_image2->setObjectName(QStringLiteral("upload_image2"));
+        upload_image2->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_2->addWidget(pushButton_3, 1, 0, 1, 1);
+        gridLayout_2->addWidget(upload_image2, 1, 1, 1, 1);
 
-        pushButton_4 = new QPushButton(gridLayoutWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setMaximumSize(QSize(80, 16777215));
+        upload_image3 = new QPushButton(gridLayoutWidget);
+        upload_image3->setObjectName(QStringLiteral("upload_image3"));
+        upload_image3->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_2->addWidget(pushButton_4, 1, 1, 1, 1);
+        gridLayout_2->addWidget(upload_image3, 1, 2, 1, 1);
 
-        pushButton_5 = new QPushButton(gridLayoutWidget);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setMaximumSize(QSize(80, 16777215));
+        upload_image4 = new QPushButton(gridLayoutWidget);
+        upload_image4->setObjectName(QStringLiteral("upload_image4"));
+        upload_image4->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_2->addWidget(pushButton_5, 1, 2, 1, 1);
-
-        pushButton_6 = new QPushButton(gridLayoutWidget);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setMaximumSize(QSize(80, 16777215));
-
-        gridLayout_2->addWidget(pushButton_6, 1, 3, 1, 1);
+        gridLayout_2->addWidget(upload_image4, 1, 3, 1, 1);
 
 
         gridLayout->addLayout(gridLayout_2, 4, 1, 1, 1);
@@ -342,7 +341,7 @@ public:
 
         gridLayoutWidget_4 = new QWidget(ajoutDialog);
         gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
-        gridLayoutWidget_4->setGeometry(QRect(20, 610, 581, 96));
+        gridLayoutWidget_4->setGeometry(QRect(20, 610, 581, 132));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_4);
         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -374,11 +373,11 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        comboBox = new QComboBox(gridLayoutWidget_4);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setMaximumSize(QSize(90, 16777215));
+        etat = new QComboBox(gridLayoutWidget_4);
+        etat->setObjectName(QStringLiteral("etat"));
+        etat->setMaximumSize(QSize(90, 16777215));
 
-        horizontalLayout->addWidget(comboBox);
+        horizontalLayout->addWidget(etat);
 
         type = new QComboBox(gridLayoutWidget_4);
         type->setObjectName(QStringLiteral("type"));
@@ -388,25 +387,24 @@ public:
 
         gridLayout_5->addLayout(horizontalLayout, 0, 1, 1, 1);
 
-        layoutWidget = new QWidget(ajoutDialog);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 700, 581, 32));
-        horizontalLayout_10 = new QHBoxLayout(layoutWidget);
+        horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        horizontalLayout_10->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_10->addItem(horizontalSpacer);
 
-        pushButton_2 = new QPushButton(layoutWidget);
+        pushButton_2 = new QPushButton(gridLayoutWidget_4);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
         horizontalLayout_10->addWidget(pushButton_2);
 
-        pushButton = new QPushButton(layoutWidget);
+        pushButton = new QPushButton(gridLayoutWidget_4);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         horizontalLayout_10->addWidget(pushButton);
+
+
+        gridLayout_5->addLayout(horizontalLayout_10, 3, 0, 1, 2);
 
 
         retranslateUi(ajoutDialog);
@@ -420,14 +418,14 @@ public:
         label->setText(QApplication::translate("ajoutDialog", "Ajout d'une annonce", 0));
         label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
         titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce", 0));
+        image1->setText(QString());
         image4->setText(QString());
-        image4_4->setText(QString());
-        image4_2->setText(QString());
-        image4_3->setText(QString());
-        pushButton_3->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        pushButton_4->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        pushButton_5->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        pushButton_6->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        image2->setText(QString());
+        image3->setText(QString());
+        upload_image1->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        upload_image2->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        upload_image3->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        upload_image4->setText(QApplication::translate("ajoutDialog", "Upload", 0));
         label_2->setText(QApplication::translate("ajoutDialog", "Informations annonce", 0));
         labelPhotos->setText(QApplication::translate("ajoutDialog", "Photos", 0));
         labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
@@ -444,8 +442,8 @@ public:
         label_14->setText(QApplication::translate("ajoutDialog", "Superficie", 0));
         label_13->setText(QApplication::translate("ajoutDialog", "Type", 0));
         label_16->setText(QApplication::translate("ajoutDialog", "Nombre de pi\303\250ces", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
+        etat->clear();
+        etat->insertItems(0, QStringList()
          << QApplication::translate("ajoutDialog", "Vente", 0)
          << QApplication::translate("ajoutDialog", "Location", 0)
         );
@@ -461,7 +459,7 @@ public:
          << QApplication::translate("ajoutDialog", "Autre", 0)
         );
         pushButton_2->setText(QApplication::translate("ajoutDialog", "Annuler", 0));
-        pushButton->setText(QApplication::translate("ajoutDialog", "Rechercher", 0));
+        pushButton->setText(QApplication::translate("ajoutDialog", "Ajouter", 0));
     } // retranslateUi
 
 };

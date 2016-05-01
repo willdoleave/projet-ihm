@@ -26,13 +26,35 @@ xml_dom::xml_dom() : QWidget()
 
 }
 
-bool xml_dom::ajoutElem() {
+bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
+                        std::string titre, std::string description, std::string photo1,
+                        std::string photo2,std::string photo3, std::string photo4,
+                        std::string adresse, std::string ville, std::string codePostal,
+                        std::string nom, std::string prenom, std::string telephone,
+                        std::string mail, std::string superficie, std::string nbPiece)
+{
     QDomElement docElem = this->dom.documentElement();
 
     QDomElement write_elem = this->dom.createElement("data"); // On crée un QDomElement
     write_elem.setAttribute("id", 1); // L'attribut id vaudra 2.
-    write_elem.setAttribute("type", "Maison"); // L'attribut value
-    write_elem.setAttribute("prix", "10"); // L'attribut value
+    write_elem.setAttribute("etat",etat.c_str());
+    write_elem.setAttribute("type", type.c_str()); // L'attribut value
+    write_elem.setAttribute("prix", prix.c_str()); // L'attribut value
+    write_elem.setAttribute("titre",titre.c_str());
+    write_elem.setAttribute("description",description.c_str());
+    write_elem.setAttribute("photo1",photo1.c_str());
+    write_elem.setAttribute("photo2",photo2.c_str());
+    write_elem.setAttribute("photo3",photo3.c_str());
+    write_elem.setAttribute("photo4",photo4.c_str());
+    write_elem.setAttribute("adresse",adresse.c_str());
+    write_elem.setAttribute("ville",ville.c_str());
+    write_elem.setAttribute("codePostal",codePostal.c_str());
+    write_elem.setAttribute("nom",nom.c_str());
+    write_elem.setAttribute("prenom",prenom.c_str());
+    write_elem.setAttribute("telephone",telephone.c_str());
+    write_elem.setAttribute("mail",mail.c_str());
+    write_elem.setAttribute("superficie",superficie.c_str());
+    write_elem.setAttribute("nbPiece",nbPiece.c_str());
 
     docElem.appendChild(write_elem);// On associe write_elem à domElem.
     QString write_doc = this->dom.toString();
@@ -48,18 +70,20 @@ bool xml_dom::ajoutElem() {
     stream << write_doc; // On utilise l'opérateur << pour écrire write_doc dans le document XML.
 
     this->close();
+    QMessageBox::information(this,"Parfait","L'annonce a été insérée avec succès !");
 
    return true;
 }
 
-bool xml_dom::listeElem() {
+bool xml_dom::listeElem()
+{
     QDomElement dom_element = this->dom.documentElement();
     QDomNode noeud = dom_element.firstChild();
     while(!noeud.isNull())
     {
         QDomElement e = noeud.toElement();
         if(!dom_element.isNull())
-            QMessageBox::information(this, "Information", "id = " + e.attribute("id") + ", tpye = " +
+            QMessageBox::information(this, "Information", "id = " + e.attribute("id") + ", type = " +
                                      e.attribute("type") + ", prix = " + e.attribute("prix"));
         noeud = noeud.nextSibling();
     }

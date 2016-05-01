@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.4.1. It"
+#error "This file was generated using the moc from 5.2.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,29 +20,28 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[7];
-    char stringdata[162];
+    char stringdata[163];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData)) \
+    offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData) \
     )
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
-QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 27), // "on_actionImporter_triggered"
-QT_MOC_LITERAL(2, 39, 0), // ""
-QT_MOC_LITERAL(3, 40, 26), // "on_action_propos_triggered"
-QT_MOC_LITERAL(4, 67, 28), // "on_actionRecherche_triggered"
-QT_MOC_LITERAL(5, 96, 38), // "on_actionAjouter_une_annonce_..."
-QT_MOC_LITERAL(6, 135, 26) // "on_actionQuitter_triggered"
-
+QT_MOC_LITERAL(0, 0, 10),
+QT_MOC_LITERAL(1, 11, 27),
+QT_MOC_LITERAL(2, 39, 0),
+QT_MOC_LITERAL(3, 40, 26),
+QT_MOC_LITERAL(4, 67, 28),
+QT_MOC_LITERAL(5, 96, 38),
+QT_MOC_LITERAL(6, 135, 26)
     },
     "MainWindow\0on_actionImporter_triggered\0"
     "\0on_action_propos_triggered\0"
     "on_actionRecherche_triggered\0"
     "on_actionAjouter_une_annonce_triggered\0"
-    "on_actionQuitter_triggered"
+    "on_actionQuitter_triggered\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,11 +59,11 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x08 /* Private */,
-       3,    0,   40,    2, 0x08 /* Private */,
-       4,    0,   41,    2, 0x08 /* Private */,
-       5,    0,   42,    2, 0x08 /* Private */,
-       6,    0,   43,    2, 0x08 /* Private */,
+       1,    0,   39,    2, 0x08,
+       3,    0,   40,    2, 0x08,
+       4,    0,   41,    2, 0x08,
+       5,    0,   42,    2, 0x08,
+       6,    0,   43,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void,
@@ -94,7 +93,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
 
 const QMetaObject MainWindow::staticMetaObject = {
     { &QMainWindow::staticMetaObject, qt_meta_stringdata_MainWindow.data,
-      qt_meta_data_MainWindow,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_MainWindow,  qt_static_metacall, 0, 0}
 };
 
 
@@ -105,7 +104,7 @@ const QMetaObject *MainWindow::metaObject() const
 
 void *MainWindow::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata))
         return static_cast<void*>(const_cast< MainWindow*>(this));
     return QMainWindow::qt_metacast(_clname);

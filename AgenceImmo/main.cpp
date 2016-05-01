@@ -5,14 +5,15 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    /*MainWindow w;
+    MainWindow w;
     w.setWindowTitle("Agence Immobilière");
-    w.show();*/
+    w.show();
 
     xml_dom *Dom = new xml_dom();
-    Dom->listeElem();
-    Dom->ajoutElem();
+    //Dom->listeElem();
+    //Dom->ajoutElem();
     //Dom->show();
+    Dom->close();
 
 
     return a.exec();
