@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -18,7 +18,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -35,12 +34,10 @@ public:
     QAction *actionRecherche;
     QAction *actionExporter;
     QAction *action_propos;
+    QAction *actionStatistiques;
+    QAction *actionUtilisation;
     QWidget *centralWidget;
     QListWidget *listWidget;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
     QMenuBar *menuBar;
     QMenu *menuFichier;
     QMenu *menuAide;
@@ -52,9 +49,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(586, 417);
+        MainWindow->resize(688, 501);
         MainWindow->setMinimumSize(QSize(586, 417));
-        MainWindow->setMaximumSize(QSize(586, 417));
+        MainWindow->setMaximumSize(QSize(1000, 1000));
         actionSauvegarder = new QAction(MainWindow);
         actionSauvegarder->setObjectName(QStringLiteral("actionSauvegarder"));
         actionSauvegarder->setCheckable(false);
@@ -90,28 +87,26 @@ public:
         actionExporter->setIcon(icon5);
         action_propos = new QAction(MainWindow);
         action_propos->setObjectName(QStringLiteral("action_propos"));
+        actionStatistiques = new QAction(MainWindow);
+        actionStatistiques->setObjectName(QStringLiteral("actionStatistiques"));
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/images/img/stats.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionStatistiques->setIcon(icon6);
+        actionUtilisation = new QAction(MainWindow);
+        actionUtilisation->setObjectName(QStringLiteral("actionUtilisation"));
+        QIcon icon7;
+        icon7.addFile(QStringLiteral(":/images/img/help.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionUtilisation->setIcon(icon7);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         listWidget = new QListWidget(centralWidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 40, 431, 271));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(460, 40, 113, 32));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(460, 80, 113, 32));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(460, 120, 113, 32));
-        pushButton_4 = new QPushButton(centralWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(460, 160, 113, 32));
+        listWidget->setGeometry(QRect(20, 10, 621, 381));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setEnabled(true);
-        menuBar->setGeometry(QRect(0, 0, 586, 22));
+        menuBar->setGeometry(QRect(0, 0, 688, 25));
         menuFichier = new QMenu(menuBar);
         menuFichier->setObjectName(QStringLiteral("menuFichier"));
         menuAide = new QMenu(menuBar);
@@ -138,12 +133,16 @@ public:
         menuFichier->addSeparator();
         menuFichier->addAction(actionQuitter);
         menuAide->addAction(action_propos);
+        menuAide->addAction(actionUtilisation);
         menuOutils->addAction(actionRecherche);
         toolBar_2->addAction(actionImporter);
         toolBar_2->addAction(actionExporter);
         toolBar_2->addSeparator();
         toolBar_2->addAction(actionAjouter_une_annonce);
         toolBar_2->addAction(actionRecherche);
+        toolBar_2->addAction(actionStatistiques);
+        toolBar_2->addSeparator();
+        toolBar_2->addAction(actionUtilisation);
 
         retranslateUi(MainWindow);
 
@@ -169,10 +168,8 @@ public:
         actionExporter->setToolTip(QApplication::translate("MainWindow", "Exporter", 0));
 #endif // QT_NO_TOOLTIP
         action_propos->setText(QApplication::translate("MainWindow", "\303\200 propos de AgenceImmo", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "PushButton", 0));
+        actionStatistiques->setText(QApplication::translate("MainWindow", "Statistiques", 0));
+        actionUtilisation->setText(QApplication::translate("MainWindow", "Utilisation", 0));
         menuFichier->setTitle(QApplication::translate("MainWindow", "Fichier", 0));
         menuAide->setTitle(QApplication::translate("MainWindow", "Aide", 0));
         menuOutils->setTitle(QApplication::translate("MainWindow", "Outils", 0));

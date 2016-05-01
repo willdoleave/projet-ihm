@@ -3,7 +3,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <QMessageBox>
-
+#include <QPushButton>
 #include <iostream>
 using namespace std;
 

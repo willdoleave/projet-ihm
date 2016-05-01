@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>586</width>
-    <height>417</height>
+    <width>688</width>
+    <height>501</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>586</width>
-    <height>417</height>
+    <width>1000</width>
+    <height>1000</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -30,62 +30,10 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
-      <width>431</width>
-      <height>271</height>
+      <y>10</y>
+      <width>621</width>
+      <height>381</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>40</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>80</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>120</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>160</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
     </property>
    </widget>
   </widget>
@@ -97,8 +45,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>586</width>
-     <height>22</height>
+     <width>688</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFichier">
@@ -117,6 +65,7 @@
      <string>Aide</string>
     </property>
     <addaction name="action_propos"/>
+    <addaction name="actionUtilisation"/>
    </widget>
    <widget class="QMenu" name="menuOutils">
     <property name="title">
@@ -150,6 +99,9 @@
    <addaction name="separator"/>
    <addaction name="actionAjouter_une_annonce"/>
    <addaction name="actionRecherche"/>
+   <addaction name="actionStatistiques"/>
+   <addaction name="separator"/>
+   <addaction name="actionUtilisation"/>
   </widget>
   <action name="actionSauvegarder">
    <property name="checkable">
@@ -226,6 +178,24 @@
   <action name="action_propos">
    <property name="text">
     <string>À propos de AgenceImmo</string>
+   </property>
+  </action>
+  <action name="actionStatistiques">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/stats.png</normaloff>:/images/img/stats.png</iconset>
+   </property>
+   <property name="text">
+    <string>Statistiques</string>
+   </property>
+  </action>
+  <action name="actionUtilisation">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/help.png</normaloff>:/images/img/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Utilisation</string>
    </property>
   </action>
  </widget>

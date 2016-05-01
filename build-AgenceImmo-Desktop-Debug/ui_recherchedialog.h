@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'recherchedialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -251,7 +251,7 @@ public:
 
         titreGlobal = new QLabel(rechercheDialog);
         titreGlobal->setObjectName(QStringLiteral("titreGlobal"));
-        titreGlobal->setGeometry(QRect(60, 20, 511, 51));
+        titreGlobal->setGeometry(QRect(20, 20, 531, 51));
         QFont font;
         font.setFamily(QStringLiteral("Arial Black"));
         font.setPointSize(30);
