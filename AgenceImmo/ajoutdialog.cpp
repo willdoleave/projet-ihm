@@ -24,19 +24,29 @@ void ajoutDialog::on_pushButton_2_clicked()
 void ajoutDialog::on_pushButton_clicked()
 {
     xml_dom *Dom = new xml_dom();
-    /*
-    bool ajoutElem(const char *etat, const char *type, const char *prix,
-                   const char *titre, const char *description, const char *photo1,
-                   const char *photo2, const char *photo3, const char *photo4,
-                   const char *adresse, const char *ville, const char *codePostal,
-                   const char *nom, const char *prenom, const char *telephone,
-                   const char *mail, const char *superficie, const char *nbPiece);
-    */
-    Dom->ajoutElem(ui->etat->currentText().toStdString(), ui->type->currentText().toStdString(), ui->prix->text().toStdString(),
+    bool ajout;
+    ajout = Dom->ajoutElem(ui->etat->currentText().toStdString(), ui->type->currentText().toStdString(), ui->prix->text().toStdString(),
                    ui->titre->text().toStdString(), ui->description->toPlainText().toStdString(), (std::string)"photo1",(std::string)"photo2",(std::string)"photo3",(std::string)"photo4",ui->adresse->text().toStdString(),
                    ui->ville->text().toStdString(), ui->codePostal->text().toStdString(), ui->nom->text().toStdString(), ui->prenom->text().toStdString(),
                    ui->telephone->text().toStdString(), ui->email->text().toStdString(), ui->superficie->text().toStdString(), ui->nombrePieces->text().toStdString()
                    );
-    //QMessageBox::information(this,"Parfait","Ajout avec succès ! : "+ui->description->toPlainText());
+    if (!ajout) {
+        QMessageBox::critical(this,"Echec de l'ajout","L'insertion n'a pas eu lieu car il manque des champs obligatoires !");
+    } else {
+        QMessageBox::information(this,"Parfait","L'annonce a été créée avec succès !");
+        ui->prix->setValue(0);
+        ui->titre->setText("");
+        ui->description->setText("");
+        ui->adresse->setText("");
+        ui->ville->setText("");
+        ui->codePostal->setValue(0);
+        ui->nom->setText("");
+        ui->prenom->setText("");
+        ui->telephone->setText("");
+        ui->email->setText("");
+        ui->superficie->setValue(0);
+        ui->nombrePieces->setValue(0);
+        close();
+    }
 
 }

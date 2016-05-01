@@ -91,6 +91,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
     QPushButton *pushButton;
+    QLabel *label_17;
 
     void setupUi(QWidget *ajoutDialog)
     {
@@ -358,11 +359,13 @@ public:
         nombrePieces = new QSpinBox(gridLayoutWidget_4);
         nombrePieces->setObjectName(QStringLiteral("nombrePieces"));
         nombrePieces->setMinimumSize(QSize(2, 0));
+        nombrePieces->setMaximum(10000);
 
         gridLayout_5->addWidget(nombrePieces, 2, 1, 1, 1);
 
         superficie = new QSpinBox(gridLayoutWidget_4);
         superficie->setObjectName(QStringLiteral("superficie"));
+        superficie->setMaximum(1000000);
 
         gridLayout_5->addWidget(superficie, 1, 1, 1, 1);
 
@@ -406,6 +409,9 @@ public:
 
         gridLayout_5->addLayout(horizontalLayout_10, 3, 0, 1, 2);
 
+        label_17 = new QLabel(ajoutDialog);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(20, 746, 381, 21));
 
         retranslateUi(ajoutDialog);
 
@@ -417,7 +423,7 @@ public:
         ajoutDialog->setWindowTitle(QApplication::translate("ajoutDialog", "Form", 0));
         label->setText(QApplication::translate("ajoutDialog", "Ajout d'une annonce", 0));
         label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
-        titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce", 0));
+        titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce*", 0));
         image1->setText(QString());
         image4->setText(QString());
         image2->setText(QString());
@@ -431,17 +437,17 @@ public:
         labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
         label_4->setText(QApplication::translate("ajoutDialog", "Adresse du bien", 0));
         label_3->setText(QApplication::translate("ajoutDialog", "Informations contact", 0));
-        label_5->setText(QApplication::translate("ajoutDialog", "Adresse", 0));
-        label_6->setText(QApplication::translate("ajoutDialog", "Ville", 0));
+        label_5->setText(QApplication::translate("ajoutDialog", "Adresse*", 0));
+        label_6->setText(QApplication::translate("ajoutDialog", "Ville*", 0));
         label_7->setText(QApplication::translate("ajoutDialog", "Code Postal", 0));
-        label_10->setText(QApplication::translate("ajoutDialog", "T\303\251l\303\251phone", 0));
-        label_9->setText(QApplication::translate("ajoutDialog", "Pr\303\251nom", 0));
-        label_8->setText(QApplication::translate("ajoutDialog", "Nom", 0));
-        label_11->setText(QApplication::translate("ajoutDialog", "Adresse mail", 0));
+        label_10->setText(QApplication::translate("ajoutDialog", "T\303\251l\303\251phone*", 0));
+        label_9->setText(QApplication::translate("ajoutDialog", "Pr\303\251nom*", 0));
+        label_8->setText(QApplication::translate("ajoutDialog", "Nom*", 0));
+        label_11->setText(QApplication::translate("ajoutDialog", "Adresse mail*", 0));
         label_12->setText(QApplication::translate("ajoutDialog", "Informations sur le bien", 0));
         label_14->setText(QApplication::translate("ajoutDialog", "Superficie", 0));
         label_13->setText(QApplication::translate("ajoutDialog", "Type", 0));
-        label_16->setText(QApplication::translate("ajoutDialog", "Nombre de pi\303\250ces", 0));
+        label_16->setText(QApplication::translate("ajoutDialog", "Nombre de pi\303\250ces*", 0));
         etat->clear();
         etat->insertItems(0, QStringList()
          << QApplication::translate("ajoutDialog", "Vente", 0)
@@ -460,6 +466,7 @@ public:
         );
         pushButton_2->setText(QApplication::translate("ajoutDialog", "Annuler", 0));
         pushButton->setText(QApplication::translate("ajoutDialog", "Ajouter", 0));
+        label_17->setText(QApplication::translate("ajoutDialog", "* Champs obligatoires", 0));
     } // retranslateUi
 
 };

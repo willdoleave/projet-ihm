@@ -33,6 +33,10 @@ bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
                         std::string nom, std::string prenom, std::string telephone,
                         std::string mail, std::string superficie, std::string nbPiece)
 {
+
+    if (titre.empty() || nom.empty() || prenom.empty() || adresse.empty() || ville.empty() || mail.empty() || nbPiece.empty() || prix.empty() || telephone.empty())
+        return false;
+
     QDomElement docElem = this->dom.documentElement();
 
     QDomElement write_elem = this->dom.createElement("data"); // On crée un QDomElement
