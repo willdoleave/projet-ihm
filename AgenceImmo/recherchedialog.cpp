@@ -2,7 +2,7 @@
 #include "ui_recherchedialog.h"
 
 rechercheDialog::rechercheDialog(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::rechercheDialog)
 {
     ui->setupUi(this);

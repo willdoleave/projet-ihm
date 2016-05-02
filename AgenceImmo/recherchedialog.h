@@ -2,12 +2,13 @@
 #define RECHERCHEDIALOG_H
 
 #include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class rechercheDialog;
 }
 
-class rechercheDialog : public QWidget
+class rechercheDialog : public QDialog
 {
     Q_OBJECT
 

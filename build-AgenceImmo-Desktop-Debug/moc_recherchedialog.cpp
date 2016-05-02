@@ -77,7 +77,7 @@ void rechercheDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
 }
 
 const QMetaObject rechercheDialog::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_rechercheDialog.data,
+    { &QDialog::staticMetaObject, qt_meta_stringdata_rechercheDialog.data,
       qt_meta_data_rechercheDialog,  qt_static_metacall, 0, 0}
 };
 
@@ -92,12 +92,12 @@ void *rechercheDialog::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_rechercheDialog.stringdata))
         return static_cast<void*>(const_cast< rechercheDialog*>(this));
-    return QWidget::qt_metacast(_clname);
+    return QDialog::qt_metacast(_clname);
 }
 
 int rechercheDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

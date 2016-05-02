@@ -34,7 +34,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    rechercheDialog recherche_dialog;
+    //rechercheDialog recherche_dialog;
     //ajoutDialog ajout_dialog;
 };
 
