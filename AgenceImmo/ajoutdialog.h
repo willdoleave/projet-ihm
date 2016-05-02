@@ -14,11 +14,17 @@ class ajoutDialog : public QWidget
 public:
     explicit ajoutDialog(QWidget *parent = 0);
     ~ajoutDialog();
+    QString photo1, filephoto1;
+    QString photo2, filephoto2;
+    QString photo3, filephoto3;
+    QString photo4, filephoto4;
 
 private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+
+    void on_upload_image1_clicked();
 
 private:
     Ui::ajoutDialog *ui;

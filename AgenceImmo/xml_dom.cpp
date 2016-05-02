@@ -29,7 +29,7 @@ xml_dom::xml_dom() : QWidget()
 
 }
 
-bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
+bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::string prix,
                         std::string titre, std::string description, std::string photo1,
                         std::string photo2,std::string photo3, std::string photo4,
                         std::string adresse, std::string ville, std::string codePostal,
@@ -43,7 +43,7 @@ bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
     QDomElement docElem = this->dom.documentElement();
 
     QDomElement write_elem = this->dom.createElement("data"); // On crée un QDomElement
-    write_elem.setAttribute("id", 1); // L'attribut id vaudra 2.
+    write_elem.setAttribute("id",id.c_str());
     write_elem.setAttribute("etat",etat.c_str());
     write_elem.setAttribute("type", type.c_str()); // L'attribut value
     write_elem.setAttribute("prix", prix.c_str()); // L'attribut value
@@ -62,7 +62,7 @@ bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
     write_elem.setAttribute("mail",mail.c_str());
     write_elem.setAttribute("superficie",superficie.c_str());
     write_elem.setAttribute("nbPiece",nbPiece.c_str());
-    write_elem.setAttribute("dateCreation",QDate::currentDate().toString());
+    write_elem.setAttribute("dateCreation",QDate::currentDate().toString("dd/MM/yyyy"));
 
     docElem.appendChild(write_elem);// On associe write_elem à domElem.
     QString write_doc = this->dom.toString();
@@ -94,6 +94,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
         if(!dom_element.isNull()) {
         //    QMessageBox::information(this, "Information", "id = " + e.attribute("id") + ", type = " +
         //                             e.attribute("type") + ", prix = " + e.attribute("prix"));
+            a.id = e.attribute("id");
             a.etat = e.attribute("etat");
             a.type = e.attribute("type");
             a.prix = e.attribute("prix");

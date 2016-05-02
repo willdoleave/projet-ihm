@@ -20,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -71,26 +72,32 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_12;
     QGridLayout *gridLayout;
-    QLineEdit *titre;
-    QSpinBox *prix;
-    QLabel *label_15;
-    QLabel *titreLabel;
-    QGridLayout *gridLayout_2;
-    QLabel *image1;
-    QLabel *image4;
-    QLabel *image2;
-    QLabel *image3;
-    QPushButton *upload_image1;
-    QPushButton *upload_image2;
-    QPushButton *upload_image3;
-    QPushButton *upload_image4;
-    QTextEdit *description;
-    QLabel *labelDescription;
     QLabel *labelPhotos;
-    QLabel *label_2;
+    QLineEdit *titre;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_4;
     QLabel *label_3;
+    QTextEdit *description;
+    QSpinBox *prix;
+    QGridLayout *gridLayout_2;
+    QLabel *image1;
+    QPushButton *upload_image4;
+    QLabel *image3;
+    QLabel *image2;
+    QLabel *image4;
+    QPushButton *upload_image2;
+    QPushButton *upload_image3;
+    QPushButton *upload_image1;
+    QLabel *label_15;
+    QLabel *titreLabel;
+    QLabel *label_18;
+    QLabel *label_2;
+    QLabel *labelDescription;
+    QHBoxLayout *horizontalLayout_2;
+    QRadioButton *contractuelle1;
+    QRadioButton *contractuelle2;
+    QRadioButton *contractuelle3;
+    QRadioButton *contractuelle4;
 
     void setupUi(QWidget *ajoutDialog)
     {
@@ -116,7 +123,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QStringLiteral("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 529, 669));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 513, 688));
         gridLayout_6 = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         label_17 = new QLabel(scrollAreaWidgetContents_2);
@@ -305,101 +312,15 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        titre = new QLineEdit(scrollAreaWidgetContents_2);
-        titre->setObjectName(QStringLiteral("titre"));
-
-        gridLayout->addWidget(titre, 1, 1, 1, 1);
-
-        prix = new QSpinBox(scrollAreaWidgetContents_2);
-        prix->setObjectName(QStringLiteral("prix"));
-        prix->setMaximum(99999999);
-
-        gridLayout->addWidget(prix, 3, 1, 1, 1);
-
-        label_15 = new QLabel(scrollAreaWidgetContents_2);
-        label_15->setObjectName(QStringLiteral("label_15"));
-
-        gridLayout->addWidget(label_15, 3, 0, 1, 1);
-
-        titreLabel = new QLabel(scrollAreaWidgetContents_2);
-        titreLabel->setObjectName(QStringLiteral("titreLabel"));
-
-        gridLayout->addWidget(titreLabel, 1, 0, 1, 1);
-
-        gridLayout_2 = new QGridLayout();
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        image1 = new QLabel(scrollAreaWidgetContents_2);
-        image1->setObjectName(QStringLiteral("image1"));
-        image1->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-
-        gridLayout_2->addWidget(image1, 0, 0, 1, 1);
-
-        image4 = new QLabel(scrollAreaWidgetContents_2);
-        image4->setObjectName(QStringLiteral("image4"));
-        image4->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-
-        gridLayout_2->addWidget(image4, 0, 3, 1, 1);
-
-        image2 = new QLabel(scrollAreaWidgetContents_2);
-        image2->setObjectName(QStringLiteral("image2"));
-        image2->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-
-        gridLayout_2->addWidget(image2, 0, 1, 1, 1);
-
-        image3 = new QLabel(scrollAreaWidgetContents_2);
-        image3->setObjectName(QStringLiteral("image3"));
-        image3->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-
-        gridLayout_2->addWidget(image3, 0, 2, 1, 1);
-
-        upload_image1 = new QPushButton(scrollAreaWidgetContents_2);
-        upload_image1->setObjectName(QStringLiteral("upload_image1"));
-        upload_image1->setMaximumSize(QSize(80, 16777215));
-
-        gridLayout_2->addWidget(upload_image1, 1, 0, 1, 1);
-
-        upload_image2 = new QPushButton(scrollAreaWidgetContents_2);
-        upload_image2->setObjectName(QStringLiteral("upload_image2"));
-        upload_image2->setMaximumSize(QSize(80, 16777215));
-
-        gridLayout_2->addWidget(upload_image2, 1, 1, 1, 1);
-
-        upload_image3 = new QPushButton(scrollAreaWidgetContents_2);
-        upload_image3->setObjectName(QStringLiteral("upload_image3"));
-        upload_image3->setMaximumSize(QSize(80, 16777215));
-
-        gridLayout_2->addWidget(upload_image3, 1, 2, 1, 1);
-
-        upload_image4 = new QPushButton(scrollAreaWidgetContents_2);
-        upload_image4->setObjectName(QStringLiteral("upload_image4"));
-        upload_image4->setMaximumSize(QSize(80, 16777215));
-
-        gridLayout_2->addWidget(upload_image4, 1, 3, 1, 1);
-
-
-        gridLayout->addLayout(gridLayout_2, 4, 1, 1, 1);
-
-        description = new QTextEdit(scrollAreaWidgetContents_2);
-        description->setObjectName(QStringLiteral("description"));
-        description->setMaximumSize(QSize(16777215, 80));
-
-        gridLayout->addWidget(description, 2, 1, 1, 1);
-
-        labelDescription = new QLabel(scrollAreaWidgetContents_2);
-        labelDescription->setObjectName(QStringLiteral("labelDescription"));
-
-        gridLayout->addWidget(labelDescription, 2, 0, 1, 1);
-
         labelPhotos = new QLabel(scrollAreaWidgetContents_2);
         labelPhotos->setObjectName(QStringLiteral("labelPhotos"));
 
         gridLayout->addWidget(labelPhotos, 4, 0, 1, 1);
 
-        label_2 = new QLabel(scrollAreaWidgetContents_2);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFont(font1);
+        titre = new QLineEdit(scrollAreaWidgetContents_2);
+        titre->setObjectName(QStringLiteral("titre"));
 
-        gridLayout->addWidget(label_2, 0, 0, 1, 2);
+        gridLayout->addWidget(titre, 1, 1, 1, 1);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -416,17 +337,132 @@ public:
         horizontalLayout_3->addWidget(label_3);
 
 
-        gridLayout->addLayout(horizontalLayout_3, 5, 0, 1, 2);
+        gridLayout->addLayout(horizontalLayout_3, 6, 0, 1, 2);
+
+        description = new QTextEdit(scrollAreaWidgetContents_2);
+        description->setObjectName(QStringLiteral("description"));
+        description->setMaximumSize(QSize(16777215, 80));
+
+        gridLayout->addWidget(description, 2, 1, 1, 1);
+
+        prix = new QSpinBox(scrollAreaWidgetContents_2);
+        prix->setObjectName(QStringLiteral("prix"));
+        prix->setMaximum(99999999);
+
+        gridLayout->addWidget(prix, 3, 1, 1, 1);
+
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        image1 = new QLabel(scrollAreaWidgetContents_2);
+        image1->setObjectName(QStringLiteral("image1"));
+        image1->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+
+        gridLayout_2->addWidget(image1, 0, 0, 1, 1);
+
+        upload_image4 = new QPushButton(scrollAreaWidgetContents_2);
+        upload_image4->setObjectName(QStringLiteral("upload_image4"));
+        upload_image4->setMaximumSize(QSize(80, 16777215));
+
+        gridLayout_2->addWidget(upload_image4, 1, 3, 1, 1);
+
+        image3 = new QLabel(scrollAreaWidgetContents_2);
+        image3->setObjectName(QStringLiteral("image3"));
+        image3->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+
+        gridLayout_2->addWidget(image3, 0, 2, 1, 1);
+
+        image2 = new QLabel(scrollAreaWidgetContents_2);
+        image2->setObjectName(QStringLiteral("image2"));
+        image2->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+
+        gridLayout_2->addWidget(image2, 0, 1, 1, 1);
+
+        image4 = new QLabel(scrollAreaWidgetContents_2);
+        image4->setObjectName(QStringLiteral("image4"));
+        image4->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+
+        gridLayout_2->addWidget(image4, 0, 3, 1, 1);
+
+        upload_image2 = new QPushButton(scrollAreaWidgetContents_2);
+        upload_image2->setObjectName(QStringLiteral("upload_image2"));
+        upload_image2->setMaximumSize(QSize(80, 16777215));
+
+        gridLayout_2->addWidget(upload_image2, 1, 1, 1, 1);
+
+        upload_image3 = new QPushButton(scrollAreaWidgetContents_2);
+        upload_image3->setObjectName(QStringLiteral("upload_image3"));
+        upload_image3->setMaximumSize(QSize(80, 16777215));
+
+        gridLayout_2->addWidget(upload_image3, 1, 2, 1, 1);
+
+        upload_image1 = new QPushButton(scrollAreaWidgetContents_2);
+        upload_image1->setObjectName(QStringLiteral("upload_image1"));
+        upload_image1->setMaximumSize(QSize(80, 16777215));
+
+        gridLayout_2->addWidget(upload_image1, 1, 0, 1, 1);
+
+
+        gridLayout->addLayout(gridLayout_2, 4, 1, 1, 1);
+
+        label_15 = new QLabel(scrollAreaWidgetContents_2);
+        label_15->setObjectName(QStringLiteral("label_15"));
+
+        gridLayout->addWidget(label_15, 3, 0, 1, 1);
+
+        titreLabel = new QLabel(scrollAreaWidgetContents_2);
+        titreLabel->setObjectName(QStringLiteral("titreLabel"));
+
+        gridLayout->addWidget(titreLabel, 1, 0, 1, 1);
+
+        label_18 = new QLabel(scrollAreaWidgetContents_2);
+        label_18->setObjectName(QStringLiteral("label_18"));
+
+        gridLayout->addWidget(label_18, 5, 0, 1, 1);
+
+        label_2 = new QLabel(scrollAreaWidgetContents_2);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setFont(font1);
+
+        gridLayout->addWidget(label_2, 0, 0, 1, 2);
+
+        labelDescription = new QLabel(scrollAreaWidgetContents_2);
+        labelDescription->setObjectName(QStringLiteral("labelDescription"));
+
+        gridLayout->addWidget(labelDescription, 2, 0, 1, 1);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        contractuelle1 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle1->setObjectName(QStringLiteral("contractuelle1"));
+        contractuelle1->setChecked(true);
+
+        horizontalLayout_2->addWidget(contractuelle1);
+
+        contractuelle2 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle2->setObjectName(QStringLiteral("contractuelle2"));
+
+        horizontalLayout_2->addWidget(contractuelle2);
+
+        contractuelle3 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle3->setObjectName(QStringLiteral("contractuelle3"));
+
+        horizontalLayout_2->addWidget(contractuelle3);
+
+        contractuelle4 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle4->setObjectName(QStringLiteral("contractuelle4"));
+
+        horizontalLayout_2->addWidget(contractuelle4);
+
+
+        gridLayout->addLayout(horizontalLayout_2, 5, 1, 1, 1);
 
 
         gridLayout_6->addLayout(gridLayout, 0, 0, 1, 2);
 
         scrollArea->setWidget(scrollAreaWidgetContents_2);
-        label_3->raise();
-        label_12->raise();
-        label_17->raise();
         label->raise();
         scrollArea->raise();
+        upload_image1->raise();
 
         retranslateUi(ajoutDialog);
 
@@ -470,21 +506,26 @@ public:
         label_6->setText(QApplication::translate("ajoutDialog", "Ville*", 0));
         label_7->setText(QApplication::translate("ajoutDialog", "Code Postal", 0));
         label_12->setText(QApplication::translate("ajoutDialog", "Informations sur le bien", 0));
-        label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
-        titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce*", 0));
-        image1->setText(QString());
-        image4->setText(QString());
-        image2->setText(QString());
-        image3->setText(QString());
-        upload_image1->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        upload_image2->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        upload_image3->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        upload_image4->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
         labelPhotos->setText(QApplication::translate("ajoutDialog", "Photos", 0));
-        label_2->setText(QApplication::translate("ajoutDialog", "Informations annonce", 0));
         label_4->setText(QApplication::translate("ajoutDialog", "Adresse du bien", 0));
         label_3->setText(QApplication::translate("ajoutDialog", "Informations contact", 0));
+        image1->setText(QString());
+        upload_image4->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        image3->setText(QString());
+        image2->setText(QString());
+        image4->setText(QString());
+        upload_image2->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        upload_image3->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        upload_image1->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
+        titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce*", 0));
+        label_18->setText(QApplication::translate("ajoutDialog", "Contractuelle", 0));
+        label_2->setText(QApplication::translate("ajoutDialog", "Informations annonce", 0));
+        labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
+        contractuelle1->setText(QString());
+        contractuelle2->setText(QString());
+        contractuelle3->setText(QString());
+        contractuelle4->setText(QString());
     } // retranslateUi
 
 };

@@ -8,7 +8,7 @@ class Annonce
 {
 public:
     Annonce();
-    //int id;
+    QString id;
     QString etat;
     QString type;
     QString prix;
@@ -39,7 +39,7 @@ class xml_dom : public QWidget
 public:
     //QList<Annonce> *list_annonces;
     xml_dom();
-    bool ajoutElem( std::string etat, std::string type, std::string prix,
+    bool ajoutElem( std::string id, std::string etat, std::string type, std::string prix,
                     std::string titre, std::string description, std::string photo1,
                     std::string photo2,std::string photo3, std::string photo4,
                     std::string adresse, std::string ville, std::string codePostal,

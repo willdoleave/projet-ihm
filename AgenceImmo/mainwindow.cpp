@@ -72,6 +72,7 @@ void MainWindow::on_actionQuitter_triggered()
 
 void MainWindow::remplirListeWidget()
 {
+    list_annonces = new QList<Annonce>();
     Dom->listeElem(list_annonces);
     for (int i = 0; i < list_annonces->count()-1; i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);

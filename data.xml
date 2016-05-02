@@ -1,10 +1,4 @@
 <?xml version='1.0' encoding='ISO-8859-1'?>
 <data>
- <data id="2" prix="10" type="Maison"/>
- <data id="2" prix="10" type="Maison"/>
- <data id="1" prix="10" type="Maison"/>
- <data id="1" type="Maison" prix="10"/>
- <data mail="hamzasbiti@gmail.com" description="Description annonce" superficie="10" type="Maison" id="1" codePostal="67000" photo1="photo1" prix="100" telephone="0662259745" photo2="photo2" photo3="photo3" photo4="photo4" adresse="6, avenue du gÃÂ©nÃÂ©ral de gaulle" nbPiece="10" titre="Annonce test" etat="Vente" prenom="Hamza" ville="Strasbourg" nom="SBITI"/>
- <data mail="hamzasbiti@gmail.com" description="" superficie="0" type="Maison" id="1" codePostal="67000" photo1="photo1" prix="0" telephone="06622" photo2="photo2" photo3="photo3" photo4="photo4" adresse="Adresse" nbPiece="0" titre="Titre" etat="Vente" prenom="Hamza" ville="Ville" nom="SBITI"/>
- <data dateCreation="Mon May 2 2016" mail="10" description="desc" type="Maison" superficie="1000000" id="1" codePostal="0" photo1="photo1" prix="10" telephone="telephone" photo2="photo2" photo3="photo3" photo4="photo4" adresse="adresse" nbPiece="10" titre="Titre" etat="Vente" prenom="prenom" ville="ville" nom="nom"/>
+ <data photo1="../upload/160502205427photo1.png" codePostal="0" photo2="" ville="aa" type="Maison" photo3="" photo4="" id="160502205427" dateCreation="02/05/2016" prix="0" prenom="aa" etat="Vente" titre="aa" telephone="aa" nom="aa" adresse="aa" mail="aa" superficie="0" nbPiece="0" description="aa"/>
 </data>
