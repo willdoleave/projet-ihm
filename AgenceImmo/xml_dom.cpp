@@ -7,14 +7,21 @@ Annonce::Annonce() {}
 
 xml_dom::xml_dom() : QWidget()
 {
+    this->open();
+}
+
+bool xml_dom::open()
+{
     dom = QDomDocument("data");
     doc_xml.setFileName("../data.xml");
 
     if(!doc_xml.open(QIODevice::ReadOnly))
     {
-        QMessageBox::critical(this,"Erreur","Impossible d'ouvrir le ficher XML");
+        QMessageBox::critical(this,"Erreur","Impossible d'ouvrir le ficher XML. Création d'un autre");
         doc_xml.close();
-        return;
+        doc_xml.open(QIODevice::ReadWrite);
+        doc_xml.close();
+        //return;
     }
 
     QString errorStr;
@@ -24,10 +31,9 @@ xml_dom::xml_dom() : QWidget()
     {
         QMessageBox::critical(this,"Erreur","Impossible de recuperer le contenu xml");
         doc_xml.close();
-        return;
+        return false;
     }
     doc_xml.close();
-
 }
 
 bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::string prix,
@@ -87,6 +93,7 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
 
 bool xml_dom::listeElem(QList<Annonce> *list_annonces)
 {
+    open();
     QDomElement dom_element = this->dom.documentElement();
     QDomNode noeud = dom_element.firstChild();
     Annonce a;
@@ -116,7 +123,6 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.photoContractuelle = e.attribute("photoContractuelle");
             list_annonces->append(a);
         }
-
         noeud = noeud.nextSibling();
     }
     return true;

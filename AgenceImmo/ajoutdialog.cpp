@@ -9,7 +9,7 @@
 #include <qresource.h>
 
 ajoutDialog::ajoutDialog(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::ajoutDialog)
 {
     ui->setupUi(this);
@@ -102,6 +102,10 @@ void ajoutDialog::on_pushButton_clicked()
         this->filephoto4 = QString("");
         ui->image1->setPixmap(QPixmap(":/img/camera.png"));
         close();
+
+        MainWindow *mw = (MainWindow*)this->parent();
+        mw->remplirListeWidget();
+
     }
 
 }
@@ -110,10 +114,9 @@ void ajoutDialog::on_upload_image1_clicked()
 {
     filephoto1 = QFileDialog::getOpenFileName(this,
     tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
-    if (filephoto1.size()>0) {
+    if (filephoto1.size()>0)
         ui->image1->setPixmap(QPixmap(filephoto1).scaled(QSize(48,48)));
 
-    }
 }
 
 void ajoutDialog::on_upload_image2_clicked()

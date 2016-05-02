@@ -2,12 +2,13 @@
 #define AJOUTDIALOG_H
 
 #include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class ajoutDialog;
 }
 
-class ajoutDialog : public QWidget
+class ajoutDialog : public QDialog
 {
     Q_OBJECT
 

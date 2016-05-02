@@ -47,6 +47,7 @@ public:
                     std::string mail, std::string superficie, std::string nbPiece,
                     std::string contractuelle);
     bool listeElem(QList<Annonce> *list_annonces);
+    bool open();
 
     QDomDocument dom;
     QFile doc_xml;

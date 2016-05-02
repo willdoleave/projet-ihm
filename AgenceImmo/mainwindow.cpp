@@ -14,8 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    QIcon icon(":/images/img/windowico.ico");
-    this->setWindowIcon(icon);
+    this->setWindowIcon(QIcon(":/images/img/windowico.ico"));
     ui->setupUi(this);
     Dom = new xml_dom();
     list_annonces = new QList<Annonce>();
@@ -65,9 +64,9 @@ void MainWindow::on_actionRecherche_triggered()
 
 void MainWindow::on_actionAjouter_une_annonce_triggered()
 {
+    ajoutDialog ajout_dialog(this);
     ajout_dialog.setWindowTitle("Ajout d'une annonce");
-    ajout_dialog.show();
-    remplirListeWidget();
+    ajout_dialog.exec();
 }
 
 void MainWindow::on_actionQuitter_triggered()
