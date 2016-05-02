@@ -12,5 +12,6 @@
         <file>img/camera.png</file>
         <file>img/stats.png</file>
         <file>img/help.png</file>
+        <file>img/windowico.ico</file>
     </qresource>
 </RCC>

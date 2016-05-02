@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QIcon icon(":/images/img/windowico.ico");
+    this->setWindowIcon(icon);
     ui->setupUi(this);
     Dom = new xml_dom();
     list_annonces = new QList<Annonce>();
