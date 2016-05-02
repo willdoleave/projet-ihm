@@ -5,6 +5,8 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <iostream>
+#include <QBoxLayout>
+#include <QLabel>
 #include <xml_dom.h>
 using namespace std;
 
@@ -63,6 +65,7 @@ void MainWindow::on_actionAjouter_une_annonce_triggered()
 {
     ajout_dialog.setWindowTitle("Ajout d'une annonce");
     ajout_dialog.show();
+    remplirListeWidget();
 }
 
 void MainWindow::on_actionQuitter_triggered()
@@ -73,18 +76,15 @@ void MainWindow::on_actionQuitter_triggered()
 void MainWindow::remplirListeWidget()
 {
     list_annonces = new QList<Annonce>();
+    ui->listWidget->clear();
     Dom->listeElem(list_annonces);
-    for (int i = 0; i < list_annonces->count()-1; i++) {
+    for (int i = 0; i < list_annonces->count(); i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);
-        QString text;
-        QTextStream stream(&text);
         Annonce a = list_annonces->at(i);
-        /*if (!(a.photoContractuelle.toStdString().empty()))
-        {
-            QIcon icon(a.photoContractuelle);
-            item->setIcon(icon);
-        }*/
-        stream << a.titre;
+        if (!a.photoContractuelle.toStdString().empty())
+            list_item->setIcon(QPixmap(a.photoContractuelle).scaled(QSize(128,128)));
+        QString text;
+        text = a.titre + ". Prix" + a.prix+"€";
         list_item->setText(text);
         ui->listWidget->addItem(list_item);
     }

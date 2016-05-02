@@ -26,6 +26,12 @@ private slots:
 
     void on_upload_image1_clicked();
 
+    void on_upload_image2_clicked();
+
+    void on_upload_image3_clicked();
+
+    void on_upload_image4_clicked();
+
 private:
     Ui::ajoutDialog *ui;
 };

@@ -44,7 +44,8 @@ public:
                     std::string photo2,std::string photo3, std::string photo4,
                     std::string adresse, std::string ville, std::string codePostal,
                     std::string nom, std::string prenom, std::string telephone,
-                    std::string mail, std::string superficie, std::string nbPiece);
+                    std::string mail, std::string superficie, std::string nbPiece,
+                    std::string contractuelle);
     bool listeElem(QList<Annonce> *list_annonces);
 
     QDomDocument dom;

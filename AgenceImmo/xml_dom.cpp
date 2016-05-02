@@ -1,5 +1,6 @@
 #include "xml_dom.h"
 #include <QMessageBox>
+#include "mainwindow.h"
 
 Annonce::Annonce() {}
 
@@ -34,7 +35,8 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
                         std::string photo2,std::string photo3, std::string photo4,
                         std::string adresse, std::string ville, std::string codePostal,
                         std::string nom, std::string prenom, std::string telephone,
-                        std::string mail, std::string superficie, std::string nbPiece)
+                        std::string mail, std::string superficie, std::string nbPiece,
+                        std::string contractuelle)
 {
 
     if (titre.empty() || nom.empty() || prenom.empty() || adresse.empty() || ville.empty() || mail.empty() || nbPiece.empty() || prix.empty() || telephone.empty())
@@ -63,7 +65,7 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     write_elem.setAttribute("superficie",superficie.c_str());
     write_elem.setAttribute("nbPiece",nbPiece.c_str());
     write_elem.setAttribute("dateCreation",QDate::currentDate().toString("dd/MM/yyyy"));
-
+    write_elem.setAttribute("photoContractuelle",contractuelle.c_str());
     docElem.appendChild(write_elem);// On associe write_elem à domElem.
     QString write_doc = this->dom.toString();
 
@@ -92,8 +94,6 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
     {
         QDomElement e = noeud.toElement();
         if(!dom_element.isNull()) {
-        //    QMessageBox::information(this, "Information", "id = " + e.attribute("id") + ", type = " +
-        //                             e.attribute("type") + ", prix = " + e.attribute("prix"));
             a.id = e.attribute("id");
             a.etat = e.attribute("etat");
             a.type = e.attribute("type");
