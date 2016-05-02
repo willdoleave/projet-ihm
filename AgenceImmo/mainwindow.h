@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <recherchedialog.h>
 #include <ajoutdialog.h>
+#include "xml_dom.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +17,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void remplirListeWidget();
+    xml_dom *Dom;
+    QList<Annonce> *list_annonces;
 
 private slots:
     void on_actionImporter_triggered();

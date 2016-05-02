@@ -72,6 +72,7 @@
      <string>Outils</string>
     </property>
     <addaction name="actionRecherche"/>
+    <addaction name="actionStatistiques"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuOutils"/>

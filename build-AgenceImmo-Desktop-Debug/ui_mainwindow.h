@@ -135,6 +135,7 @@ public:
         menuAide->addAction(action_propos);
         menuAide->addAction(actionUtilisation);
         menuOutils->addAction(actionRecherche);
+        menuOutils->addAction(actionStatistiques);
         toolBar_2->addAction(actionImporter);
         toolBar_2->addAction(actionExporter);
         toolBar_2->addSeparator();

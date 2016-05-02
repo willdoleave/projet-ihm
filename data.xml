@@ -4,5 +4,7 @@
  <data id="2" prix="10" type="Maison"/>
  <data id="1" prix="10" type="Maison"/>
  <data id="1" type="Maison" prix="10"/>
- <data telephone="0662259745" prix="100" titre="Annonce test" description="Description annonce" adresse="6, avenue du général de gaulle" etat="Vente" photo1="photo1" ville="Strasbourg" photo2="photo2" photo3="photo3" photo4="photo4" id="1" nbPiece="10" mail="hamzasbiti@gmail.com" superficie="10" type="Maison" prenom="Hamza" codePostal="67000" nom="SBITI"/>
+ <data mail="hamzasbiti@gmail.com" description="Description annonce" superficie="10" type="Maison" id="1" codePostal="67000" photo1="photo1" prix="100" telephone="0662259745" photo2="photo2" photo3="photo3" photo4="photo4" adresse="6, avenue du gÃÂ©nÃÂ©ral de gaulle" nbPiece="10" titre="Annonce test" etat="Vente" prenom="Hamza" ville="Strasbourg" nom="SBITI"/>
+ <data mail="hamzasbiti@gmail.com" description="" superficie="0" type="Maison" id="1" codePostal="67000" photo1="photo1" prix="0" telephone="06622" photo2="photo2" photo3="photo3" photo4="photo4" adresse="Adresse" nbPiece="0" titre="Titre" etat="Vente" prenom="Hamza" ville="Ville" nom="SBITI"/>
+ <data dateCreation="Mon May 2 2016" mail="10" description="desc" type="Maison" superficie="1000000" id="1" codePostal="0" photo1="photo1" prix="10" telephone="telephone" photo2="photo2" photo3="photo3" photo4="photo4" adresse="adresse" nbPiece="10" titre="Titre" etat="Vente" prenom="prenom" ville="ville" nom="nom"/>
 </data>

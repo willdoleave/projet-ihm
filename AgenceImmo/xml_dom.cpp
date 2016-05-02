@@ -1,6 +1,9 @@
 #include "xml_dom.h"
 #include <QMessageBox>
 
+Annonce::Annonce() {}
+
+
 xml_dom::xml_dom() : QWidget()
 {
     dom = QDomDocument("data");
@@ -59,6 +62,7 @@ bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
     write_elem.setAttribute("mail",mail.c_str());
     write_elem.setAttribute("superficie",superficie.c_str());
     write_elem.setAttribute("nbPiece",nbPiece.c_str());
+    write_elem.setAttribute("dateCreation",QDate::currentDate().toString());
 
     docElem.appendChild(write_elem);// On associe write_elem à domElem.
     QString write_doc = this->dom.toString();
@@ -74,21 +78,44 @@ bool xml_dom::ajoutElem( std::string etat, std::string type, std::string prix,
     stream << write_doc; // On utilise l'opérateur << pour écrire write_doc dans le document XML.
 
     this->close();
-    QMessageBox::information(this,"Parfait","L'annonce a été insérée avec succès !");
+    //QMessageBox::information(this,"Parfait","L'annonce a été insérée avec succès !");
 
    return true;
 }
 
-bool xml_dom::listeElem()
+bool xml_dom::listeElem(QList<Annonce> *list_annonces)
 {
     QDomElement dom_element = this->dom.documentElement();
     QDomNode noeud = dom_element.firstChild();
+    Annonce a;
     while(!noeud.isNull())
     {
         QDomElement e = noeud.toElement();
-        if(!dom_element.isNull())
-            QMessageBox::information(this, "Information", "id = " + e.attribute("id") + ", type = " +
-                                     e.attribute("type") + ", prix = " + e.attribute("prix"));
+        if(!dom_element.isNull()) {
+        //    QMessageBox::information(this, "Information", "id = " + e.attribute("id") + ", type = " +
+        //                             e.attribute("type") + ", prix = " + e.attribute("prix"));
+            a.etat = e.attribute("etat");
+            a.type = e.attribute("type");
+            a.prix = e.attribute("prix");
+            a.titre = e.attribute("titre");
+            a.description = e.attribute("description");
+            a.photo1 = e.attribute("photo1");
+            a.photo2 = e.attribute("photo2");
+            a.photo3 = e.attribute("photo3");
+            a.photo4 = e.attribute("photo4");
+            a.adresse = e.attribute("adresse");
+            a.ville = e.attribute("ville");
+            a.codePostal = e.attribute("codePostal");
+            a.nom = e.attribute("nom");
+            a.prenom = e.attribute("prenom");
+            a.telephone = e.attribute("telephone");
+            a.mail = e.attribute("mail");
+            a.superficie = e.attribute("superficie");
+            a.nbPiece = e.attribute("nbPiece");
+            a.photoContractuelle = e.attribute("photoContractuelle");
+            list_annonces->append(a);
+        }
+
         noeud = noeud.nextSibling();
     }
     return true;

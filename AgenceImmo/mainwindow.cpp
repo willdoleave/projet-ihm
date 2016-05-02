@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <iostream>
+#include <xml_dom.h>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -12,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    Dom = new xml_dom();
+    list_annonces = new QList<Annonce>();
+    remplirListeWidget();
 }
 
 MainWindow::~MainWindow()
@@ -64,4 +68,23 @@ void MainWindow::on_actionAjouter_une_annonce_triggered()
 void MainWindow::on_actionQuitter_triggered()
 {
     close();
+}
+
+void MainWindow::remplirListeWidget()
+{
+    Dom->listeElem(list_annonces);
+    for (int i = 0; i < list_annonces->count()-1; i++) {
+        QListWidgetItem *list_item = new QListWidgetItem(0,0);
+        QString text;
+        QTextStream stream(&text);
+        Annonce a = list_annonces->at(i);
+        /*if (!(a.photoContractuelle.toStdString().empty()))
+        {
+            QIcon icon(a.photoContractuelle);
+            item->setIcon(icon);
+        }*/
+        stream << a.titre;
+        list_item->setText(text);
+        ui->listWidget->addItem(list_item);
+    }
 }
