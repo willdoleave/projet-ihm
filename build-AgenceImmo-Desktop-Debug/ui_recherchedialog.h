@@ -281,7 +281,7 @@ public:
         chkBureau->setText(QApplication::translate("rechercheDialog", "Bureau", 0));
         chkAutre->setText(QApplication::translate("rechercheDialog", "Autre", 0));
         labelCodePostal->setText(QApplication::translate("rechercheDialog", "Code Postal", 0));
-        radioDateApres->setText(QApplication::translate("rechercheDialog", "Apr\303\250s", 0));
+        radioDateApres->setText(QApplication::translate("rechercheDialog", "\303\200 partir", 0));
         radioDateAvant->setText(QApplication::translate("rechercheDialog", "Avant", 0));
         chkMaison->setText(QApplication::translate("rechercheDialog", "Maison", 0));
         chkChateau->setText(QApplication::translate("rechercheDialog", "Ch\303\242teau", 0));

@@ -13,7 +13,7 @@ xml_dom::xml_dom() : QWidget()
 bool xml_dom::open()
 {
     dom = QDomDocument("data");
-    doc_xml.setFileName("../data.xml");
+    doc_xml.setFileName("../AgenceImmo/data.xml");
 
     if(!doc_xml.open(QIODevice::ReadOnly))
     {

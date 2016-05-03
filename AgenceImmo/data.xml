@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<info_de_TF1>
-        <information id="0" value="Un avion s'est craché dans l'océan" />
-        <information id="1" value="Une femme a gagné à l'Euro Million" />
-</info_de_TF1>
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<data>
+ <data adresse="Quartier Filature" prix="249000" dateCreation="03/05/2016" telephone="0123456789" nbPiece="12" id="160503005452" titre="Maison quartier filature" photo1="../upload/160503005452photo1.jpg" photo2="../upload/160503005452photo2.jpg" superficie="1000" photo3="../upload/160503005452photo3.jpg" etat="Vente" photo4="" ville="Mulhouse" codePostal="68000" description="Maison situé à  Mulhouse dans le quartier filature" nom="Nom-1" mail="test@test.com" prenom="Prenom-1" type="Maison" photoContractuelle="../upload/160503005452photo1.jpg"/>
+ <data adresse="30, Avenue de l'étoile" telephone="0112233445" prix="439000" dateCreation="03/05/2016" nbPiece="10" id="160503031743" titre="Grande Maison sur deux étages" photo1="../upload/160503031743photo1.jpg" photo2="../upload/160503031743photo2.jpg" superficie="1530" photo3="../upload/160503031743photo3.jpg" etat="Vente" photo4="" codePostal="67700" ville="Saverne" description="Cette maison, avec jardin et piscine, se situe à quelques mètres du centre commercial bla bla....." nom="Monsieur NX" mail="monsieur@test.com" prenom="Monsieur PX " type="Maison" photoContractuelle="../upload/160503031743photo1.jpg"/>
+</data>
