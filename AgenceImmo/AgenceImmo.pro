@@ -18,18 +18,21 @@ SOURCES += main.cpp\
     recherchedialog.cpp \
     ajoutdialog.cpp \
     xml_dom.cpp \
-    detaildialog.cpp
+    detaildialog.cpp \
+    modifierdialog.cpp
 
 HEADERS  += mainwindow.h \
     recherchedialog.h \
     ajoutdialog.h \
     xml_dom.h \
-    detaildialog.h
+    detaildialog.h \
+    modifierdialog.h
 
 FORMS    += mainwindow.ui \
     recherchedialog.ui \
     ajoutdialog.ui \
-    detaildialog.ui
+    detaildialog.ui \
+    modifierdialog.ui
 
 RESOURCES += \
     resources.qrc

@@ -17,5 +17,6 @@
         <file>img/repeat.png</file>
         <file>img/edit.png</file>
         <file>img/eye.png</file>
+        <file>img/warning.png</file>
     </qresource>
 </RCC>

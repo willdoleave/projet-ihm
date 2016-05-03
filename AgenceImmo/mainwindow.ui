@@ -294,7 +294,7 @@
     <string>Examiner l'annonce</string>
    </property>
    <property name="shortcut">
-    <string>Return, Shift+X</string>
+    <string>Shift+X</string>
    </property>
   </action>
  </widget>

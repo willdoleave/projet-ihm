@@ -43,11 +43,11 @@ void MainWindow::on_actionImporter_triggered()
     msgBox.exec();
 
     if (msgBox.clickedButton()==pButtonYes) {
-        cout << "Oui" << endl;
+        qDebug() << "Oui";
     } else if (msgBox.clickedButton() == pButtonNo) {
-        cout << "Non" << endl;
+        qDebug() << "Non";
     } else if (msgBox.clickedButton() == pButtonCancel) {
-        cout << "Annuler" << endl;
+        qDebug() << "Annuler";
     }
 
 }
@@ -142,3 +142,29 @@ void MainWindow::on_actionExaminer_annonce_triggered()
 
 
 
+
+void MainWindow::on_actionSupprimerAnnonce_triggered()
+{
+    QListWidgetItem *wi = ui->listWidget->selectedItems().first();
+    QString id;
+    id = wi->statusTip();
+
+    QMessageBox msgBox;
+    msgBox.setText(tr("Etes-vous sur de vouloir supprimer cette annonce ?"));
+    QAbstractButton* pButtonYes = msgBox.addButton(tr("Oui"), QMessageBox::YesRole);
+    QAbstractButton* pButtonNo = msgBox.addButton(tr("Non"), QMessageBox::NoRole);
+    //msgBox.addButton(tr("Annuler"), QMessageBox::NoRole);
+    QString titre;
+    titre = "Supprimer l'annonce id="+id;
+    msgBox.setWindowTitle(titre);
+    msgBox.setIconPixmap(QPixmap(":/images/img/warning.png"));
+    msgBox.exec();
+
+    if (msgBox.clickedButton()==pButtonYes) {
+        qDebug() << "Oui";
+
+    } else if (msgBox.clickedButton() == pButtonNo) {
+        qDebug() << "Non";
+    }
+
+}
