@@ -81,7 +81,7 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     write_elem.setAttribute("mail",mail.c_str());
     write_elem.setAttribute("superficie",superficie.c_str());
     write_elem.setAttribute("nbPiece",nbPiece.c_str());
-    write_elem.setAttribute("dateCreation",QDate::currentDate().toString("dd/MM/yyyy"));
+    //write_elem.setAttribute("dateCreation",QDate::currentDate().toString("dd/MM/yyyy"));
     write_elem.setAttribute("photoContractuelle",contractuelle.c_str());
     docElem.appendChild(write_elem);// On associe write_elem à domElem.
     QString write_doc = this->dom.toString();
@@ -161,7 +161,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.superficie = e.attribute("superficie");
             a.nbPiece = e.attribute("nbPiece");
             a.photoContractuelle = e.attribute("photoContractuelle");
-            a.dateCreation = e.attribute("dateCreation");
+            //a.dateCreation = e.attribute("dateCreation");
             list_annonces->append(a);
         }
         noeud = noeud.nextSibling();

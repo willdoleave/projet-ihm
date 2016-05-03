@@ -28,7 +28,7 @@ public:
     QString superficie;
     QString nbPiece;
     QString photoContractuelle;
-    QString dateCreation;
+    QDate dateCreation;
 private:
 
 };

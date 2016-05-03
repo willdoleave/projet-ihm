@@ -99,6 +99,7 @@ public:
 
         piecesMin = new QSpinBox(gridLayoutWidget);
         piecesMin->setObjectName(QStringLiteral("piecesMin"));
+        piecesMin->setMaximum(1000000);
 
         gridLayout_2->addWidget(piecesMin, 2, 1, 1, 1);
 
@@ -115,6 +116,7 @@ public:
 
         prixMin = new QSpinBox(gridLayoutWidget);
         prixMin->setObjectName(QStringLiteral("prixMin"));
+        prixMin->setMaximum(10000);
 
         gridLayout_2->addWidget(prixMin, 0, 1, 1, 1);
 
@@ -158,6 +160,7 @@ public:
 
         superficieMin = new QSpinBox(gridLayoutWidget);
         superficieMin->setObjectName(QStringLiteral("superficieMin"));
+        superficieMin->setMaximum(1000000);
 
         gridLayout_2->addWidget(superficieMin, 1, 1, 1, 1);
 

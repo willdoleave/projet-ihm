@@ -29,7 +29,7 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
     adresse = a.adresse.toUtf8()+", "+a.codePostal.toUtf8()+", "+a.ville;
     superficie = a.superficie.toUtf8()+" m²";
     id_etat = "id: "+a.id.toUtf8()+" - En "+a.etat.toUtf8();
-    parution_prix = "Parution: "+a.dateCreation.toUtf8()+" - Prix: "+a.prix.toUtf8()+"€";
+    parution_prix = "Parution: "+a.dateCreation.toString("dd/MM/yyyy")+" - Prix: "+a.prix.toUtf8()+"€";
     pieces = a.nbPiece+ " pièces";
     prix = a.prix+"€";
     nom_prenom = a.nom+" "+a.prenom;

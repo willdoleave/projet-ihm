@@ -127,12 +127,12 @@ QList<Annonce> rechercheDialog::rechercheAnnonce(QList<Annonce> listeAnnonces) {
     for (int i = 0; i < listeRecherche.length(); i++) {
         Annonce a = listeRecherche.value(i);
         if (dateAvant) {
-            if (QDate::fromString(a.dateCreation,"dd/MM/yyyy") < date) {
+            if (a.dateCreation < date) {
                 listeRecherche.removeAt(i);
                 i--;
             }
         } else {
-            if (QDate::fromString(a.dateCreation,"dd/MM/yyyy") > date) {
+            if (a.dateCreation > date) {
                 listeRecherche.removeAt(i);
                 i--;
             }
