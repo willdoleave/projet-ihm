@@ -108,3 +108,10 @@ void detaildialog::on_pushButton_clicked()
 {
     close();
 }
+
+void detaildialog::on_pushButton_2_clicked()
+{
+    MainWindow *mw = (MainWindow*)this->parent();
+    close();
+    mw->on_actionModifier_triggered();
+}

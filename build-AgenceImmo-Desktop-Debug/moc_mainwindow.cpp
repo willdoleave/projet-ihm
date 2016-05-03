@@ -32,20 +32,21 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10),
 QT_MOC_LITERAL(1, 11, 27),
 QT_MOC_LITERAL(2, 39, 0),
-QT_MOC_LITERAL(3, 40, 26),
-QT_MOC_LITERAL(4, 67, 28),
-QT_MOC_LITERAL(5, 96, 38),
-QT_MOC_LITERAL(6, 135, 26),
-QT_MOC_LITERAL(7, 162, 35),
-QT_MOC_LITERAL(8, 198, 35),
-QT_MOC_LITERAL(9, 234, 31),
-QT_MOC_LITERAL(10, 266, 10),
-QT_MOC_LITERAL(11, 277, 12),
-QT_MOC_LITERAL(12, 290, 2),
-QT_MOC_LITERAL(13, 293, 27)
+QT_MOC_LITERAL(3, 40, 27),
+QT_MOC_LITERAL(4, 68, 26),
+QT_MOC_LITERAL(5, 95, 28),
+QT_MOC_LITERAL(6, 124, 38),
+QT_MOC_LITERAL(7, 163, 26),
+QT_MOC_LITERAL(8, 190, 35),
+QT_MOC_LITERAL(9, 226, 35),
+QT_MOC_LITERAL(10, 262, 31),
+QT_MOC_LITERAL(11, 294, 10),
+QT_MOC_LITERAL(12, 305, 12),
+QT_MOC_LITERAL(13, 318, 2)
     },
-    "MainWindow\0on_actionImporter_triggered\0"
-    "\0on_action_propos_triggered\0"
+    "MainWindow\0on_actionModifier_triggered\0"
+    "\0on_actionImporter_triggered\0"
+    "on_action_propos_triggered\0"
     "on_actionRecherche_triggered\0"
     "on_actionAjouter_une_annonce_triggered\0"
     "on_actionQuitter_triggered\0"
@@ -53,7 +54,6 @@ QT_MOC_LITERAL(13, 293, 27)
     "on_actionSupprimerAnnonce_triggered\0"
     "on_actionToutAfficher_triggered\0"
     "closeEvent\0QCloseEvent*\0ev\0"
-    "on_actionModifier_triggered\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,7 +71,7 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   64,    2, 0x08,
+       1,    0,   64,    2, 0x0a,
        3,    0,   65,    2, 0x08,
        4,    0,   66,    2, 0x08,
        5,    0,   67,    2, 0x08,
@@ -79,8 +79,8 @@ static const uint qt_meta_data_MainWindow[] = {
        7,    0,   69,    2, 0x08,
        8,    0,   70,    2, 0x08,
        9,    0,   71,    2, 0x08,
-      10,    1,   72,    2, 0x08,
-      13,    0,   75,    2, 0x08,
+      10,    0,   72,    2, 0x08,
+      11,    1,   73,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void,
@@ -91,8 +91,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 11,   12,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 12,   13,
 
        0        // eod
 };
@@ -102,16 +102,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
-        case 0: _t->on_actionImporter_triggered(); break;
-        case 1: _t->on_action_propos_triggered(); break;
-        case 2: _t->on_actionRecherche_triggered(); break;
-        case 3: _t->on_actionAjouter_une_annonce_triggered(); break;
-        case 4: _t->on_actionQuitter_triggered(); break;
-        case 5: _t->on_actionExaminer_annonce_triggered(); break;
-        case 6: _t->on_actionSupprimerAnnonce_triggered(); break;
-        case 7: _t->on_actionToutAfficher_triggered(); break;
-        case 8: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
-        case 9: _t->on_actionModifier_triggered(); break;
+        case 0: _t->on_actionModifier_triggered(); break;
+        case 1: _t->on_actionImporter_triggered(); break;
+        case 2: _t->on_action_propos_triggered(); break;
+        case 3: _t->on_actionRecherche_triggered(); break;
+        case 4: _t->on_actionAjouter_une_annonce_triggered(); break;
+        case 5: _t->on_actionQuitter_triggered(); break;
+        case 6: _t->on_actionExaminer_annonce_triggered(); break;
+        case 7: _t->on_actionSupprimerAnnonce_triggered(); break;
+        case 8: _t->on_actionToutAfficher_triggered(); break;
+        case 9: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }

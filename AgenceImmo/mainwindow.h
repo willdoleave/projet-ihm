@@ -24,6 +24,9 @@ public:
     xml_dom *Dom;
     QList<Annonce> *list_annonces;
 
+public slots:
+    void on_actionModifier_triggered();
+
 private slots:
     void on_actionImporter_triggered();
 
@@ -43,7 +46,7 @@ private slots:
 
     void closeEvent(QCloseEvent *ev);
 
-    void on_actionModifier_triggered();
+
 
 
 private:
