@@ -228,7 +228,7 @@ public:
 #endif // QT_NO_TOOLTIP
         actionModifier->setShortcut(QApplication::translate("MainWindow", "Shift+M", 0));
         actionExaminer_annonce->setText(QApplication::translate("MainWindow", "Examiner l'annonce", 0));
-        actionExaminer_annonce->setShortcut(QApplication::translate("MainWindow", "Shift+X", 0));
+        actionExaminer_annonce->setShortcut(QApplication::translate("MainWindow", "Return, Shift+X", 0));
         menuFichier->setTitle(QApplication::translate("MainWindow", "Fichier", 0));
         menuAide->setTitle(QApplication::translate("MainWindow", "Aide", 0));
         menuOutils->setTitle(QApplication::translate("MainWindow", "Outils", 0));

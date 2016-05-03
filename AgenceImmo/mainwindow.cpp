@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     list_annonces = new QList<Annonce>();
     remplirListeWidget();
     list_widget = ui->listWidget;
+    QObject::connect(ui->listWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(on_actionExaminer_annonce_triggered()));
 }
 
 MainWindow::~MainWindow()
