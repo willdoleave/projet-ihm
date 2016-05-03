@@ -225,6 +225,9 @@
           <day>1</day>
          </date>
         </property>
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
        </widget>
       </item>
      </layout>

@@ -283,6 +283,7 @@ public:
         labelCodePostal->setText(QApplication::translate("rechercheDialog", "Code Postal", 0));
         radioDateApres->setText(QApplication::translate("rechercheDialog", "\303\200 partir", 0));
         radioDateAvant->setText(QApplication::translate("rechercheDialog", "Avant", 0));
+        dateAnnonce->setDisplayFormat(QApplication::translate("rechercheDialog", "dd/MM/yyyy", 0));
         chkMaison->setText(QApplication::translate("rechercheDialog", "Maison", 0));
         chkChateau->setText(QApplication::translate("rechercheDialog", "Ch\303\242teau", 0));
         chkAppt->setText(QApplication::translate("rechercheDialog", "Appartement", 0));

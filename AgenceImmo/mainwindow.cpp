@@ -84,13 +84,8 @@ void MainWindow::on_actionQuitter_triggered()
 void MainWindow::remplirListeWidget()
 {
 
-// ICI ECRITURE DE LA LISTE D'ABORD!!!
-   // if (list_annonces->empty()) {
-        ui->listWidget->clear();
-        Dom->listeElem(list_annonces);
-   /* } else  {
-
-    }*/
+    ui->listWidget->clear();
+    Dom->listeElem(list_annonces);
     ui->listWidget->setIconSize(QSize(128,128));
     for (int i = 0; i < list_annonces->count(); i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);
@@ -188,4 +183,9 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
         qDebug() << "Non";
     }
 
+}
+
+void MainWindow::on_actionToutAfficher_triggered()
+{
+    remplirListeWidget();
 }

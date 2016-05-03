@@ -38,6 +38,8 @@ private slots:
 
     void on_actionSupprimerAnnonce_triggered();
 
+    void on_actionToutAfficher_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
