@@ -5,6 +5,7 @@
 #include <recherchedialog.h>
 #include <ajoutdialog.h>
 #include "xml_dom.h"
+#include <QListWidget>
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,7 @@ public:
     void remplirListeWidget();
     xml_dom *Dom;
     QList<Annonce> *list_annonces;
+    QListWidget *list_widget;
 
 private slots:
     void on_actionImporter_triggered();
@@ -31,6 +33,8 @@ private slots:
     void on_actionAjouter_une_annonce_triggered();
 
     void on_actionQuitter_triggered();
+
+    void on_actionExaminer_annonce_triggered();
 
 private:
     Ui::MainWindow *ui;

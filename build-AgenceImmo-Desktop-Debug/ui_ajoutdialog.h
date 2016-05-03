@@ -356,6 +356,7 @@ public:
         image1 = new QLabel(scrollAreaWidgetContents_2);
         image1->setObjectName(QStringLiteral("image1"));
         image1->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        image1->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(image1, 0, 0, 1, 1);
 
@@ -368,18 +369,21 @@ public:
         image3 = new QLabel(scrollAreaWidgetContents_2);
         image3->setObjectName(QStringLiteral("image3"));
         image3->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        image3->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(image3, 0, 2, 1, 1);
 
         image2 = new QLabel(scrollAreaWidgetContents_2);
         image2->setObjectName(QStringLiteral("image2"));
         image2->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        image2->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(image2, 0, 1, 1, 1);
 
         image4 = new QLabel(scrollAreaWidgetContents_2);
         image4->setObjectName(QStringLiteral("image4"));
         image4->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
+        image4->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(image4, 0, 3, 1, 1);
 
@@ -460,9 +464,6 @@ public:
         gridLayout_6->addLayout(gridLayout, 0, 0, 1, 2);
 
         scrollArea->setWidget(scrollAreaWidgetContents_2);
-        label->raise();
-        scrollArea->raise();
-        upload_image1->raise();
 
         retranslateUi(ajoutDialog);
 

@@ -34,6 +34,7 @@ bool xml_dom::open()
         return false;
     }
     doc_xml.close();
+    return true;
 }
 
 bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::string prix,

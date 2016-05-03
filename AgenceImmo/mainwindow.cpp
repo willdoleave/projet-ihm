@@ -8,8 +8,7 @@
 #include <QBoxLayout>
 #include <QLabel>
 #include <xml_dom.h>
-#include <QScrollArea>
-#include <QCheckBox>
+#include "detaildialog.h"
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -21,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     Dom = new xml_dom();
     list_annonces = new QList<Annonce>();
     remplirListeWidget();
+    list_widget = ui->listWidget;
 }
 
 MainWindow::~MainWindow()
@@ -99,6 +99,7 @@ void MainWindow::remplirListeWidget()
         text = "---"+a.titre.toUtf8() + "---\n" + a.ville + ", " + a.codePostal + "\n" + a.superficie + "m² - "
                 + a.nbPiece + " pièces\n" + "En "+ a.etat +"\n"+ "Prix : " + a.prix+"€";
         list_item->setText(text.toUtf8());
+        list_item->setStatusTip(QString(i));
         ui->listWidget->addItem(list_item);
     }
     if (list_annonces->count()) {
@@ -109,4 +110,11 @@ void MainWindow::remplirListeWidget()
     }
         //ui->listWidget->setStyleSheet( "QListWidget::item { border-bottom: 1px solid black; }" );
         //ui->listWidget->setStyleSheet("WidgetItem:pressed { background-color: blue; }");
+}
+
+void MainWindow::on_actionExaminer_annonce_triggered()
+{
+    detaildialog detail_dialog(this);
+    detail_dialog.setWindowTitle("Détail de l'annonce");
+    detail_dialog.exec();
 }
