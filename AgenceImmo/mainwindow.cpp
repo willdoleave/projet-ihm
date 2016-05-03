@@ -208,3 +208,25 @@ void MainWindow::on_actionToutAfficher_triggered()
     ui->listWidget->clear();
     remplirListeWidget();
 }
+
+void MainWindow::on_actionModifier_triggered()
+{
+    QListWidgetItem *wi = ui->listWidget->selectedItems().first();
+    QString id;
+    id = wi->statusTip();
+    Annonce a;
+    for(int i = 0; i < list_annonces->count() ; i++)
+    {
+        if(QString(list_annonces->at(i).id) == id)
+            a = list_annonces->at(i);
+    }
+    //
+
+
+    ui->actionAjouter_une_annonce->setEnabled(false);
+    ajoutDialog ajout_dialog(this, &a);
+    ajout_dialog.setWindowTitle("Ajout d'une annonce");
+    ajout_dialog.exec();
+    ui->actionAjouter_une_annonce->setEnabled(true);
+
+}

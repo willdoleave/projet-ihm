@@ -32,7 +32,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ajoutDialog
 {
 public:
-    QLabel *label;
+    QGridLayout *gridLayout_7;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents_2;
     QGridLayout *gridLayout_6;
@@ -52,14 +52,14 @@ public:
     QPushButton *pushButton;
     QHBoxLayout *horizontalLayout_8;
     QGridLayout *gridLayout_4;
-    QLabel *label_9;
-    QLabel *label_10;
-    QLineEdit *nom;
-    QLineEdit *prenom;
     QLineEdit *telephone;
-    QLineEdit *email;
-    QLabel *label_8;
+    QLabel *label_9;
+    QLineEdit *prenom;
+    QLineEdit *nom;
     QLabel *label_11;
+    QLabel *label_8;
+    QLineEdit *email;
+    QLabel *label_10;
     QHBoxLayout *horizontalLayout_7;
     QGridLayout *gridLayout_3;
     QLabel *label_5;
@@ -68,17 +68,21 @@ public:
     QLineEdit *adresse;
     QLabel *label_7;
     QSpinBox *codePostal;
-    QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_12;
     QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_2;
+    QRadioButton *contractuelle1;
+    QRadioButton *contractuelle2;
+    QRadioButton *contractuelle3;
+    QRadioButton *contractuelle4;
     QLabel *labelPhotos;
     QLineEdit *titre;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_4;
-    QLabel *label_3;
-    QTextEdit *description;
-    QSpinBox *prix;
+    QLabel *label_2;
+    QLabel *label_18;
+    QLabel *titreLabel;
+    QLabel *labelDescription;
+    QLabel *label_15;
     QGridLayout *gridLayout_2;
     QLabel *image1;
     QPushButton *upload_image4;
@@ -88,42 +92,29 @@ public:
     QPushButton *upload_image2;
     QPushButton *upload_image3;
     QPushButton *upload_image1;
-    QLabel *label_15;
-    QLabel *titreLabel;
-    QLabel *label_18;
-    QLabel *label_2;
-    QLabel *labelDescription;
-    QHBoxLayout *horizontalLayout_2;
-    QRadioButton *contractuelle1;
-    QRadioButton *contractuelle2;
-    QRadioButton *contractuelle3;
-    QRadioButton *contractuelle4;
+    QTextEdit *description;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_4;
+    QLabel *label_3;
+    QSpinBox *prix;
+    QLabel *titre_global;
 
     void setupUi(QWidget *ajoutDialog)
     {
         if (ajoutDialog->objectName().isEmpty())
             ajoutDialog->setObjectName(QStringLiteral("ajoutDialog"));
-        ajoutDialog->resize(567, 709);
-        ajoutDialog->setMinimumSize(QSize(567, 709));
-        ajoutDialog->setMaximumSize(QSize(567, 709));
-        label = new QLabel(ajoutDialog);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(80, 0, 481, 41));
-        QFont font;
-        font.setFamily(QStringLiteral("Arial Black"));
-        font.setPointSize(30);
-        font.setBold(true);
-        font.setWeight(75);
-        label->setFont(font);
-        label->setStyleSheet(QStringLiteral("color:red;"));
+        ajoutDialog->resize(700, 709);
+        ajoutDialog->setMinimumSize(QSize(300, 300));
+        ajoutDialog->setMaximumSize(QSize(700, 709));
+        gridLayout_7 = new QGridLayout(ajoutDialog);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
         scrollArea = new QScrollArea(ajoutDialog);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
         scrollArea->setEnabled(true);
-        scrollArea->setGeometry(QRect(20, 40, 531, 671));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QStringLiteral("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 513, 688));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 664, 741));
         gridLayout_6 = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         label_17 = new QLabel(scrollAreaWidgetContents_2);
@@ -203,45 +194,45 @@ public:
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        telephone = new QLineEdit(scrollAreaWidgetContents_2);
+        telephone->setObjectName(QStringLiteral("telephone"));
+
+        gridLayout_4->addWidget(telephone, 2, 2, 1, 1);
+
         label_9 = new QLabel(scrollAreaWidgetContents_2);
         label_9->setObjectName(QStringLiteral("label_9"));
 
-        gridLayout_4->addWidget(label_9, 1, 0, 1, 1);
-
-        label_10 = new QLabel(scrollAreaWidgetContents_2);
-        label_10->setObjectName(QStringLiteral("label_10"));
-
-        gridLayout_4->addWidget(label_10, 2, 0, 1, 1);
-
-        nom = new QLineEdit(scrollAreaWidgetContents_2);
-        nom->setObjectName(QStringLiteral("nom"));
-
-        gridLayout_4->addWidget(nom, 0, 1, 1, 1);
+        gridLayout_4->addWidget(label_9, 1, 1, 1, 1);
 
         prenom = new QLineEdit(scrollAreaWidgetContents_2);
         prenom->setObjectName(QStringLiteral("prenom"));
 
-        gridLayout_4->addWidget(prenom, 1, 1, 1, 1);
+        gridLayout_4->addWidget(prenom, 1, 2, 1, 1);
 
-        telephone = new QLineEdit(scrollAreaWidgetContents_2);
-        telephone->setObjectName(QStringLiteral("telephone"));
+        nom = new QLineEdit(scrollAreaWidgetContents_2);
+        nom->setObjectName(QStringLiteral("nom"));
 
-        gridLayout_4->addWidget(telephone, 2, 1, 1, 1);
-
-        email = new QLineEdit(scrollAreaWidgetContents_2);
-        email->setObjectName(QStringLiteral("email"));
-
-        gridLayout_4->addWidget(email, 3, 1, 1, 1);
-
-        label_8 = new QLabel(scrollAreaWidgetContents_2);
-        label_8->setObjectName(QStringLiteral("label_8"));
-
-        gridLayout_4->addWidget(label_8, 0, 0, 1, 1);
+        gridLayout_4->addWidget(nom, 0, 2, 1, 1);
 
         label_11 = new QLabel(scrollAreaWidgetContents_2);
         label_11->setObjectName(QStringLiteral("label_11"));
 
-        gridLayout_4->addWidget(label_11, 3, 0, 1, 1);
+        gridLayout_4->addWidget(label_11, 3, 1, 1, 1);
+
+        label_8 = new QLabel(scrollAreaWidgetContents_2);
+        label_8->setObjectName(QStringLiteral("label_8"));
+
+        gridLayout_4->addWidget(label_8, 0, 1, 1, 1);
+
+        email = new QLineEdit(scrollAreaWidgetContents_2);
+        email->setObjectName(QStringLiteral("email"));
+
+        gridLayout_4->addWidget(email, 3, 2, 1, 1);
+
+        label_10 = new QLabel(scrollAreaWidgetContents_2);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        gridLayout_4->addWidget(label_10, 2, 1, 1, 1);
 
 
         horizontalLayout_8->addLayout(gridLayout_4);
@@ -287,10 +278,6 @@ public:
 
         horizontalLayout_7->addLayout(gridLayout_3);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_7->addItem(horizontalSpacer_2);
-
 
         gridLayout_6->addLayout(horizontalLayout_7, 1, 0, 1, 1);
 
@@ -298,12 +285,12 @@ public:
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         label_12 = new QLabel(scrollAreaWidgetContents_2);
         label_12->setObjectName(QStringLiteral("label_12"));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial Black"));
-        font1.setPointSize(18);
-        font1.setBold(true);
-        font1.setWeight(75);
-        label_12->setFont(font1);
+        QFont font;
+        font.setFamily(QStringLiteral("Arial Black"));
+        font.setPointSize(18);
+        font.setBold(true);
+        font.setWeight(75);
+        label_12->setFont(font);
 
         horizontalLayout_9->addWidget(label_12);
 
@@ -312,44 +299,71 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        contractuelle1 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle1->setObjectName(QStringLiteral("contractuelle1"));
+        contractuelle1->setStyleSheet(QStringLiteral("margin: 0 60"));
+        contractuelle1->setChecked(true);
+
+        horizontalLayout_2->addWidget(contractuelle1);
+
+        contractuelle2 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle2->setObjectName(QStringLiteral("contractuelle2"));
+        contractuelle2->setStyleSheet(QStringLiteral("margin:0 20"));
+
+        horizontalLayout_2->addWidget(contractuelle2);
+
+        contractuelle3 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle3->setObjectName(QStringLiteral("contractuelle3"));
+        contractuelle3->setStyleSheet(QStringLiteral("margin:0 24"));
+
+        horizontalLayout_2->addWidget(contractuelle3);
+
+        contractuelle4 = new QRadioButton(scrollAreaWidgetContents_2);
+        contractuelle4->setObjectName(QStringLiteral("contractuelle4"));
+        contractuelle4->setStyleSheet(QStringLiteral("margin: 0 30"));
+
+        horizontalLayout_2->addWidget(contractuelle4);
+
+
+        gridLayout->addLayout(horizontalLayout_2, 6, 1, 1, 1);
+
         labelPhotos = new QLabel(scrollAreaWidgetContents_2);
         labelPhotos->setObjectName(QStringLiteral("labelPhotos"));
 
-        gridLayout->addWidget(labelPhotos, 4, 0, 1, 1);
+        gridLayout->addWidget(labelPhotos, 5, 0, 1, 1);
 
         titre = new QLineEdit(scrollAreaWidgetContents_2);
         titre->setObjectName(QStringLiteral("titre"));
 
-        gridLayout->addWidget(titre, 1, 1, 1, 1);
+        gridLayout->addWidget(titre, 2, 1, 1, 1);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_4 = new QLabel(scrollAreaWidgetContents_2);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setFont(font1);
+        label_2 = new QLabel(scrollAreaWidgetContents_2);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setFont(font);
 
-        horizontalLayout_3->addWidget(label_4);
+        gridLayout->addWidget(label_2, 1, 0, 1, 2);
 
-        label_3 = new QLabel(scrollAreaWidgetContents_2);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setFont(font1);
+        label_18 = new QLabel(scrollAreaWidgetContents_2);
+        label_18->setObjectName(QStringLiteral("label_18"));
 
-        horizontalLayout_3->addWidget(label_3);
+        gridLayout->addWidget(label_18, 6, 0, 1, 1);
 
+        titreLabel = new QLabel(scrollAreaWidgetContents_2);
+        titreLabel->setObjectName(QStringLiteral("titreLabel"));
 
-        gridLayout->addLayout(horizontalLayout_3, 6, 0, 1, 2);
+        gridLayout->addWidget(titreLabel, 2, 0, 1, 1);
 
-        description = new QTextEdit(scrollAreaWidgetContents_2);
-        description->setObjectName(QStringLiteral("description"));
-        description->setMaximumSize(QSize(16777215, 80));
+        labelDescription = new QLabel(scrollAreaWidgetContents_2);
+        labelDescription->setObjectName(QStringLiteral("labelDescription"));
 
-        gridLayout->addWidget(description, 2, 1, 1, 1);
+        gridLayout->addWidget(labelDescription, 3, 0, 1, 1);
 
-        prix = new QSpinBox(scrollAreaWidgetContents_2);
-        prix->setObjectName(QStringLiteral("prix"));
-        prix->setMaximum(99999999);
+        label_15 = new QLabel(scrollAreaWidgetContents_2);
+        label_15->setObjectName(QStringLiteral("label_15"));
 
-        gridLayout->addWidget(prix, 3, 1, 1, 1);
+        gridLayout->addWidget(label_15, 4, 0, 1, 1);
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
@@ -406,64 +420,57 @@ public:
         gridLayout_2->addWidget(upload_image1, 1, 0, 1, 1);
 
 
-        gridLayout->addLayout(gridLayout_2, 4, 1, 1, 1);
+        gridLayout->addLayout(gridLayout_2, 5, 1, 1, 1);
 
-        label_15 = new QLabel(scrollAreaWidgetContents_2);
-        label_15->setObjectName(QStringLiteral("label_15"));
+        description = new QTextEdit(scrollAreaWidgetContents_2);
+        description->setObjectName(QStringLiteral("description"));
+        description->setMaximumSize(QSize(16777215, 80));
 
-        gridLayout->addWidget(label_15, 3, 0, 1, 1);
+        gridLayout->addWidget(description, 3, 1, 1, 1);
 
-        titreLabel = new QLabel(scrollAreaWidgetContents_2);
-        titreLabel->setObjectName(QStringLiteral("titreLabel"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        label_4 = new QLabel(scrollAreaWidgetContents_2);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setFont(font);
 
-        gridLayout->addWidget(titreLabel, 1, 0, 1, 1);
+        horizontalLayout_3->addWidget(label_4);
 
-        label_18 = new QLabel(scrollAreaWidgetContents_2);
-        label_18->setObjectName(QStringLiteral("label_18"));
+        label_3 = new QLabel(scrollAreaWidgetContents_2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setFont(font);
 
-        gridLayout->addWidget(label_18, 5, 0, 1, 1);
-
-        label_2 = new QLabel(scrollAreaWidgetContents_2);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFont(font1);
-
-        gridLayout->addWidget(label_2, 0, 0, 1, 2);
-
-        labelDescription = new QLabel(scrollAreaWidgetContents_2);
-        labelDescription->setObjectName(QStringLiteral("labelDescription"));
-
-        gridLayout->addWidget(labelDescription, 2, 0, 1, 1);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        contractuelle1 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle1->setObjectName(QStringLiteral("contractuelle1"));
-        contractuelle1->setChecked(true);
-
-        horizontalLayout_2->addWidget(contractuelle1);
-
-        contractuelle2 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle2->setObjectName(QStringLiteral("contractuelle2"));
-
-        horizontalLayout_2->addWidget(contractuelle2);
-
-        contractuelle3 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle3->setObjectName(QStringLiteral("contractuelle3"));
-
-        horizontalLayout_2->addWidget(contractuelle3);
-
-        contractuelle4 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle4->setObjectName(QStringLiteral("contractuelle4"));
-
-        horizontalLayout_2->addWidget(contractuelle4);
+        horizontalLayout_3->addWidget(label_3);
 
 
-        gridLayout->addLayout(horizontalLayout_2, 5, 1, 1, 1);
+        gridLayout->addLayout(horizontalLayout_3, 7, 0, 1, 2);
+
+        prix = new QSpinBox(scrollAreaWidgetContents_2);
+        prix->setObjectName(QStringLiteral("prix"));
+        prix->setMaximum(99999999);
+
+        gridLayout->addWidget(prix, 4, 1, 1, 1);
+
+        titre_global = new QLabel(scrollAreaWidgetContents_2);
+        titre_global->setObjectName(QStringLiteral("titre_global"));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial Black"));
+        font1.setPointSize(30);
+        font1.setBold(true);
+        font1.setWeight(75);
+        titre_global->setFont(font1);
+        titre_global->setStyleSheet(QStringLiteral("color:red;"));
+        titre_global->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(titre_global, 0, 0, 1, 2);
 
 
         gridLayout_6->addLayout(gridLayout, 0, 0, 1, 2);
 
         scrollArea->setWidget(scrollAreaWidgetContents_2);
+
+        gridLayout_7->addWidget(scrollArea, 0, 0, 1, 1);
+
 
         retranslateUi(ajoutDialog);
 
@@ -473,13 +480,13 @@ public:
     void retranslateUi(QWidget *ajoutDialog)
     {
         ajoutDialog->setWindowTitle(QApplication::translate("ajoutDialog", "Form", 0));
-        label->setText(QApplication::translate("ajoutDialog", "Ajout d'une annonce", 0));
 #ifndef QT_NO_WHATSTHIS
         scrollArea->setWhatsThis(QApplication::translate("ajoutDialog", "<html><head/><body><p><br/></p></body></html>", 0));
 #endif // QT_NO_WHATSTHIS
         label_17->setText(QApplication::translate("ajoutDialog", "* Champs obligatoires", 0));
         label_14->setText(QApplication::translate("ajoutDialog", "Superficie", 0));
         label_13->setText(QApplication::translate("ajoutDialog", "Type", 0));
+        superficie->setSuffix(QApplication::translate("ajoutDialog", "m\302\262", 0));
         label_16->setText(QApplication::translate("ajoutDialog", "Nombre de pi\303\250ces*", 0));
         etat->clear();
         etat->insertItems(0, QStringList()
@@ -500,16 +507,23 @@ public:
         pushButton_2->setText(QApplication::translate("ajoutDialog", "Annuler", 0));
         pushButton->setText(QApplication::translate("ajoutDialog", "Ajouter", 0));
         label_9->setText(QApplication::translate("ajoutDialog", "Pr\303\251nom*", 0));
-        label_10->setText(QApplication::translate("ajoutDialog", "T\303\251l\303\251phone*", 0));
-        label_8->setText(QApplication::translate("ajoutDialog", "Nom*", 0));
         label_11->setText(QApplication::translate("ajoutDialog", "Adresse mail*", 0));
+        label_8->setText(QApplication::translate("ajoutDialog", "Nom*", 0));
+        label_10->setText(QApplication::translate("ajoutDialog", "T\303\251l\303\251phone*", 0));
         label_5->setText(QApplication::translate("ajoutDialog", "Adresse*", 0));
         label_6->setText(QApplication::translate("ajoutDialog", "Ville*", 0));
         label_7->setText(QApplication::translate("ajoutDialog", "Code Postal", 0));
         label_12->setText(QApplication::translate("ajoutDialog", "Informations sur le bien", 0));
+        contractuelle1->setText(QString());
+        contractuelle2->setText(QString());
+        contractuelle3->setText(QString());
+        contractuelle4->setText(QString());
         labelPhotos->setText(QApplication::translate("ajoutDialog", "Photos", 0));
-        label_4->setText(QApplication::translate("ajoutDialog", "Adresse du bien", 0));
-        label_3->setText(QApplication::translate("ajoutDialog", "Informations contact", 0));
+        label_2->setText(QApplication::translate("ajoutDialog", "Informations annonce", 0));
+        label_18->setText(QApplication::translate("ajoutDialog", "Contractuelle", 0));
+        titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce*", 0));
+        labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
+        label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
         image1->setText(QString());
         upload_image4->setText(QApplication::translate("ajoutDialog", "Upload", 0));
         image3->setText(QString());
@@ -518,15 +532,10 @@ public:
         upload_image2->setText(QApplication::translate("ajoutDialog", "Upload", 0));
         upload_image3->setText(QApplication::translate("ajoutDialog", "Upload", 0));
         upload_image1->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
-        titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce*", 0));
-        label_18->setText(QApplication::translate("ajoutDialog", "Contractuelle", 0));
-        label_2->setText(QApplication::translate("ajoutDialog", "Informations annonce", 0));
-        labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
-        contractuelle1->setText(QString());
-        contractuelle2->setText(QString());
-        contractuelle3->setText(QString());
-        contractuelle4->setText(QString());
+        label_4->setText(QApplication::translate("ajoutDialog", "Adresse du bien", 0));
+        label_3->setText(QApplication::translate("ajoutDialog", "Informations contact", 0));
+        prix->setSuffix(QApplication::translate("ajoutDialog", "\342\202\254", 0));
+        titre_global->setText(QApplication::translate("ajoutDialog", "Ajout d'une annonce", 0));
     } // retranslateUi
 
 };
