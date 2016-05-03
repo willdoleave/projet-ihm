@@ -38,7 +38,8 @@ void rechercheDialog::on_rechercher_clicked()
     QList<Annonce> listeRecherche;
     listeRecherche = rechercheAnnonce(*listeAnnonces);
     ((MainWindow*)parentWidget())->remplirListeWidget(&listeRecherche);
-    close();
+    if (listeRecherche.size() > 0)
+        close();
 }
 
 
@@ -91,7 +92,7 @@ QList<Annonce> rechercheDialog::rechercheAnnonce(QList<Annonce> listeAnnonces) {
         dateAvant = true;
     }
 
-    //pourcourir la liste des annonces et ajouter tous les annonces correspondent aux critères dans
+    //pourcourir la liste des annonces et ajouter tous les annonces correspondant aux critères dans
     //la listeRecherche
     for (int i = 0; i < listeAnnonces.length(); i++) {
         Annonce a = listeAnnonces.value(i);
@@ -100,7 +101,7 @@ QList<Annonce> rechercheDialog::rechercheAnnonce(QList<Annonce> listeAnnonces) {
                 a.nbPiece.toInt(0,10) >= pieceMin && a.nbPiece.toInt(0,10) <= pieceMax) {
             if (codePostal == 0) {
                 listeRecherche.append(a);
-            }else {
+            } else {
                 if (a.codePostal.toInt(0,10) == codePostal) {
                     listeRecherche.append(a);
                 }
@@ -141,6 +142,16 @@ QList<Annonce> rechercheDialog::rechercheAnnonce(QList<Annonce> listeAnnonces) {
         }
     }
 
+    // Enlever toutes les annonces qui ne contiennent aucune photo
+    if (ui->chkPhoto->isChecked()) {
+        for (int i = 0; i < listeRecherche.length();i++) {
+            Annonce a = listeRecherche.value(i);
+            if (a.photo1.size()==0 && a.photo2.size()==0 && a.photo3.size()==0 && a.photo4.size()==0 && a.photoContractuelle.size()==0) {
+                listeRecherche.removeAt(i);
+                i--;
+            }
+        }
+    }
     //afficher le resultat
     if (listeRecherche.length() == 0)
         QMessageBox::information(this, "Information", "Aucun résultat");
