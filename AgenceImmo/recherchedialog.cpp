@@ -37,6 +37,8 @@ void rechercheDialog::on_rechercher_clicked()
     QList<Annonce> *listeAnnonces = ((MainWindow*)parentWidget())->list_annonces;
     QList<Annonce> listeRecherche;
     listeRecherche = rechercheAnnonce(*listeAnnonces);
+    ((MainWindow*)parentWidget())->remplirListeWidget(&listeRecherche);
+    close();
 }
 
 
@@ -140,13 +142,14 @@ QList<Annonce> rechercheDialog::rechercheAnnonce(QList<Annonce> listeAnnonces) {
     }
 
     //afficher le resultat
-    if (listeRecherche.length() == 0) {
+    if (listeRecherche.length() == 0)
         QMessageBox::information(this, "Information", "Aucun résultat");
-    } else {
+   /* } else {
         for (int i = 0; i < listeRecherche.length(); i++) {
             Annonce a = listeRecherche.value(i);
             QMessageBox::information(this, "Information", "id = " + a.id + ", prix = " + a.prix);
         }
     }
+    */
     return listeRecherche;
 }

@@ -10,6 +10,8 @@
 #include <xml_dom.h>
 #include "detaildialog.h"
 #include "trier.h"
+#include "recherchedialog.h"
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -93,6 +95,33 @@ void MainWindow::on_actionQuitter_triggered()
     close();
 }
 
+void MainWindow::remplirListeWidget(QList<Annonce> *listeAnnonces)
+{
+    ui->listWidget->clear();
+    ui->listWidget->setIconSize(QSize(128,128));
+    for (int i = 0; i < listeAnnonces->size(); i++) {
+        QListWidgetItem *list_item = new QListWidgetItem(0,0);
+        Annonce a = listeAnnonces->at(i);
+
+        if (!a.photoContractuelle.toStdString().empty())
+            list_item->setIcon(QPixmap(a.photoContractuelle).scaled(QSize(128,128)));
+
+        QString text;
+
+        text = "---"+a.titre.toUtf8() + "---\n" + a.ville + ", " + a.codePostal + "\n" + a.superficie + "m² - "
+                + a.nbPiece + " pièces\n" + a.type +" en "+ a.etat +"\n"+ "Prix : " + a.prix+"€";
+        list_item->setText(text.toUtf8());
+        list_item->setStatusTip(QString(a.id));
+        ui->listWidget->addItem(list_item);
+    }
+    if (listeAnnonces->size()) {
+        ui->listWidget->setCurrentRow(0);
+        ui->actionSupprimerAnnonce->setEnabled(true);
+        ui->actionModifier->setEnabled(true);
+        ui->actionExaminer_annonce->setEnabled(true);
+    }
+
+}
 
 /**
  * @brief MainWindow::remplirListeWidget

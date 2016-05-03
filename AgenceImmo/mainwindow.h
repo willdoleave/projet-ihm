@@ -20,6 +20,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void remplirListeWidget();
+    void remplirListeWidget(QList<Annonce> *listeAnnonces);
     xml_dom *Dom;
     QList<Annonce> *list_annonces;
 
@@ -43,6 +44,7 @@ private slots:
     void closeEvent(QCloseEvent *ev);
 
     void on_actionModifier_triggered();
+
 
 private:
     Ui::MainWindow *ui;
