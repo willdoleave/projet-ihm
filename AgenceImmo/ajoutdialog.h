@@ -23,6 +23,7 @@ public:
     QString photo4, filephoto4;
     Annonce a;
     bool ajout;
+    QString id_new;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -37,7 +38,6 @@ private slots:
 
     void on_upload_image4_clicked();
 
-    void on_bouton_ok_clicked();
 
 private:
     Ui::ajoutDialog *ui;

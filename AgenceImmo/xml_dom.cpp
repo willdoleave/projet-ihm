@@ -146,9 +146,6 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
 
         QDomElement e = noeud.toElement();
         if(!dom_element.isNull()) {
-
-            qDebug() << e.attribute("titre").toUtf8();
-            //qDebug() << QString::fromUtf8(e.attribute("titre").toUtf8());
             a.id = e.attribute("id");
             a.etat = e.attribute("etat");
             a.type = e.attribute("type");

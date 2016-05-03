@@ -116,7 +116,7 @@ void MainWindow::remplirListeWidget()
 
     ui->listWidget->clear();
     ui->listWidget->setIconSize(QSize(128,128));
-    for (int i = 0; i < list_annonces->count(); i++) {
+    for (int i = 0; i < list_annonces->size(); i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);
         Annonce a = list_annonces->at(i);
 
@@ -131,7 +131,7 @@ void MainWindow::remplirListeWidget()
         list_item->setStatusTip(QString(a.id));
         ui->listWidget->addItem(list_item);
     }
-    if (list_annonces->count()) {
+    if (list_annonces->size()) {
         ui->listWidget->setCurrentRow(0);
         ui->actionSupprimerAnnonce->setEnabled(true);
         ui->actionModifier->setEnabled(true);
@@ -149,7 +149,7 @@ void MainWindow::on_actionExaminer_annonce_triggered()
     QString id;
     id = wi->statusTip();
 
-    for(int i = 0; i < list_annonces->count() ; i++)
+    for(int i = 0; i < list_annonces->size() ; i++)
     {
         if(QString(list_annonces->at(i).id) == id)
             a = list_annonces->at(i);
@@ -190,7 +190,7 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
 
     if (msgBox.clickedButton()==pButtonYes) {
         qDebug() << "Oui";
-        for(int i = 0; i < list_annonces->count() ; i++)
+        for(int i = 0; i < list_annonces->size() ; i++)
         {
             if(QString(list_annonces->at(i).id) == id) {
                 qDebug() << "Supprimé";
@@ -200,7 +200,7 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
             }
         }
         remplirListeWidget();
-        if (!list_annonces->count()) {
+        if (!list_annonces->size()) {
             ui->actionSupprimerAnnonce->setEnabled(false);
             ui->actionModifier->setEnabled(false);
             ui->actionExaminer_annonce->setEnabled(false);
@@ -225,7 +225,7 @@ void MainWindow::on_actionModifier_triggered()
     QString id;
     id = wi->statusTip();
     Annonce a;
-    for(int i = 0; i < list_annonces->count() ; i++)
+    for(int i = 0; i < list_annonces->size() ; i++)
     {
         if(QString(list_annonces->at(i).id) == id)
             a = list_annonces->at(i);

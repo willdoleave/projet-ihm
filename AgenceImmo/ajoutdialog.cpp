@@ -23,7 +23,9 @@ ajoutDialog::ajoutDialog(QWidget *parent, Annonce *a) :
 {
     ajout = false;
     ui->setupUi(this);
+    this->id_new = a->id;
 
+    ui->pushButton->setText("Modifier");
     ui->titre_global->setText("Modification");
     ui->adresse->setText(a->adresse);
     ui->prix->setValue(a->prix.toInt());
@@ -44,12 +46,13 @@ ajoutDialog::ajoutDialog(QWidget *parent, Annonce *a) :
 
     if (a->photoContractuelle == a->photo1)
         ui->contractuelle1->setChecked(true);
-    if (a->photoContractuelle == a->photo2)
+    else if (a->photoContractuelle == a->photo2)
         ui->contractuelle2->setChecked(true);
-    if (a->photoContractuelle == a->photo3)
+    else if (a->photoContractuelle == a->photo3)
         ui->contractuelle3->setChecked(true);
-    if (a->photoContractuelle == a->photo4)
+    else if (a->photoContractuelle == a->photo4)
         ui->contractuelle4->setChecked(true);
+    else ui->contractuelle1->setChecked(true);
 
 
     if (a->etat.toUtf8() == "Location")
@@ -120,43 +123,43 @@ void ajoutDialog::on_pushButton_2_clicked()
 
 void ajoutDialog::on_pushButton_clicked()
 {
-    if (ajout) {
-        xml_dom *Dom = new xml_dom();
-        bool ajout;
-        QString id = QDateTime::currentDateTime().toString("yyMMddHHmmss");
-        if (filephoto1.size()>=1) photo1 = QString("../upload/"+id+"photo1"+"."+QFileInfo(filephoto1).suffix()); else photo1 = QString("");
-        if (filephoto2.size()>=1) photo2 = QString("../upload/"+id+"photo2"+"."+QFileInfo(filephoto2).suffix()); else photo2 = QString("");
-        if (filephoto3.size()>=1) photo3 = QString("../upload/"+id+"photo3"+"."+QFileInfo(filephoto3).suffix()); else photo3 = QString("");
-        if (filephoto4.size()>=1) photo4 = QString("../upload/"+id+"photo4"+"."+QFileInfo(filephoto4).suffix()); else photo4 = QString("");
-        QString contractuelle;
-        if (ui->contractuelle1->isChecked()) contractuelle = photo1;
-        else if (ui->contractuelle2->isChecked()) contractuelle = photo2;
-        else if (ui->contractuelle3->isChecked()) contractuelle = photo3;
-        else if (ui->contractuelle1->isChecked()) contractuelle = photo4;
-        else contractuelle = QString("");
+    QString id = QDateTime::currentDateTime().toString("yyMMddHHmmss");
+    if (filephoto1.size()>=1) photo1 = QString("../upload/"+id+"photo1"+"."+QFileInfo(filephoto1).suffix()); else photo1 = QString("");
+    if (filephoto2.size()>=1) photo2 = QString("../upload/"+id+"photo2"+"."+QFileInfo(filephoto2).suffix()); else photo2 = QString("");
+    if (filephoto3.size()>=1) photo3 = QString("../upload/"+id+"photo3"+"."+QFileInfo(filephoto3).suffix()); else photo3 = QString("");
+    if (filephoto4.size()>=1) photo4 = QString("../upload/"+id+"photo4"+"."+QFileInfo(filephoto4).suffix()); else photo4 = QString("");
+    QString contractuelle;
+    if (ui->contractuelle1->isChecked()) contractuelle = photo1;
+    else if (ui->contractuelle2->isChecked()) contractuelle = photo2;
+    else if (ui->contractuelle3->isChecked()) contractuelle = photo3;
+    else if (ui->contractuelle1->isChecked()) contractuelle = photo4;
+    else contractuelle = QString("");
 
-        MainWindow *mw = (MainWindow*)this->parent();
-        Annonce a;
-        a.id = id;
-        a.etat = ui->etat->currentText();
-        a.type = ui->type->currentText();
-        a.prix = ui->prix->text();
-        a.titre = ui->titre->text();
-        a.description = ui->description->toPlainText();
-        a.photo1 = photo1;
-        a.photo2 = photo2;
-        a.photo3 = photo3;
-        a.photo4 = photo4;
-        a.adresse = ui->adresse->text();
-        a.ville = ui->ville->text();
-        a.codePostal = ui->codePostal->text();
-        a.nom = ui->nom->text();
-        a.prenom = ui->prenom->text();
-        a.telephone = ui->telephone->text();
-        a.mail = ui->email->text();
-        a.superficie = ui->superficie->text();
-        a.nbPiece = ui->nombrePieces->text();
-        a.photoContractuelle = contractuelle;
+    MainWindow *mw = (MainWindow*)this->parent();
+    Annonce a;
+    a.id = id;
+    a.etat = ui->etat->currentText();
+    a.type = ui->type->currentText();
+    a.prix = ui->prix->text();
+    a.titre = ui->titre->text();
+    a.description = ui->description->toPlainText();
+    a.photo1 = photo1;
+    a.photo2 = photo2;
+    a.photo3 = photo3;
+    a.photo4 = photo4;
+    a.adresse = ui->adresse->text();
+    a.ville = ui->ville->text();
+    a.codePostal = ui->codePostal->text();
+    a.nom = ui->nom->text();
+    a.prenom = ui->prenom->text();
+    a.telephone = ui->telephone->text();
+    a.mail = ui->email->text();
+    a.superficie = ui->superficie->text();
+    a.nbPiece = ui->nombrePieces->text();
+    a.photoContractuelle = contractuelle;
+
+
+    if (ajout) {
 
         int size = mw->list_annonces->size();
         mw->list_annonces->append(a);
@@ -195,6 +198,23 @@ void ajoutDialog::on_pushButton_clicked()
             mw->remplirListeWidget();
 
         }
+    } else {
+
+        int index = 0;
+        for(int i = 0; i < mw->list_annonces->count() ; i++)
+        {
+            QString q1 = mw->list_annonces->at(i).id.toUtf8();
+            QString q2 = this->id_new;
+            if (q1 == q2) {
+                index = i;
+                break;
+            }
+        }
+            printf("%d\n",index);
+            //qDebug << "count = " << mw->list_annonces->size();// << " id =" << id;
+            mw->list_annonces->replace(index,a);
+            mw->remplirListeWidget();
+            close();
     }
 
 }
