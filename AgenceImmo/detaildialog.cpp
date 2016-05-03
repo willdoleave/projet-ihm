@@ -103,3 +103,8 @@ detaildialog::~detaildialog()
 
     delete ui;
 }
+
+void detaildialog::on_pushButton_clicked()
+{
+    close();
+}

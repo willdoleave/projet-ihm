@@ -18,6 +18,9 @@ public:
     explicit detaildialog(QWidget *parent = 0, Annonce *a = 0);
     ~detaildialog();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::detaildialog *ui;
 };
