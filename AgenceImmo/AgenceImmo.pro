@@ -19,14 +19,16 @@ SOURCES += main.cpp\
     ajoutdialog.cpp \
     xml_dom.cpp \
     detaildialog.cpp \
-    modifierdialog.cpp
+    modifierdialog.cpp \
+    trier.cpp
 
 HEADERS  += mainwindow.h \
     recherchedialog.h \
     ajoutdialog.h \
     xml_dom.h \
     detaildialog.h \
-    modifierdialog.h
+    modifierdialog.h \
+    trier.h
 
 FORMS    += mainwindow.ui \
     recherchedialog.ui \

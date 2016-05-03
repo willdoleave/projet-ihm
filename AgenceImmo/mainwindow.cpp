@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <xml_dom.h>
 #include "detaildialog.h"
+#include "trier.h"
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -103,6 +104,15 @@ void MainWindow::remplirListeWidget()
     //list_annonces = new QList<Annonce>();
     //if (ui->listWidget->size() == 0)
         //Dom->listeElem(list_annonces);
+
+    /*trier tri = trier();
+    QList<Annonce> listeTri = tri.triFusionPrix(*list_annonces, TYPE);
+    //afficher le resultat
+    for (int i = 0; i < listeTri.length(); i++) {
+        Annonce a = listeTri.value(i);
+        QMessageBox::information(this, "Information", "id = " + a.id + ", prix = " + a.prix + ", superficie = " + a.superficie + ", nbpiece = " + a.nbPiece + ", type = " + a.type);
+        //QMessageBox::information(this, "Information", "id = " + listeTri.length());
+    }*/
 
     ui->listWidget->clear();
     ui->listWidget->setIconSize(QSize(128,128));
