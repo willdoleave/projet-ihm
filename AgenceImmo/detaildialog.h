@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QDialog>
+#include "xml_dom.h"
 
 namespace Ui {
 class detaildialog;
@@ -14,6 +15,7 @@ class detaildialog : public QDialog
 
 public:
     explicit detaildialog(QWidget *parent = 0);
+    explicit detaildialog(QWidget *parent = 0, Annonce *a = 0);
     ~detaildialog();
 
 private:

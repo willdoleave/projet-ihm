@@ -122,6 +122,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.superficie = e.attribute("superficie");
             a.nbPiece = e.attribute("nbPiece");
             a.photoContractuelle = e.attribute("photoContractuelle");
+            a.dateCreation = e.attribute("dateCreation");
             list_annonces->append(a);
         }
         noeud = noeud.nextSibling();

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <xml_dom.h>
+#include <QTextCodec>
 
 int main(int argc, char *argv[])
 {
@@ -10,11 +11,8 @@ int main(int argc, char *argv[])
     w.show();
 
     xml_dom *Dom = new xml_dom();
-    //Dom->listeElem();
-    //Dom->ajoutElem();
-    //Dom->show();
     Dom->close();
-
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
     return a.exec();
 }

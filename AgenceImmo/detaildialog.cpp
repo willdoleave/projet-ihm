@@ -4,22 +4,32 @@
 #include "xml_dom.h"
 #include <QListWidget>
 
-
 detaildialog::detaildialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::detaildialog)
 {
     ui->setupUi(this);
+}
 
-    MainWindow *mw = (MainWindow*)this->parent();
-    QListWidgetItem *wi = mw->list_widget->selectedItems().first();
-    Annonce a = mw->list_annonces->at(wi->statusTip().toInt());
+detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
+    QDialog(parent),
+    ui(new Ui::detaildialog)
+{
+    ui->setupUi(this);
+
+    //MainWindow *mw = (MainWindow*)this->parent();
+    //QListWidgetItem *wi = mw->list_widget->selectedItems().at(0);
+
+    //Annonce a = mw->list_annonces->at(wi->statusTip().toInt());
+    Annonce a = *aa;
+    //printf("%s\n",aa->adresse.toStdString().c_str());
+    //wi->listWidget()->currentItem();
 
     QString adresse, superficie, id_etat, parution_prix, pieces, prix, nom_prenom;
     adresse = a.adresse.toUtf8()+", "+a.codePostal.toUtf8()+", "+a.ville;
     superficie = a.superficie.toUtf8()+" m²";
     id_etat = "id: "+a.id.toUtf8()+" - En "+a.etat.toUtf8();
-    parution_prix = "Parution: "+a.dateCreation.toString("dd/MM/yyyy")+" - Prix: "+a.prix.toUtf8()+"€";
+    parution_prix = "Parution: "+a.dateCreation.toUtf8()+" - Prix: "+a.prix.toUtf8()+"€";
     pieces = a.nbPiece+ " pièces";
     prix = a.prix+"€";
     nom_prenom = a.nom+" "+a.prenom;
@@ -29,7 +39,7 @@ detaildialog::detaildialog(QWidget *parent) :
     ui->superficie->setText(superficie);
     ui->id_etat->setText(id_etat);
     ui->parution_prix->setText(parution_prix);
-    ui->description->setText(a.description.toUtf8());
+    ui->description->setText(QString::fromUtf8(a.description.toUtf8()));
     ui->pieces->setText(pieces);
     ui->prix->setText(prix);
     ui->nom_prenom->setText(nom_prenom);
@@ -59,11 +69,11 @@ detaildialog::detaildialog(QWidget *parent) :
     else
         ui->photo4->setVisible(false);
 
-    /*  ui->photo_contractuelle->setVisible(false);
-    ui->photo1->setVisible(false);
-    ui->photo2->setVisible(false);
-    ui->photo3->setVisible(false);
-*/
+  //  ui->photo_contractuelle->setVisible(false);
+  //  ui->photo1->setVisible(false);
+  //  ui->photo2->setVisible(false);
+  //  ui->photo3->setVisible(false);
+
 
 
     QString titre_description;

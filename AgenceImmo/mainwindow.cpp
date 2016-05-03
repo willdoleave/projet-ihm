@@ -97,9 +97,9 @@ void MainWindow::remplirListeWidget()
         QString text;
 
         text = "---"+a.titre.toUtf8() + "---\n" + a.ville + ", " + a.codePostal + "\n" + a.superficie + "m² - "
-                + a.nbPiece + " pièces\n" + "En "+ a.etat +"\n"+ "Prix : " + a.prix+"€";
+                + a.nbPiece + " pièces\n" + a.type +" en "+ a.etat +"\n"+ "Prix : " + a.prix+"€";
         list_item->setText(text.toUtf8());
-        list_item->setStatusTip(QString(i));
+        list_item->setStatusTip(QString(a.id));
         ui->listWidget->addItem(list_item);
     }
     if (list_annonces->count()) {
@@ -114,7 +114,30 @@ void MainWindow::remplirListeWidget()
 
 void MainWindow::on_actionExaminer_annonce_triggered()
 {
-    detaildialog detail_dialog(this);
-    detail_dialog.setWindowTitle("Détail de l'annonce");
-    detail_dialog.exec();
+
+    Annonce a;
+    QListWidgetItem *wi = ui->listWidget->selectedItems().first();
+    QString id;
+    id = wi->statusTip();
+
+    for(int i = 0; i < list_annonces->count() ; i++)
+    {
+        if(QString(list_annonces->at(i).id) == id)
+            a = list_annonces->at(i);
+    }
+
+    detaildialog *detail_dialog = new detaildialog(this, &a);
+    QString titre_dialog = QString::fromUtf8("Détails de l'annonce id ")+a.id.toStdString().c_str()+" \""
+                                    +QString::fromUtf8(a.titre.toStdString().c_str())+"\"";
+
+    //titre_dialog::fromUtf8("Détails de l'annonce");// = "Détails de l'annonce " + a.id + "\"" + a.titre + "\"";
+    detail_dialog->setWindowTitle(titre_dialog);
+    detail_dialog->exec();
+
 }
+
+
+
+
+
+
