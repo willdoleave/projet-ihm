@@ -16,5 +16,6 @@
         <file>img/cross.png</file>
         <file>img/repeat.png</file>
         <file>img/edit.png</file>
+        <file>img/eye.png</file>
     </qresource>
 </RCC>

@@ -39,6 +39,7 @@ public:
     QAction *actionSupprimerAnnonce;
     QAction *actionToutAfficher;
     QAction *actionModifier;
+    QAction *actionExaminer_annonce;
     QWidget *centralWidget;
     QListWidget *listWidget;
     QMenuBar *menuBar;
@@ -102,6 +103,7 @@ public:
         actionUtilisation->setIcon(icon7);
         actionSupprimerAnnonce = new QAction(MainWindow);
         actionSupprimerAnnonce->setObjectName(QStringLiteral("actionSupprimerAnnonce"));
+        actionSupprimerAnnonce->setEnabled(false);
         QIcon icon8;
         icon8.addFile(QStringLiteral(":/images/img/cross.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionSupprimerAnnonce->setIcon(icon8);
@@ -112,9 +114,16 @@ public:
         actionToutAfficher->setIcon(icon9);
         actionModifier = new QAction(MainWindow);
         actionModifier->setObjectName(QStringLiteral("actionModifier"));
+        actionModifier->setEnabled(false);
         QIcon icon10;
         icon10.addFile(QStringLiteral(":/images/img/edit.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionModifier->setIcon(icon10);
+        actionExaminer_annonce = new QAction(MainWindow);
+        actionExaminer_annonce->setObjectName(QStringLiteral("actionExaminer_annonce"));
+        actionExaminer_annonce->setEnabled(false);
+        QIcon icon11;
+        icon11.addFile(QStringLiteral(":/images/img/eye.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionExaminer_annonce->setIcon(icon11);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         listWidget = new QListWidget(centralWidget);
@@ -152,6 +161,7 @@ public:
         menuFichier->addAction(actionQuitter);
         menuAide->addAction(action_propos);
         menuAide->addAction(actionUtilisation);
+        menuOutils->addAction(actionToutAfficher);
         menuOutils->addAction(actionRecherche);
         menuOutils->addAction(actionStatistiques);
         toolBar_2->addAction(actionImporter);
@@ -159,8 +169,9 @@ public:
         toolBar_2->addSeparator();
         toolBar_2->addAction(actionAjouter_une_annonce);
         toolBar_2->addAction(actionSupprimerAnnonce);
-        toolBar_2->addAction(actionToutAfficher);
         toolBar_2->addAction(actionModifier);
+        toolBar_2->addAction(actionExaminer_annonce);
+        toolBar_2->addAction(actionToutAfficher);
         toolBar_2->addAction(actionRecherche);
         toolBar_2->addAction(actionStatistiques);
         toolBar_2->addSeparator();
@@ -203,19 +214,21 @@ public:
         actionUtilisation->setShortcut(QApplication::translate("MainWindow", "Shift+H", 0));
         actionSupprimerAnnonce->setText(QApplication::translate("MainWindow", "supprimerAnnonce", 0));
 #ifndef QT_NO_TOOLTIP
-        actionSupprimerAnnonce->setToolTip(QApplication::translate("MainWindow", "Supprimer une annonce", 0));
+        actionSupprimerAnnonce->setToolTip(QApplication::translate("MainWindow", "Supprimer l'annonce", 0));
 #endif // QT_NO_TOOLTIP
         actionSupprimerAnnonce->setShortcut(QApplication::translate("MainWindow", "Backspace", 0));
-        actionToutAfficher->setText(QApplication::translate("MainWindow", "toutAfficher", 0));
+        actionToutAfficher->setText(QApplication::translate("MainWindow", "Afficher toutes les annonces", 0));
 #ifndef QT_NO_TOOLTIP
-        actionToutAfficher->setToolTip(QApplication::translate("MainWindow", "Tout afficher", 0));
+        actionToutAfficher->setToolTip(QApplication::translate("MainWindow", "Afficher toutes les annonces", 0));
 #endif // QT_NO_TOOLTIP
         actionToutAfficher->setShortcut(QApplication::translate("MainWindow", "Shift+A", 0));
         actionModifier->setText(QApplication::translate("MainWindow", "modifier", 0));
 #ifndef QT_NO_TOOLTIP
-        actionModifier->setToolTip(QApplication::translate("MainWindow", "Modifier", 0));
+        actionModifier->setToolTip(QApplication::translate("MainWindow", "Modifier l'annonce", 0));
 #endif // QT_NO_TOOLTIP
         actionModifier->setShortcut(QApplication::translate("MainWindow", "Shift+M", 0));
+        actionExaminer_annonce->setText(QApplication::translate("MainWindow", "Examiner l'annonce", 0));
+        actionExaminer_annonce->setShortcut(QApplication::translate("MainWindow", "Shift+X", 0));
         menuFichier->setTitle(QApplication::translate("MainWindow", "Fichier", 0));
         menuAide->setTitle(QApplication::translate("MainWindow", "Aide", 0));
         menuOutils->setTitle(QApplication::translate("MainWindow", "Outils", 0));

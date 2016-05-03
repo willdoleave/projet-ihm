@@ -71,6 +71,7 @@
     <property name="title">
      <string>Outils</string>
     </property>
+    <addaction name="actionToutAfficher"/>
     <addaction name="actionRecherche"/>
     <addaction name="actionStatistiques"/>
    </widget>
@@ -100,8 +101,9 @@
    <addaction name="separator"/>
    <addaction name="actionAjouter_une_annonce"/>
    <addaction name="actionSupprimerAnnonce"/>
-   <addaction name="actionToutAfficher"/>
    <addaction name="actionModifier"/>
+   <addaction name="actionExaminer_annonce"/>
+   <addaction name="actionToutAfficher"/>
    <addaction name="actionRecherche"/>
    <addaction name="actionStatistiques"/>
    <addaction name="separator"/>
@@ -230,6 +232,9 @@
    </property>
   </action>
   <action name="actionSupprimerAnnonce">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/images/img/cross.png</normaloff>:/images/img/cross.png</iconset>
@@ -238,7 +243,7 @@
     <string>supprimerAnnonce</string>
    </property>
    <property name="toolTip">
-    <string>Supprimer une annonce</string>
+    <string>Supprimer l'annonce</string>
    </property>
    <property name="shortcut">
     <string>Backspace</string>
@@ -250,16 +255,19 @@
      <normaloff>:/images/img/repeat.png</normaloff>:/images/img/repeat.png</iconset>
    </property>
    <property name="text">
-    <string>toutAfficher</string>
+    <string>Afficher toutes les annonces</string>
    </property>
    <property name="toolTip">
-    <string>Tout afficher</string>
+    <string>Afficher toutes les annonces</string>
    </property>
    <property name="shortcut">
     <string>Shift+A</string>
    </property>
   </action>
   <action name="actionModifier">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/images/img/edit.png</normaloff>:/images/img/edit.png</iconset>
@@ -268,10 +276,25 @@
     <string>modifier</string>
    </property>
    <property name="toolTip">
-    <string>Modifier</string>
+    <string>Modifier l'annonce</string>
    </property>
    <property name="shortcut">
     <string>Shift+M</string>
+   </property>
+  </action>
+  <action name="actionExaminer_annonce">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/eye.png</normaloff>:/images/img/eye.png</iconset>
+   </property>
+   <property name="text">
+    <string>Examiner l'annonce</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+X</string>
    </property>
   </action>
  </widget>

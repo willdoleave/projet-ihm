@@ -336,21 +336,22 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resources.cpp
 qrc_resources.cpp: ../AgenceImmo/resources.qrc \
 		../AgenceImmo/AgenceImmo.pro \
-		../AgenceImmo/img/export.png \
-		../AgenceImmo/img/exit.png \
-		../AgenceImmo/img/plus.png \
-		../AgenceImmo/img/stats.png \
-		../AgenceImmo/img/search.png \
-		../AgenceImmo/img/question.png \
-		../AgenceImmo/img/repeat.png \
+		../AgenceImmo/img/camera.png \
 		../AgenceImmo/img/windowico.ico \
-		../AgenceImmo/img/import.png \
+		../AgenceImmo/img/eye.png \
+		../AgenceImmo/img/stats.png \
 		../AgenceImmo/img/open.png \
 		../AgenceImmo/img/save.png \
-		../AgenceImmo/img/cross.png \
+		../AgenceImmo/img/export.png \
+		../AgenceImmo/img/search.png \
 		../AgenceImmo/img/help.png \
+		../AgenceImmo/img/repeat.png \
 		../AgenceImmo/img/edit.png \
-		../AgenceImmo/img/camera.png
+		../AgenceImmo/img/cross.png \
+		../AgenceImmo/img/import.png \
+		../AgenceImmo/img/question.png \
+		../AgenceImmo/img/exit.png \
+		../AgenceImmo/img/plus.png
 	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name resources ../AgenceImmo/resources.qrc -o qrc_resources.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_recherchedialog.cpp moc_ajoutdialog.cpp

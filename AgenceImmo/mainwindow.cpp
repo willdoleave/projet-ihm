@@ -68,9 +68,11 @@ void MainWindow::on_actionRecherche_triggered()
 
 void MainWindow::on_actionAjouter_une_annonce_triggered()
 {
+    ui->actionAjouter_une_annonce->setEnabled(false);
     ajoutDialog ajout_dialog(this);
     ajout_dialog.setWindowTitle("Ajout d'une annonce");
     ajout_dialog.exec();
+    ui->actionAjouter_une_annonce->setEnabled(true);
 }
 
 void MainWindow::on_actionQuitter_triggered()
@@ -94,16 +96,17 @@ void MainWindow::remplirListeWidget()
 
         QString text;
 
-        text = "---"+a.titre + "---\n" + a.ville + " - " + a.codePostal + "\n" + a.superficie + "m² - "
+        text = "---"+a.titre.toUtf8() + "---\n" + a.ville + ", " + a.codePostal + "\n" + a.superficie + "m² - "
                 + a.nbPiece + " pièces\n" + "En "+ a.etat +"\n"+ "Prix : " + a.prix+"€";
-        list_item->setText(text);
+        list_item->setText(text.toUtf8());
         ui->listWidget->addItem(list_item);
     }
-    if (list_annonces->count())
+    if (list_annonces->count()) {
         ui->listWidget->setCurrentRow(0);
-
+        ui->actionSupprimerAnnonce->setEnabled(true);
+        ui->actionModifier->setEnabled(true);
+        ui->actionExaminer_annonce->setEnabled(true);
+    }
         //ui->listWidget->setStyleSheet( "QListWidget::item { border-bottom: 1px solid black; }" );
         //ui->listWidget->setStyleSheet("WidgetItem:pressed { background-color: blue; }");
-
-
 }
