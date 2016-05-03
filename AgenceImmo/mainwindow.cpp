@@ -171,6 +171,8 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
             if(QString(list_annonces->at(i).id) == id) {
                 qDebug() << "Supprimé";
                 list_annonces->removeAt(i);
+                QString supp_photo = "rm ../upload/"+id+"*";
+                system(supp_photo.toUtf8());
             }
         }
         Dom->reecrireFichier(list_annonces);
