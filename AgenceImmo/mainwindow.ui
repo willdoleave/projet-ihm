@@ -123,9 +123,6 @@
    <property name="text">
     <string>Sauvegarder</string>
    </property>
-   <property name="shortcut">
-    <string>Shift+S</string>
-   </property>
    <property name="iconVisibleInMenu">
     <bool>true</bool>
    </property>
@@ -181,7 +178,7 @@
     <string>Rechercher une annonce</string>
    </property>
    <property name="shortcut">
-    <string>F5</string>
+    <string>Shift+R</string>
    </property>
   </action>
   <action name="actionExporter">
@@ -294,7 +291,7 @@
     <string>Examiner l'annonce</string>
    </property>
    <property name="shortcut">
-    <string>Shift+X</string>
+    <string>Return</string>
    </property>
   </action>
  </widget>

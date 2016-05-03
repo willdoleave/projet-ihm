@@ -187,5 +187,6 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
 
 void MainWindow::on_actionToutAfficher_triggered()
 {
+    ui->listWidget->clear();
     remplirListeWidget();
 }

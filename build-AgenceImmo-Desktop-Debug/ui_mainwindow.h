@@ -186,7 +186,6 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionSauvegarder->setText(QApplication::translate("MainWindow", "Sauvegarder", 0));
-        actionSauvegarder->setShortcut(QApplication::translate("MainWindow", "Shift+S", 0));
         actionImporter->setText(QApplication::translate("MainWindow", "Importer", 0));
 #ifndef QT_NO_TOOLTIP
         actionImporter->setToolTip(QApplication::translate("MainWindow", "Importer", 0));
@@ -200,7 +199,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionRecherche->setToolTip(QApplication::translate("MainWindow", "Rechercher une annonce", 0));
 #endif // QT_NO_TOOLTIP
-        actionRecherche->setShortcut(QApplication::translate("MainWindow", "F5", 0));
+        actionRecherche->setShortcut(QApplication::translate("MainWindow", "Shift+R", 0));
         actionExporter->setText(QApplication::translate("MainWindow", "Exporter", 0));
 #ifndef QT_NO_TOOLTIP
         actionExporter->setToolTip(QApplication::translate("MainWindow", "Exporter", 0));
@@ -228,7 +227,7 @@ public:
 #endif // QT_NO_TOOLTIP
         actionModifier->setShortcut(QApplication::translate("MainWindow", "Shift+M", 0));
         actionExaminer_annonce->setText(QApplication::translate("MainWindow", "Examiner l'annonce", 0));
-        actionExaminer_annonce->setShortcut(QApplication::translate("MainWindow", "Shift+X", 0));
+        actionExaminer_annonce->setShortcut(QApplication::translate("MainWindow", "Return", 0));
         menuFichier->setTitle(QApplication::translate("MainWindow", "Fichier", 0));
         menuAide->setTitle(QApplication::translate("MainWindow", "Aide", 0));
         menuOutils->setTitle(QApplication::translate("MainWindow", "Outils", 0));
