@@ -104,6 +104,7 @@ public:
 
         codePostal = new QSpinBox(gridLayoutWidget);
         codePostal->setObjectName(QStringLiteral("codePostal"));
+        codePostal->setMaximum(10000);
 
         gridLayout_2->addWidget(codePostal, 6, 1, 1, 1);
 

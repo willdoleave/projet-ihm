@@ -25,7 +25,7 @@ bool xml_dom::open()
         QFile file(fileName);
         if (file.open(QIODevice::ReadWrite)) {
             QTextStream stream(&file);
-            stream << "<?xml version='1.0' encoding='ISO-8859-1'?>" << endl;
+            stream << "<?xml version='1.0' encoding=\"UTF-8\"?>" << endl;
             stream << "<data>" << endl;
             stream << "</data>" << endl;
 
@@ -110,7 +110,7 @@ bool xml_dom::reecrireFichier(QList<Annonce> *list_annonces)
     QFile file(fileName);
     if (file.open(QIODevice::ReadWrite)) {
         QTextStream stream(&file);
-        stream << "<?xml version='1.0' encoding='ISO-8859-1'?>" << endl;
+        stream << "<?xml version='1.0' encoding=\"UTF-8\"?>" << endl;
         stream << "<data>" << endl;
         stream << "</data>" << endl;
 
@@ -140,6 +140,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
     {
         QDomElement e = noeud.toElement();
         if(!dom_element.isNull()) {
+            qDebug() << QString::fromUtf8(e.attribute("titre").toUtf8());
             a.id = e.attribute("id");
             a.etat = e.attribute("etat");
             a.type = e.attribute("type");
