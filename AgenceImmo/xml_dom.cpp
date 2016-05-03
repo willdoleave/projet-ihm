@@ -7,13 +7,14 @@ Annonce::Annonce() {}
 
 xml_dom::xml_dom() : QWidget()
 {
+    fileName = "../AgenceImmo/data.xml";
     this->open();
 }
 
 bool xml_dom::open()
 {
     dom = QDomDocument("data");
-    doc_xml.setFileName("../AgenceImmo/data.xml");
+    doc_xml.setFileName(fileName);
 
     if(!doc_xml.open(QIODevice::ReadOnly))
     {
@@ -21,6 +22,15 @@ bool xml_dom::open()
         doc_xml.close();
         doc_xml.open(QIODevice::ReadWrite);
         doc_xml.close();
+        QFile file(fileName);
+        if (file.open(QIODevice::ReadWrite)) {
+            QTextStream stream(&file);
+            stream << "<?xml version='1.0' encoding='ISO-8859-1'?>" << endl;
+            stream << "<data>" << endl;
+            stream << "</data>" << endl;
+
+        }
+        doc_xml.open(QIODevice::ReadOnly);
         //return;
     }
 
@@ -90,6 +100,34 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     //QMessageBox::information(this,"Parfait","L'annonce a été insérée avec succès !");
 
    return true;
+}
+
+
+bool xml_dom::reecrireFichier(QList<Annonce> *list_annonces)
+{
+    QFile::resize(fileName,0);
+    //<?xml version='1.0' encoding='ISO-8859-1'?>
+    QFile file(fileName);
+    if (file.open(QIODevice::ReadWrite)) {
+        QTextStream stream(&file);
+        stream << "<?xml version='1.0' encoding='ISO-8859-1'?>" << endl;
+        stream << "<data>" << endl;
+        stream << "</data>" << endl;
+
+    }
+
+    for (int i = 0; i < list_annonces->count(); i++) {
+        Annonce a = list_annonces->at(i);
+        this->ajoutElem(a.id.toStdString(),a.etat.toStdString(),a.type.toStdString(),
+                        a.prix.toStdString(), a.titre.toStdString(), a.description.toStdString(),
+                        a.photo1.toStdString(), a.photo2.toStdString(), a.photo3.toStdString(), a.photo4.toStdString(),
+                        a.adresse.toStdString(), a.ville.toStdString(), a.codePostal.toStdString(), a.nom.toStdString(),
+                        a.prenom.toStdString(), a.telephone.toStdString(), a.mail.toStdString(), a.superficie.toStdString(),
+                        a.nbPiece.toStdString(), a.photoContractuelle.toStdString()
+                        );
+    }
+
+    return true;
 }
 
 bool xml_dom::listeElem(QList<Annonce> *list_annonces)

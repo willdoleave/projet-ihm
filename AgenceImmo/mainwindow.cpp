@@ -84,9 +84,13 @@ void MainWindow::on_actionQuitter_triggered()
 void MainWindow::remplirListeWidget()
 {
 
-    list_annonces = new QList<Annonce>();
-    ui->listWidget->clear();
-    Dom->listeElem(list_annonces);
+// ICI ECRITURE DE LA LISTE D'ABORD!!!
+   // if (list_annonces->empty()) {
+        ui->listWidget->clear();
+        Dom->listeElem(list_annonces);
+   /* } else  {
+
+    }*/
     ui->listWidget->setIconSize(QSize(128,128));
     for (int i = 0; i < list_annonces->count(); i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);
@@ -162,6 +166,21 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
 
     if (msgBox.clickedButton()==pButtonYes) {
         qDebug() << "Oui";
+        for(int i = 0; i < list_annonces->count() ; i++)
+        {
+            if(QString(list_annonces->at(i).id) == id) {
+                qDebug() << "Supprimé";
+                list_annonces->removeAt(i);
+            }
+        }
+        Dom->reecrireFichier(list_annonces);
+        remplirListeWidget();
+        if (!list_annonces->count()) {
+            ui->actionSupprimerAnnonce->setEnabled(false);
+            ui->actionModifier->setEnabled(false);
+            ui->actionExaminer_annonce->setEnabled(false);
+        }
+
 
     } else if (msgBox.clickedButton() == pButtonNo) {
         qDebug() << "Non";
