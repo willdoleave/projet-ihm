@@ -18,7 +18,7 @@ bool xml_dom::open()
 
     if(!doc_xml.open(QIODevice::ReadOnly))
     {
-        QMessageBox::critical(this,"Erreur","Impossible d'ouvrir le ficher XML. Création d'un autre");
+        QMessageBox::critical(this,"Erreur","Impossible d'ouvrir le ficher XML. Création d'un nouveau");
         doc_xml.close();
         doc_xml.open(QIODevice::ReadWrite);
         doc_xml.close();
@@ -89,7 +89,8 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     if(!this->doc_xml.open(QIODevice::WriteOnly))
     {
         this->doc_xml.close();
-        QMessageBox::critical(this,"Erreur","Impossible d'écrire dans le document XML");
+        qDebug() << "Impossible d'ajouter un élément";
+        //QMessageBox::critical(this,"Erreur","Impossible d'écrire dans le document XML");
         return false;
     }
 
@@ -97,8 +98,8 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     stream << write_doc; // On utilise l'opérateur << pour écrire write_doc dans le document XML.
 
     this->close();
-    //QMessageBox::information(this,"Parfait","L'annonce a été insérée avec succès !");
 
+    qDebug() << "Element ajouté";
    return true;
 }
 
@@ -106,6 +107,7 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
 bool xml_dom::reecrireFichier(QList<Annonce> *list_annonces)
 {
     QFile::resize(fileName,0);
+
     //<?xml version='1.0' encoding='ISO-8859-1'?>
     QFile file(fileName);
     if (file.open(QIODevice::ReadWrite)) {
@@ -115,6 +117,8 @@ bool xml_dom::reecrireFichier(QList<Annonce> *list_annonces)
         stream << "</data>" << endl;
 
     }
+
+    file.close();
 
     for (int i = 0; i < list_annonces->count(); i++) {
         Annonce a = list_annonces->at(i);
@@ -126,6 +130,7 @@ bool xml_dom::reecrireFichier(QList<Annonce> *list_annonces)
                         a.nbPiece.toStdString(), a.photoContractuelle.toStdString()
                         );
     }
+
 
     return true;
 }
@@ -142,7 +147,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
         QDomElement e = noeud.toElement();
         if(!dom_element.isNull()) {
 
-            qDebug() << e.attribute("titre");
+            qDebug() << e.attribute("titre").toUtf8();
             //qDebug() << QString::fromUtf8(e.attribute("titre").toUtf8());
             a.id = e.attribute("id");
             a.etat = e.attribute("etat");
@@ -164,10 +169,67 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.superficie = e.attribute("superficie");
             a.nbPiece = e.attribute("nbPiece");
             a.photoContractuelle = e.attribute("photoContractuelle");
-            //a.dateCreation = e.attribute("dateCreation");
+            a.dateCreation = QDate::fromString(e.attribute("dateCreation"),"dd/MM/yyyy");
             list_annonces->append(a);
         }
         noeud = noeud.nextSibling();
     }
     return true;
+}
+
+
+
+
+
+bool xml_dom::save(QList<Annonce> *list_annonces)
+{
+    QDomDocument *Dom = new QDomDocument();
+    QDomElement root = Dom->createElement("data");
+    Dom->appendChild(root);
+
+    for(int i = 0; i < list_annonces->count(); i++)
+    {
+        Annonce a = list_annonces->at(i);
+        QDomElement docElem = Dom->createElement("data");
+
+        docElem.setAttribute("id", a.id);
+        docElem.setAttribute("etat",a.etat);
+        docElem.setAttribute("type", a.type);
+        docElem.setAttribute("prix", a.prix);
+        docElem.setAttribute("titre", a.titre);
+        docElem.setAttribute("description",a.description);
+        docElem.setAttribute("photo1", a.photo1);
+        docElem.setAttribute("photo2", a.photo2);
+        docElem.setAttribute("photo3", a.photo3);
+        docElem.setAttribute("photo4", a.photo4);
+        docElem.setAttribute("adresse", a.adresse);
+        docElem.setAttribute("ville", a.ville);
+        docElem.setAttribute("codePostal",a.codePostal);
+        docElem.setAttribute("nom", a.nom);
+        docElem.setAttribute("prenom", a.prenom);
+        docElem.setAttribute("telephone", a.telephone);
+        docElem.setAttribute("mail", a.mail);
+        docElem.setAttribute("superficie", a.superficie);
+        docElem.setAttribute("nbPiece", a.nbPiece);
+        docElem.setAttribute("photoContractuelle", a.photoContractuelle);
+        docElem.setAttribute("dateCreation", a.dateCreation.toString("dd/MM/yyyy"));
+
+        root.appendChild(docElem);
+    }
+
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "Open the file for writing failed.";
+        return false;
+    }
+    else
+    {
+        QTextStream stream(&file);
+        stream << Dom->toString();
+        file.close();
+        return true;
+    }
+
+    return false;
 }

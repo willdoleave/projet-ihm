@@ -50,22 +50,22 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
         ui->photo_contractuelle->setPixmap(QPixmap(a.photoContractuelle).scaled(QSize(400,400)));
 
     if (a.photo1.size()>0 && a.photo1.toUtf8() != a.photoContractuelle.toUtf8())
-        ui->photo1->setPixmap(QPixmap(a.photo1).scaled(QSize(170,170)));
+        ui->photo1->setPixmap(QPixmap(a.photo1).scaled(QSize(150,150)));
     else
         ui->photo1->setVisible(false);
 
     if (a.photo2.size()>0 && a.photo2.toUtf8() != a.photoContractuelle.toUtf8())
-        ui->photo2->setPixmap(QPixmap(a.photo2).scaled(QSize(170,170)));
+        ui->photo2->setPixmap(QPixmap(a.photo2).scaled(QSize(150,150)));
     else
         ui->photo2->setVisible(false);
 
     if (a.photo3.size()>0 && a.photo3.toUtf8() != a.photoContractuelle.toUtf8())
-        ui->photo3->setPixmap(QPixmap(a.photo3).scaled(QSize(170,170)));
+        ui->photo3->setPixmap(QPixmap(a.photo3).scaled(QSize(150,150)));
     else
         ui->photo3->setVisible(false);
 
     if (a.photo4.size()>0 && a.photo4.toUtf8() != a.photoContractuelle.toUtf8())
-         ui->photo4->setPixmap(QPixmap(a.photo4).scaled(QSize(170,170)));
+         ui->photo4->setPixmap(QPixmap(a.photo4).scaled(QSize(150,150)));
     else
         ui->photo4->setVisible(false);
 

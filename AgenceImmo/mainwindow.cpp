@@ -19,8 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     Dom = new xml_dom();
     list_annonces = new QList<Annonce>();
+    Dom->listeElem(list_annonces);
     remplirListeWidget();
-    list_widget = ui->listWidget;
     QObject::connect(ui->listWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(on_actionExaminer_annonce_triggered()));
 }
 
@@ -28,6 +28,17 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::closeEvent(QCloseEvent *ev)
+{
+    qDebug() << "Enregistrement en cours";
+    if (Dom->save(list_annonces))
+        qDebug() << "Success";
+    else
+        qDebug() << "Erreur lors de l'enregistrement";
+    //ev->accept();
+}
+
 
 void MainWindow::on_actionImporter_triggered()
 {
@@ -81,11 +92,19 @@ void MainWindow::on_actionQuitter_triggered()
     close();
 }
 
+
+/**
+ * @brief MainWindow::remplirListeWidget
+ *        Rafraichit le listWidget avec le contenu de list_annonces
+ */
 void MainWindow::remplirListeWidget()
 {
 
+    //list_annonces = new QList<Annonce>();
+    //if (ui->listWidget->size() == 0)
+        //Dom->listeElem(list_annonces);
+
     ui->listWidget->clear();
-    Dom->listeElem(list_annonces);
     ui->listWidget->setIconSize(QSize(128,128));
     for (int i = 0; i < list_annonces->count(); i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);
@@ -170,7 +189,6 @@ void MainWindow::on_actionSupprimerAnnonce_triggered()
                 system(supp_photo.toUtf8());
             }
         }
-        Dom->reecrireFichier(list_annonces);
         remplirListeWidget();
         if (!list_annonces->count()) {
             ui->actionSupprimerAnnonce->setEnabled(false);

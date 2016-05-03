@@ -190,21 +190,21 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionImporter->setToolTip(QApplication::translate("MainWindow", "Importer", 0));
 #endif // QT_NO_TOOLTIP
-        actionImporter->setShortcut(QApplication::translate("MainWindow", "Shift+I", 0));
+        actionImporter->setShortcut(QApplication::translate("MainWindow", "Ctrl+I", 0));
         actionAjouter_une_annonce->setText(QApplication::translate("MainWindow", "Ajouter une annonce", 0));
         actionAjouter_une_annonce->setShortcut(QApplication::translate("MainWindow", "+", 0));
         actionQuitter->setText(QApplication::translate("MainWindow", "Quitter", 0));
-        actionQuitter->setShortcut(QApplication::translate("MainWindow", "F4", 0));
+        actionQuitter->setShortcut(QApplication::translate("MainWindow", "Ctrl+F4", 0));
         actionRecherche->setText(QApplication::translate("MainWindow", "Recherche", 0));
 #ifndef QT_NO_TOOLTIP
         actionRecherche->setToolTip(QApplication::translate("MainWindow", "Rechercher une annonce", 0));
 #endif // QT_NO_TOOLTIP
-        actionRecherche->setShortcut(QApplication::translate("MainWindow", "Shift+R", 0));
+        actionRecherche->setShortcut(QApplication::translate("MainWindow", "Ctrl+F", 0));
         actionExporter->setText(QApplication::translate("MainWindow", "Exporter", 0));
 #ifndef QT_NO_TOOLTIP
         actionExporter->setToolTip(QApplication::translate("MainWindow", "Exporter", 0));
 #endif // QT_NO_TOOLTIP
-        actionExporter->setShortcut(QApplication::translate("MainWindow", "Shift+E", 0));
+        actionExporter->setShortcut(QApplication::translate("MainWindow", "Ctrl+E", 0));
         action_propos->setText(QApplication::translate("MainWindow", "\303\200 propos de AgenceImmo", 0));
         action_propos->setShortcut(QApplication::translate("MainWindow", "?", 0));
         actionStatistiques->setText(QApplication::translate("MainWindow", "Statistiques", 0));

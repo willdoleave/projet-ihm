@@ -6,6 +6,7 @@
 #include <ajoutdialog.h>
 #include "xml_dom.h"
 #include <QListWidget>
+#include <QCloseEvent>
 
 namespace Ui {
 class MainWindow;
@@ -21,7 +22,6 @@ public:
     void remplirListeWidget();
     xml_dom *Dom;
     QList<Annonce> *list_annonces;
-    QListWidget *list_widget;
 
 private slots:
     void on_actionImporter_triggered();
@@ -40,8 +40,11 @@ private slots:
 
     void on_actionToutAfficher_triggered();
 
+    void closeEvent(QCloseEvent *ev);
+
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

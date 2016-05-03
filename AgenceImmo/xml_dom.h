@@ -49,6 +49,7 @@ public:
     bool listeElem(QList<Annonce> *list_annonces);
     bool reecrireFichier(QList<Annonce> *list_annonces);
     bool open();
+    bool save(QList<Annonce> *list_annonces);
 
 
     QDomDocument dom;

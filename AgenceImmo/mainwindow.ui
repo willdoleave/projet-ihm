@@ -139,7 +139,7 @@
     <string>Importer</string>
    </property>
    <property name="shortcut">
-    <string>Shift+I</string>
+    <string>Ctrl+I</string>
    </property>
   </action>
   <action name="actionAjouter_une_annonce">
@@ -163,7 +163,7 @@
     <string>Quitter</string>
    </property>
    <property name="shortcut">
-    <string>F4</string>
+    <string>Ctrl+F4</string>
    </property>
   </action>
   <action name="actionRecherche">
@@ -178,7 +178,7 @@
     <string>Rechercher une annonce</string>
    </property>
    <property name="shortcut">
-    <string>Shift+R</string>
+    <string>Ctrl+F</string>
    </property>
   </action>
   <action name="actionExporter">
@@ -193,7 +193,7 @@
     <string>Exporter</string>
    </property>
    <property name="shortcut">
-    <string>Shift+E</string>
+    <string>Ctrl+E</string>
    </property>
   </action>
   <action name="action_propos">

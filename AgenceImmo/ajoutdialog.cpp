@@ -61,17 +61,33 @@ void ajoutDialog::on_pushButton_clicked()
     else if (ui->contractuelle3->isChecked()) contractuelle = photo3;
     else if (ui->contractuelle1->isChecked()) contractuelle = photo4;
     else contractuelle = QString("");
-    ajout = Dom->ajoutElem(id.toStdString(), ui->etat->currentText().toStdString(), ui->type->currentText().toStdString(),
-                           ui->prix->text().toStdString(),ui->titre->text().toStdString(),
-                           ui->description->toPlainText().toStdString(),
-                           photo1.toStdString(),photo2.toStdString(),photo3.toStdString(),photo4.toStdString(),
-                           ui->adresse->text().toStdString(),ui->ville->text().toStdString(),
-                           ui->codePostal->text().toStdString(), ui->nom->text().toStdString(),
-                           ui->prenom->text().toStdString(),ui->telephone->text().toStdString(),
-                           ui->email->text().toStdString(), ui->superficie->text().toStdString(),
-                           ui->nombrePieces->text().toStdString(), contractuelle.toStdString()
-                   );
-    if (!ajout) {
+
+    MainWindow *mw = (MainWindow*)this->parent();
+    Annonce a;
+    a.id = id;
+    a.etat = ui->etat->currentText();
+    a.type = ui->type->currentText();
+    a.prix = ui->prix->text();
+    a.titre = ui->titre->text();
+    a.description = ui->description->toPlainText();
+    a.photo1 = photo1;
+    a.photo2 = photo2;
+    a.photo3 = photo3;
+    a.photo4 = photo4;
+    a.adresse = ui->adresse->text();
+    a.ville = ui->ville->text();
+    a.codePostal = ui->codePostal->text();
+    a.nom = ui->nom->text();
+    a.prenom = ui->prenom->text();
+    a.telephone = ui->telephone->text();
+    a.mail = ui->email->text();
+    a.superficie = ui->superficie->text();
+    a.nbPiece = ui->nombrePieces->text();
+    a.photoContractuelle = contractuelle;
+
+    int size = mw->list_annonces->size();
+    mw->list_annonces->append(a);
+    if (size == mw->list_annonces->size()) {
         QMessageBox::critical(this,"Echec de l'ajout","L'insertion n'a pas eu lieu car il manque des champs obligatoires !");
     } else {
         QMessageBox::information(this,"Parfait","L'annonce a été créée avec succès !");
@@ -103,7 +119,6 @@ void ajoutDialog::on_pushButton_clicked()
         ui->image1->setPixmap(QPixmap(":/img/camera.png"));
         close();
 
-        MainWindow *mw = (MainWindow*)this->parent();
         mw->remplirListeWidget();
 
     }
