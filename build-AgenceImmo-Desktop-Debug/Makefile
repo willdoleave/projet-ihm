@@ -336,18 +336,21 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resources.cpp
 qrc_resources.cpp: ../AgenceImmo/resources.qrc \
 		../AgenceImmo/AgenceImmo.pro \
-		../AgenceImmo/img/stats.png \
-		../AgenceImmo/img/camera.png \
-		../AgenceImmo/img/windowico.ico \
+		../AgenceImmo/img/export.png \
 		../AgenceImmo/img/exit.png \
 		../AgenceImmo/img/plus.png \
-		../AgenceImmo/img/export.png \
+		../AgenceImmo/img/stats.png \
 		../AgenceImmo/img/search.png \
+		../AgenceImmo/img/question.png \
+		../AgenceImmo/img/repeat.png \
+		../AgenceImmo/img/windowico.ico \
+		../AgenceImmo/img/import.png \
 		../AgenceImmo/img/open.png \
 		../AgenceImmo/img/save.png \
-		../AgenceImmo/img/question.png \
+		../AgenceImmo/img/cross.png \
 		../AgenceImmo/img/help.png \
-		../AgenceImmo/img/import.png
+		../AgenceImmo/img/edit.png \
+		../AgenceImmo/img/camera.png
 	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name resources ../AgenceImmo/resources.qrc -o qrc_resources.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_recherchedialog.cpp moc_ajoutdialog.cpp
@@ -466,6 +469,8 @@ moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
 		/usr/include/qt5/QtGui/qicon.h \
 		../AgenceImmo/recherchedialog.h \
 		/usr/include/qt5/QtWidgets/QWidget \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		../AgenceImmo/ajoutdialog.h \
 		../AgenceImmo/xml_dom.h \
 		/usr/include/qt5/QtXml/QtXml \
@@ -694,6 +699,8 @@ moc_recherchedialog.cpp: /usr/include/qt5/QtWidgets/QWidget \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		../AgenceImmo/recherchedialog.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../AgenceImmo/recherchedialog.h -o moc_recherchedialog.cpp
 
@@ -805,6 +812,8 @@ moc_ajoutdialog.cpp: /usr/include/qt5/QtWidgets/QWidget \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		../AgenceImmo/ajoutdialog.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../AgenceImmo/ajoutdialog.h -o moc_ajoutdialog.cpp
 
@@ -946,6 +955,8 @@ main.o: ../AgenceImmo/main.cpp ../AgenceImmo/mainwindow.h \
 		/usr/include/qt5/QtGui/qicon.h \
 		../AgenceImmo/recherchedialog.h \
 		/usr/include/qt5/QtWidgets/QWidget \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		../AgenceImmo/ajoutdialog.h \
 		../AgenceImmo/xml_dom.h \
 		/usr/include/qt5/QtXml/QtXml \
@@ -1184,6 +1195,8 @@ mainwindow.o: ../AgenceImmo/mainwindow.cpp ../AgenceImmo/mainwindow.h \
 		/usr/include/qt5/QtGui/qicon.h \
 		../AgenceImmo/recherchedialog.h \
 		/usr/include/qt5/QtWidgets/QWidget \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		../AgenceImmo/ajoutdialog.h \
 		../AgenceImmo/xml_dom.h \
 		/usr/include/qt5/QtXml/QtXml \
@@ -1422,7 +1435,6 @@ mainwindow.o: ../AgenceImmo/mainwindow.cpp ../AgenceImmo/mainwindow.h \
 		/usr/include/qt5/QtGui/qtguiversion.h \
 		/usr/include/qt5/QtWidgets/QMessageBox \
 		/usr/include/qt5/QtWidgets/qmessagebox.h \
-		/usr/include/qt5/QtWidgets/qdialog.h \
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
@@ -1432,7 +1444,11 @@ mainwindow.o: ../AgenceImmo/mainwindow.cpp ../AgenceImmo/mainwindow.h \
 		/usr/include/qt5/QtWidgets/qlayoutitem.h \
 		/usr/include/qt5/QtWidgets/qgridlayout.h \
 		/usr/include/qt5/QtWidgets/QLabel \
-		/usr/include/qt5/QtWidgets/qlabel.h
+		/usr/include/qt5/QtWidgets/qlabel.h \
+		/usr/include/qt5/QtWidgets/QScrollArea \
+		/usr/include/qt5/QtWidgets/qscrollarea.h \
+		/usr/include/qt5/QtWidgets/QCheckBox \
+		/usr/include/qt5/QtWidgets/qcheckbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../AgenceImmo/mainwindow.cpp
 
 recherchedialog.o: ../AgenceImmo/recherchedialog.cpp ../AgenceImmo/recherchedialog.h \
@@ -1544,6 +1560,8 @@ recherchedialog.o: ../AgenceImmo/recherchedialog.cpp ../AgenceImmo/recherchedial
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		ui_recherchedialog.h \
 		/usr/include/qt5/QtCore/QDate \
 		/usr/include/qt5/QtCore/qdatetime.h \
@@ -1710,6 +1728,8 @@ ajoutdialog.o: ../AgenceImmo/ajoutdialog.cpp ../AgenceImmo/ajoutdialog.h \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/QDialog \
+		/usr/include/qt5/QtWidgets/qdialog.h \
 		ui_ajoutdialog.h \
 		/usr/include/qt5/QtCore/QVariant \
 		/usr/include/qt5/QtWidgets/QAction \
@@ -1889,7 +1909,6 @@ ajoutdialog.o: ../AgenceImmo/ajoutdialog.cpp ../AgenceImmo/ajoutdialog.h \
 		../AgenceImmo/recherchedialog.h \
 		/usr/include/qt5/QtWidgets/QMessageBox \
 		/usr/include/qt5/QtWidgets/qmessagebox.h \
-		/usr/include/qt5/QtWidgets/qdialog.h \
 		/usr/include/qt5/QtWidgets/QFileDialog \
 		/usr/include/qt5/QtWidgets/qfiledialog.h \
 		/usr/include/qt5/QtCore/QFileInfo \
@@ -2129,6 +2148,7 @@ xml_dom.o: ../AgenceImmo/xml_dom.cpp ../AgenceImmo/xml_dom.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
 		../AgenceImmo/recherchedialog.h \
+		/usr/include/qt5/QtWidgets/QDialog \
 		../AgenceImmo/ajoutdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o xml_dom.o ../AgenceImmo/xml_dom.cpp
 

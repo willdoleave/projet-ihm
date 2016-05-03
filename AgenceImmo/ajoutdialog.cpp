@@ -123,16 +123,23 @@ void ajoutDialog::on_upload_image2_clicked()
 {
     filephoto2 = QFileDialog::getOpenFileName(this,
     tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
+    if (filephoto2.size()>0)
+        ui->image2->setPixmap(QPixmap(filephoto2).scaled(QSize(48,48)));
 }
 
 void ajoutDialog::on_upload_image3_clicked()
 {
     filephoto3 = QFileDialog::getOpenFileName(this,
     tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
+    if (filephoto3.size()>0)
+        ui->image3->setPixmap(QPixmap(filephoto3).scaled(QSize(48,48)));
 }
+
 
 void ajoutDialog::on_upload_image4_clicked()
 {
     filephoto4 = QFileDialog::getOpenFileName(this,
     tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
+    if (filephoto4.size()>0)
+        ui->image4->setPixmap(QPixmap(filephoto4).scaled(QSize(48,48)));
 }

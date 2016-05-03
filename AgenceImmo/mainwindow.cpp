@@ -8,6 +8,8 @@
 #include <QBoxLayout>
 #include <QLabel>
 #include <xml_dom.h>
+#include <QScrollArea>
+#include <QCheckBox>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -78,17 +80,30 @@ void MainWindow::on_actionQuitter_triggered()
 
 void MainWindow::remplirListeWidget()
 {
+
     list_annonces = new QList<Annonce>();
     ui->listWidget->clear();
     Dom->listeElem(list_annonces);
+    ui->listWidget->setIconSize(QSize(128,128));
     for (int i = 0; i < list_annonces->count(); i++) {
         QListWidgetItem *list_item = new QListWidgetItem(0,0);
         Annonce a = list_annonces->at(i);
+
         if (!a.photoContractuelle.toStdString().empty())
             list_item->setIcon(QPixmap(a.photoContractuelle).scaled(QSize(128,128)));
+
         QString text;
-        text = a.titre + ". Prix" + a.prix+"€";
+
+        text = "---"+a.titre + "---\n" + a.ville + " - " + a.codePostal + "\n" + a.superficie + "m² - "
+                + a.nbPiece + " pièces\n" + "En "+ a.etat +"\n"+ "Prix : " + a.prix+"€";
         list_item->setText(text);
         ui->listWidget->addItem(list_item);
     }
+    if (list_annonces->count())
+        ui->listWidget->setCurrentRow(0);
+
+        //ui->listWidget->setStyleSheet( "QListWidget::item { border-bottom: 1px solid black; }" );
+        //ui->listWidget->setStyleSheet("WidgetItem:pressed { background-color: blue; }");
+
+
 }

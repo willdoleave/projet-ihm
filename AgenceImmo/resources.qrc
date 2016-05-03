@@ -13,5 +13,8 @@
         <file>img/stats.png</file>
         <file>img/help.png</file>
         <file>img/windowico.ico</file>
+        <file>img/cross.png</file>
+        <file>img/repeat.png</file>
+        <file>img/edit.png</file>
     </qresource>
 </RCC>

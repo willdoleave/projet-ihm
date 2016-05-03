@@ -99,6 +99,9 @@
    <addaction name="actionExporter"/>
    <addaction name="separator"/>
    <addaction name="actionAjouter_une_annonce"/>
+   <addaction name="actionSupprimerAnnonce"/>
+   <addaction name="actionToutAfficher"/>
+   <addaction name="actionModifier"/>
    <addaction name="actionRecherche"/>
    <addaction name="actionStatistiques"/>
    <addaction name="separator"/>
@@ -118,6 +121,9 @@
    <property name="text">
     <string>Sauvegarder</string>
    </property>
+   <property name="shortcut">
+    <string>Shift+S</string>
+   </property>
    <property name="iconVisibleInMenu">
     <bool>true</bool>
    </property>
@@ -133,6 +139,9 @@
    <property name="toolTip">
     <string>Importer</string>
    </property>
+   <property name="shortcut">
+    <string>Shift+I</string>
+   </property>
   </action>
   <action name="actionAjouter_une_annonce">
    <property name="icon">
@@ -142,6 +151,9 @@
    <property name="text">
     <string>Ajouter une annonce</string>
    </property>
+   <property name="shortcut">
+    <string>+</string>
+   </property>
   </action>
   <action name="actionQuitter">
    <property name="icon">
@@ -150,6 +162,9 @@
    </property>
    <property name="text">
     <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
    </property>
   </action>
   <action name="actionRecherche">
@@ -163,6 +178,9 @@
    <property name="toolTip">
     <string>Rechercher une annonce</string>
    </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
   </action>
   <action name="actionExporter">
    <property name="icon">
@@ -175,10 +193,16 @@
    <property name="toolTip">
     <string>Exporter</string>
    </property>
+   <property name="shortcut">
+    <string>Shift+E</string>
+   </property>
   </action>
   <action name="action_propos">
    <property name="text">
     <string>À propos de AgenceImmo</string>
+   </property>
+   <property name="shortcut">
+    <string>?</string>
    </property>
   </action>
   <action name="actionStatistiques">
@@ -189,6 +213,9 @@
    <property name="text">
     <string>Statistiques</string>
    </property>
+   <property name="shortcut">
+    <string>Shift+S</string>
+   </property>
   </action>
   <action name="actionUtilisation">
    <property name="icon">
@@ -197,6 +224,54 @@
    </property>
    <property name="text">
     <string>Utilisation</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+H</string>
+   </property>
+  </action>
+  <action name="actionSupprimerAnnonce">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/cross.png</normaloff>:/images/img/cross.png</iconset>
+   </property>
+   <property name="text">
+    <string>supprimerAnnonce</string>
+   </property>
+   <property name="toolTip">
+    <string>Supprimer une annonce</string>
+   </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
+  </action>
+  <action name="actionToutAfficher">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/repeat.png</normaloff>:/images/img/repeat.png</iconset>
+   </property>
+   <property name="text">
+    <string>toutAfficher</string>
+   </property>
+   <property name="toolTip">
+    <string>Tout afficher</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+A</string>
+   </property>
+  </action>
+  <action name="actionModifier">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/img/edit.png</normaloff>:/images/img/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>modifier</string>
+   </property>
+   <property name="toolTip">
+    <string>Modifier</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+M</string>
    </property>
   </action>
  </widget>
