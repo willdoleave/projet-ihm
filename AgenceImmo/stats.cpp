@@ -166,7 +166,7 @@ void Stats::dessinerGraphique()
     loueg->setData(ticks, dataloue);
     location->setData(ticks, datalocation);
 
-    ui->customPlot->legend->setVisible(true);
+    ui->customPlot->legend->setVisible(false);
     ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignCenter);
     ui->customPlot->legend->setBrush(QColor(255,255,255,200));
     QPen legendPen;
@@ -177,33 +177,5 @@ void Stats::dessinerGraphique()
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 
     ui->customPlot->replot();
-    /*
-
-
-    // stack bars ontop of each other:
-    trouve->moveAbove(recherche);
-
-    // Add data:
-    QVector<double> datarecherche, datatrouve;
-    datarecherche  << cpt_vente << cpt_locat << cpt_rviag ;
-    datatrouve     << cpt_vendu << cpt_louee << cpt_vviag ;
-
-    recherche->setData(ticks, datarecherche);
-    trouve->setData(ticks, datatrouve);
-
-    // setup legend:
-    ui->widgetPlot->legend->setVisible(true);
-    ui->widgetPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignHCenter);
-    ui->widgetPlot->legend->setBrush(QColor(255, 255, 255, 200));
-    QPen legendPen;
-    legendPen.setColor(QColor(130, 130, 130, 200));
-    ui->widgetPlot->legend->setBorderPen(legendPen);
-    QFont legendFont = font();
-    legendFont.setPointSize(10);
-    ui->widgetPlot->legend->setFont(legendFont);
-    ui->widgetPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-
-    ui->widgetPlot->replot();
-*/
 }
 
