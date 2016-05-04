@@ -17,13 +17,7 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
 {
     ui->setupUi(this);
 
-    //MainWindow *mw = (MainWindow*)this->parent();
-    //QListWidgetItem *wi = mw->list_widget->selectedItems().at(0);
-
-    //Annonce a = mw->list_annonces->at(wi->statusTip().toInt());
-    Annonce a = *aa;
-    //printf("%s\n",aa->adresse.toStdString().c_str());
-    //wi->listWidget()->currentItem();
+    a = *aa;
 
     QString adresse, superficie, id_etat, parution_prix, pieces, prix, nom_prenom;
     adresse = a.adresse.toUtf8()+", "+a.codePostal.toUtf8()+", "+a.ville;
@@ -50,6 +44,11 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
         ui->bouton_vendre->setText("Louer");
     else if (a.etat.toUtf8() == "Vente")
         ui->bouton_vendre->setText("Vendre");
+    else if (a.etat.toUtf8() == "Vendu")
+        ui->bouton_vendre->setText("Afficher acheteur");
+    else if (a.etat.toUtf8() == "Loué")
+        ui->bouton_vendre->setText("Afficher loueur");
+
 
     if (a.photoContractuelle.size()>0)
         ui->photo_contractuelle->setPixmap(QPixmap(a.photoContractuelle).scaled(QSize(400,400)));

@@ -197,16 +197,16 @@
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="1">
-     <widget class="QLabel" name="nb_vendus">
+     <widget class="QLabel" name="vendus">
       <property name="text">
-       <string>vendus</string>
+       <string>0</string>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
      <widget class="QLabel" name="en_vente">
       <property name="text">
-       <string>en vente</string>
+       <string>0</string>
       </property>
      </widget>
     </item>
@@ -255,7 +255,7 @@
     <item row="0" column="3">
      <widget class="QLabel" name="loues">
       <property name="text">
-       <string>loues</string>
+       <string>0</string>
       </property>
      </widget>
     </item>
@@ -276,7 +276,7 @@
     <item row="1" column="3">
      <widget class="QLabel" name="en_location">
       <property name="text">
-       <string>en location</string>
+       <string>0</string>
       </property>
      </widget>
     </item>
