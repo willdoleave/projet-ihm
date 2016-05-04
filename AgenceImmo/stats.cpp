@@ -52,10 +52,9 @@ void Stats::calcul()
     for (int i = 0; i < mw->list_annonces->length(); i++)
     {
         Annonce a = mw->list_annonces->at(i);
-        if (a.dateModificationEtat >= datedebut && a.dateModificationEtat <= datefin) {
-            for (int j = 0; j < listeType.length();i++) {
+        if (a.dateCreation >= datedebut && a.dateCreation <= datefin) {
+            for (int j = 0; j < listeType.length();j++) {
                 if (a.type == listeType.value(j)) {
-
                     if (a.etat == "Vente") en_vente++;
                     else if (a.etat == "Location") en_location++;
                     else if (a.etat == "Vendu") vendu++;
