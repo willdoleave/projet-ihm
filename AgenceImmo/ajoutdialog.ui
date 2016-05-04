@@ -382,6 +382,18 @@
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
             <widget class="QLabel" name="image1">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>150</height>
+              </size>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -408,12 +420,15 @@
             <widget class="QPushButton" name="upload_image1">
              <property name="maximumSize">
               <size>
-               <width>80</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
-              <string>Upload</string>
+              <string>Upload contractuelle</string>
              </property>
             </widget>
            </item>
