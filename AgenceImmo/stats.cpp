@@ -11,6 +11,8 @@ Stats::Stats(QWidget *parent) :
     ui(new Ui::Stats)
 {
     ui->setupUi(this);
+    this->calcul();
+    this->dessinerGraphique();
 }
 
 Stats::~Stats()
@@ -27,29 +29,40 @@ void Stats::calcul()
     QDate datedebut = ui->datedebut->date();
     QDate datefin = ui->datefin->date();
 
-    if(ui->chkAppt->checkState() == 2) {
+    if (ui->chkTous->checkState() == 2) {
         listeType.append((ui->chkAppt->text()));
-    }
-    if(ui->chkAutre->checkState() == 2) {
         listeType.append((ui->chkAutre->text()));
-    }
-    if(ui->chkBureau->checkState() == 2) {
         listeType.append((ui->chkBureau->text()));
-    }
-    if(ui->chkChateau->checkState() == 2) {
         listeType.append((ui->chkChateau->text()));
-    }
-    if(ui->chkFerme->checkState() == 2) {
         listeType.append((ui->chkFerme->text()));
-    }
-    if(ui->chkMaison->checkState() == 2) {
         listeType.append((ui->chkMaison->text()));
-    }
-    if(ui->chkTerrain->checkState() == 2) {
         listeType.append((ui->chkTerrain->text()));
-    }
-    if(ui->chkCommerce->checkState() == 2) {
         listeType.append((ui->chkCommerce->text()));
+    } else {
+        if(ui->chkAppt->checkState() == 2) {
+            listeType.append((ui->chkAppt->text()));
+        }
+        if(ui->chkAutre->checkState() == 2) {
+            listeType.append((ui->chkAutre->text()));
+        }
+        if(ui->chkBureau->checkState() == 2) {
+            listeType.append((ui->chkBureau->text()));
+        }
+        if(ui->chkChateau->checkState() == 2) {
+            listeType.append((ui->chkChateau->text()));
+        }
+        if(ui->chkFerme->checkState() == 2) {
+            listeType.append((ui->chkFerme->text()));
+        }
+        if(ui->chkMaison->checkState() == 2) {
+            listeType.append((ui->chkMaison->text()));
+        }
+        if(ui->chkTerrain->checkState() == 2) {
+            listeType.append((ui->chkTerrain->text()));
+        }
+        if(ui->chkCommerce->checkState() == 2) {
+            listeType.append((ui->chkCommerce->text()));
+        }
     }
 
     for (int i = 0; i < mw->list_annonces->length(); i++)
@@ -179,3 +192,93 @@ void Stats::dessinerGraphique()
     ui->customPlot->replot();
 }
 
+
+void Stats::on_chkMaison_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkAppt_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkChateau_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkCommerce_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkBureau_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkTerrain_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkFerme_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkAutre_clicked()
+{
+    if (ui->chkTous->isChecked())
+        ui->chkTous->setChecked(false);
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_datefin_dateChanged(const QDate &date)
+{
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_datedebut_dateChanged(const QDate &date)
+{
+    this->calcul();
+    this->dessinerGraphique();
+}
+
+void Stats::on_chkTous_clicked()
+{
+    if (ui->chkTous->isChecked()) {
+        ui->chkAppt->setChecked(false);
+        ui->chkAutre->setChecked(false);
+        ui->chkBureau->setChecked(false);
+        ui->chkChateau->setChecked(false);
+        ui->chkCommerce->setChecked(false);
+        ui->chkFerme->setChecked(false);
+        ui->chkMaison->setChecked(false);
+        ui->chkTerrain->setChecked(false);
+    }
+}

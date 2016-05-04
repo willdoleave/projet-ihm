@@ -93,7 +93,7 @@
     <rect>
      <x>50</x>
      <y>140</y>
-     <width>411</width>
+     <width>414</width>
      <height>110</height>
     </rect>
    </property>
@@ -113,59 +113,69 @@
     </item>
     <item>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="chkMaison">
-        <property name="text">
-         <string>Maison</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QCheckBox" name="chkTerrain">
-        <property name="text">
-         <string>Terrain</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="1">
-       <widget class="QCheckBox" name="chkFerme">
-        <property name="text">
-         <string>Ferme</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QCheckBox" name="chkBureau">
-        <property name="text">
-         <string>Bureau</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
        <widget class="QCheckBox" name="chkChateau">
         <property name="text">
          <string>Château</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="chkTerrain">
+        <property name="text">
+         <string>Terrain</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
        <widget class="QCheckBox" name="chkAppt">
         <property name="text">
          <string>Appartement</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="3" column="2">
+       <widget class="QCheckBox" name="chkAutre">
+        <property name="text">
+         <string>Autre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="chkBureau">
+        <property name="text">
+         <string>Bureau</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
        <widget class="QCheckBox" name="chkCommerce">
         <property name="text">
          <string>Commerce</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QCheckBox" name="chkAutre">
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="chkMaison">
         <property name="text">
-         <string>Autre</string>
+         <string>Maison</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="chkFerme">
+        <property name="text">
+         <string>Ferme</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" rowspan="4">
+       <widget class="QCheckBox" name="chkTous">
+        <property name="text">
+         <string>tous</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
