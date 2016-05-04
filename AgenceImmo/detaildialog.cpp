@@ -3,12 +3,14 @@
 #include "mainwindow.h"
 #include "xml_dom.h"
 #include <QListWidget>
+#include <QMessageBox>
 
 detaildialog::detaildialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::detaildialog)
 {
     ui->setupUi(this);
+    ui->listWidget->clear();
 }
 
 detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
@@ -21,11 +23,11 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
 
     QString adresse, superficie, id_etat, parution_prix, pieces, prix, nom_prenom;
     adresse = a.adresse.toUtf8()+", "+a.codePostal.toUtf8()+", "+a.ville;
-    superficie = a.superficie.toUtf8()+" m²";
+    superficie = a.superficie.toUtf8();
     id_etat = "id: "+a.id.toUtf8()+" - En "+a.etat.toUtf8();
-    parution_prix = "Parution: "+a.dateCreation.toString("dd/MM/yyyy")+" - Prix: "+a.prix.toUtf8()+"€";
+    parution_prix = "Parution: "+a.dateCreation.toString("dd/MM/yyyy")+" - Prix: "+a.prix.toUtf8();
     pieces = a.nbPiece+ " pièces";
-    prix = a.prix+"€";
+    prix = a.prix;
     nom_prenom = a.nom+" "+a.prenom;
 
     ui->titre_global->setText(a.titre);
@@ -63,6 +65,7 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
     ui->listWidget->addItem(list_item);
 
     //QMessageBox::information(this, "Information", QString::number(a.photos.length()) );
+
     for (int i = 0; i < a.photos.length(); i++) {
         list_item = new QListWidgetItem(0,0);
 
@@ -117,7 +120,6 @@ void detaildialog::on_bouton_vendre_clicked()
 {
     // Vendre un bien (ou le louer);
     qDebug() << ui->bouton_vendre->text();
-    MainWindow *mw = (MainWindow*)this->parent();
 
 }
 

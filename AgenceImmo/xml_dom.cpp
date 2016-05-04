@@ -110,12 +110,14 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
     open();
     QDomElement dom_element = this->dom.documentElement();
     QDomNode noeud = dom_element.firstChild();
-    Annonce a;
+
     while(!noeud.isNull())
     {
 
         QDomElement e = noeud.toElement();
         if(!dom_element.isNull()) {
+            Annonce a;
+
             a.id = e.attribute("id");
             a.etat = e.attribute("etat");
             a.type = e.attribute("type");
@@ -149,6 +151,9 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.dateCreation = QDate::fromString(e.attribute("dateCreation"),"dd/MM/yyyy");
             a.dateModificationEtat = QDate::fromString(e.attribute("dateModificationEtat"),"dd/MM/yyyy");
             list_annonces->append(a);
+
+            a.photos.clear();
+
         }
         noeud = noeud.nextSibling();
     }
