@@ -41,9 +41,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-54</y>
         <width>664</width>
-        <height>743</height>
+        <height>800</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -393,13 +393,6 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QListWidget" name="listWidget">
-             <property name="flow">
-              <enum>QListView::LeftToRight</enum>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="2">
             <widget class="QPushButton" name="upload_image2">
              <property name="text">
@@ -421,6 +414,19 @@
              </property>
              <property name="text">
               <string>Upload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QListWidget" name="listWidget">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>135</height>
+              </size>
+             </property>
+             <property name="flow">
+              <enum>QListView::LeftToRight</enum>
              </property>
             </widget>
            </item>
