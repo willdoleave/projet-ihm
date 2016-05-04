@@ -268,7 +268,15 @@ void MainWindow::on_actionModifier_triggered()
 
 }
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_actionStatistiques_triggered()
+{
+    Stats *s = new Stats(this);
+    s->setWindowTitle("Statistiques");
+    s->exec();
+}
+
+void MainWindow::on_tri_valeur_currentIndexChanged(int index)
 {
     if (ui->tri_valeur->currentIndex() > 0) {
         trier *tri = new trier();
@@ -277,11 +285,4 @@ void MainWindow::on_pushButton_clicked()
     } else {
         remplirListeWidget();
     }
-}
-
-void MainWindow::on_actionStatistiques_triggered()
-{
-    Stats *s = new Stats(this);
-    s->setWindowTitle("Statistiques");
-    s->exec();
 }

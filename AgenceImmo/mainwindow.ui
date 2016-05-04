@@ -41,7 +41,7 @@
      <rect>
       <x>20</x>
       <y>0</y>
-      <width>314</width>
+      <width>330</width>
       <height>61</height>
      </rect>
     </property>
@@ -86,19 +86,6 @@
          <string>Type</string>
         </property>
        </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="maximumSize">
-        <size>
-         <width>50</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>OK</string>
-       </property>
       </widget>
      </item>
     </layout>

@@ -47,11 +47,9 @@ private slots:
     void closeEvent(QCloseEvent *ev);
 
 
-
-
-    void on_pushButton_clicked();
-
     void on_actionStatistiques_triggered();
+
+    void on_tri_valeur_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;

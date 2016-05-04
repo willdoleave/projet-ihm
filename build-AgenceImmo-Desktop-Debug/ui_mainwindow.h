@@ -21,7 +21,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -50,7 +49,6 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QComboBox *tri_valeur;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuFichier;
     QMenu *menuAide;
@@ -141,7 +139,7 @@ public:
         listWidget->setGeometry(QRect(20, 60, 621, 391));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(20, 0, 314, 61));
+        horizontalLayoutWidget->setGeometry(QRect(20, 0, 330, 61));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -160,12 +158,6 @@ public:
         tri_valeur->setObjectName(QStringLiteral("tri_valeur"));
 
         horizontalLayout->addWidget(tri_valeur);
-
-        pushButton = new QPushButton(horizontalLayoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setMaximumSize(QSize(50, 16777215));
-
-        horizontalLayout->addWidget(pushButton);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -270,7 +262,6 @@ public:
          << QApplication::translate("MainWindow", "Nombre de pi\303\250ces", 0)
          << QApplication::translate("MainWindow", "Type", 0)
         );
-        pushButton->setText(QApplication::translate("MainWindow", "OK", 0));
         menuFichier->setTitle(QApplication::translate("MainWindow", "Fichier", 0));
         menuAide->setTitle(QApplication::translate("MainWindow", "Aide", 0));
         menuOutils->setTitle(QApplication::translate("MainWindow", "Outils", 0));
