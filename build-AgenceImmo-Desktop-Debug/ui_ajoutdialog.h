@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ajoutdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.2.1
+** Created by: Qt User Interface Compiler version 5.4.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -19,8 +19,8 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -71,28 +71,18 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_12;
     QGridLayout *gridLayout;
-    QHBoxLayout *horizontalLayout_2;
-    QRadioButton *contractuelle1;
-    QRadioButton *contractuelle2;
-    QRadioButton *contractuelle3;
-    QRadioButton *contractuelle4;
     QLabel *labelPhotos;
     QLineEdit *titre;
     QLabel *label_2;
-    QLabel *label_18;
     QLabel *titreLabel;
-    QLabel *labelDescription;
+    QTextEdit *description;
     QLabel *label_15;
+    QLabel *labelDescription;
     QGridLayout *gridLayout_2;
     QLabel *image1;
-    QPushButton *upload_image4;
-    QLabel *image3;
-    QLabel *image2;
-    QLabel *image4;
+    QListWidget *listWidget;
     QPushButton *upload_image2;
-    QPushButton *upload_image3;
     QPushButton *upload_image1;
-    QTextEdit *description;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_4;
     QLabel *label_3;
@@ -114,7 +104,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QStringLiteral("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, -52, 664, 741));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 664, 743));
         gridLayout_6 = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         label_17 = new QLabel(scrollAreaWidgetContents_2);
@@ -299,36 +289,6 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        contractuelle1 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle1->setObjectName(QStringLiteral("contractuelle1"));
-        contractuelle1->setStyleSheet(QStringLiteral("margin: 0 60"));
-        contractuelle1->setChecked(true);
-
-        horizontalLayout_2->addWidget(contractuelle1);
-
-        contractuelle2 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle2->setObjectName(QStringLiteral("contractuelle2"));
-        contractuelle2->setStyleSheet(QStringLiteral("margin:0 20"));
-
-        horizontalLayout_2->addWidget(contractuelle2);
-
-        contractuelle3 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle3->setObjectName(QStringLiteral("contractuelle3"));
-        contractuelle3->setStyleSheet(QStringLiteral("margin:0 24"));
-
-        horizontalLayout_2->addWidget(contractuelle3);
-
-        contractuelle4 = new QRadioButton(scrollAreaWidgetContents_2);
-        contractuelle4->setObjectName(QStringLiteral("contractuelle4"));
-        contractuelle4->setStyleSheet(QStringLiteral("margin: 0 30"));
-
-        horizontalLayout_2->addWidget(contractuelle4);
-
-
-        gridLayout->addLayout(horizontalLayout_2, 6, 1, 1, 1);
-
         labelPhotos = new QLabel(scrollAreaWidgetContents_2);
         labelPhotos->setObjectName(QStringLiteral("labelPhotos"));
 
@@ -345,25 +305,26 @@ public:
 
         gridLayout->addWidget(label_2, 1, 0, 1, 2);
 
-        label_18 = new QLabel(scrollAreaWidgetContents_2);
-        label_18->setObjectName(QStringLiteral("label_18"));
-
-        gridLayout->addWidget(label_18, 6, 0, 1, 1);
-
         titreLabel = new QLabel(scrollAreaWidgetContents_2);
         titreLabel->setObjectName(QStringLiteral("titreLabel"));
 
         gridLayout->addWidget(titreLabel, 2, 0, 1, 1);
 
-        labelDescription = new QLabel(scrollAreaWidgetContents_2);
-        labelDescription->setObjectName(QStringLiteral("labelDescription"));
+        description = new QTextEdit(scrollAreaWidgetContents_2);
+        description->setObjectName(QStringLiteral("description"));
+        description->setMaximumSize(QSize(16777215, 80));
 
-        gridLayout->addWidget(labelDescription, 3, 0, 1, 1);
+        gridLayout->addWidget(description, 3, 1, 1, 1);
 
         label_15 = new QLabel(scrollAreaWidgetContents_2);
         label_15->setObjectName(QStringLiteral("label_15"));
 
         gridLayout->addWidget(label_15, 4, 0, 1, 1);
+
+        labelDescription = new QLabel(scrollAreaWidgetContents_2);
+        labelDescription->setObjectName(QStringLiteral("labelDescription"));
+
+        gridLayout->addWidget(labelDescription, 3, 0, 1, 1);
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
@@ -374,59 +335,28 @@ public:
 
         gridLayout_2->addWidget(image1, 0, 0, 1, 1);
 
-        upload_image4 = new QPushButton(scrollAreaWidgetContents_2);
-        upload_image4->setObjectName(QStringLiteral("upload_image4"));
-        upload_image4->setMaximumSize(QSize(80, 16777215));
+        listWidget = new QListWidget(scrollAreaWidgetContents_2);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setFlow(QListView::LeftToRight);
 
-        gridLayout_2->addWidget(upload_image4, 1, 3, 1, 1);
-
-        image3 = new QLabel(scrollAreaWidgetContents_2);
-        image3->setObjectName(QStringLiteral("image3"));
-        image3->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-        image3->setAlignment(Qt::AlignCenter);
-
-        gridLayout_2->addWidget(image3, 0, 2, 1, 1);
-
-        image2 = new QLabel(scrollAreaWidgetContents_2);
-        image2->setObjectName(QStringLiteral("image2"));
-        image2->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-        image2->setAlignment(Qt::AlignCenter);
-
-        gridLayout_2->addWidget(image2, 0, 1, 1, 1);
-
-        image4 = new QLabel(scrollAreaWidgetContents_2);
-        image4->setObjectName(QStringLiteral("image4"));
-        image4->setPixmap(QPixmap(QString::fromUtf8(":/images/img/camera.png")));
-        image4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_2->addWidget(image4, 0, 3, 1, 1);
+        gridLayout_2->addWidget(listWidget, 0, 1, 1, 1);
 
         upload_image2 = new QPushButton(scrollAreaWidgetContents_2);
         upload_image2->setObjectName(QStringLiteral("upload_image2"));
-        upload_image2->setMaximumSize(QSize(80, 16777215));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/img/plus.png"), QSize(), QIcon::Normal, QIcon::Off);
+        upload_image2->setIcon(icon);
 
-        gridLayout_2->addWidget(upload_image2, 1, 1, 1, 1);
-
-        upload_image3 = new QPushButton(scrollAreaWidgetContents_2);
-        upload_image3->setObjectName(QStringLiteral("upload_image3"));
-        upload_image3->setMaximumSize(QSize(80, 16777215));
-
-        gridLayout_2->addWidget(upload_image3, 1, 2, 1, 1);
+        gridLayout_2->addWidget(upload_image2, 0, 2, 1, 1);
 
         upload_image1 = new QPushButton(scrollAreaWidgetContents_2);
         upload_image1->setObjectName(QStringLiteral("upload_image1"));
         upload_image1->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_2->addWidget(upload_image1, 1, 0, 1, 1);
+        gridLayout_2->addWidget(upload_image1, 2, 0, 1, 1);
 
 
         gridLayout->addLayout(gridLayout_2, 5, 1, 1, 1);
-
-        description = new QTextEdit(scrollAreaWidgetContents_2);
-        description->setObjectName(QStringLiteral("description"));
-        description->setMaximumSize(QSize(16777215, 80));
-
-        gridLayout->addWidget(description, 3, 1, 1, 1);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -443,7 +373,7 @@ public:
         horizontalLayout_3->addWidget(label_3);
 
 
-        gridLayout->addLayout(horizontalLayout_3, 7, 0, 1, 2);
+        gridLayout->addLayout(horizontalLayout_3, 6, 0, 1, 2);
 
         prix = new QSpinBox(scrollAreaWidgetContents_2);
         prix->setObjectName(QStringLiteral("prix"));
@@ -516,23 +446,13 @@ public:
         label_6->setText(QApplication::translate("ajoutDialog", "Ville*", 0));
         label_7->setText(QApplication::translate("ajoutDialog", "Code Postal", 0));
         label_12->setText(QApplication::translate("ajoutDialog", "Informations sur le bien", 0));
-        contractuelle1->setText(QString());
-        contractuelle2->setText(QString());
-        contractuelle3->setText(QString());
-        contractuelle4->setText(QString());
         labelPhotos->setText(QApplication::translate("ajoutDialog", "Photos", 0));
         label_2->setText(QApplication::translate("ajoutDialog", "Informations annonce", 0));
-        label_18->setText(QApplication::translate("ajoutDialog", "Contractuelle", 0));
         titreLabel->setText(QApplication::translate("ajoutDialog", "Titre de l'annonce*", 0));
-        labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
         label_15->setText(QApplication::translate("ajoutDialog", "Prix", 0));
+        labelDescription->setText(QApplication::translate("ajoutDialog", "Description", 0));
         image1->setText(QString());
-        upload_image4->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        image3->setText(QString());
-        image2->setText(QString());
-        image4->setText(QString());
-        upload_image2->setText(QApplication::translate("ajoutDialog", "Upload", 0));
-        upload_image3->setText(QApplication::translate("ajoutDialog", "Upload", 0));
+        upload_image2->setText(QString());
         upload_image1->setText(QApplication::translate("ajoutDialog", "Upload", 0));
         label_4->setText(QApplication::translate("ajoutDialog", "Adresse du bien", 0));
         label_3->setText(QApplication::translate("ajoutDialog", "Informations contact", 0));

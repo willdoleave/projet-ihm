@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,32 +20,33 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[17];
-    char stringdata[394];
+    char stringdata[393];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
-QT_MOC_LITERAL(0, 0, 10),
-QT_MOC_LITERAL(1, 11, 27),
-QT_MOC_LITERAL(2, 39, 0),
-QT_MOC_LITERAL(3, 40, 27),
-QT_MOC_LITERAL(4, 68, 26),
-QT_MOC_LITERAL(5, 95, 28),
-QT_MOC_LITERAL(6, 124, 38),
-QT_MOC_LITERAL(7, 163, 26),
-QT_MOC_LITERAL(8, 190, 35),
-QT_MOC_LITERAL(9, 226, 35),
-QT_MOC_LITERAL(10, 262, 31),
-QT_MOC_LITERAL(11, 294, 10),
-QT_MOC_LITERAL(12, 305, 12),
-QT_MOC_LITERAL(13, 318, 2),
-QT_MOC_LITERAL(14, 321, 31),
-QT_MOC_LITERAL(15, 353, 33),
-QT_MOC_LITERAL(16, 387, 5)
+QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
+QT_MOC_LITERAL(1, 11, 27), // "on_actionModifier_triggered"
+QT_MOC_LITERAL(2, 39, 0), // ""
+QT_MOC_LITERAL(3, 40, 27), // "on_actionImporter_triggered"
+QT_MOC_LITERAL(4, 68, 26), // "on_action_propos_triggered"
+QT_MOC_LITERAL(5, 95, 28), // "on_actionRecherche_triggered"
+QT_MOC_LITERAL(6, 124, 38), // "on_actionAjouter_une_annonce_..."
+QT_MOC_LITERAL(7, 163, 26), // "on_actionQuitter_triggered"
+QT_MOC_LITERAL(8, 190, 35), // "on_actionExaminer_annonce_tri..."
+QT_MOC_LITERAL(9, 226, 35), // "on_actionSupprimerAnnonce_tri..."
+QT_MOC_LITERAL(10, 262, 31), // "on_actionToutAfficher_triggered"
+QT_MOC_LITERAL(11, 294, 10), // "closeEvent"
+QT_MOC_LITERAL(12, 305, 12), // "QCloseEvent*"
+QT_MOC_LITERAL(13, 318, 2), // "ev"
+QT_MOC_LITERAL(14, 321, 31), // "on_actionStatistiques_triggered"
+QT_MOC_LITERAL(15, 353, 33), // "on_tri_valeur_currentIndexCha..."
+QT_MOC_LITERAL(16, 387, 5) // "index"
+
     },
     "MainWindow\0on_actionModifier_triggered\0"
     "\0on_actionImporter_triggered\0"
@@ -59,7 +60,7 @@ QT_MOC_LITERAL(16, 387, 5)
     "closeEvent\0QCloseEvent*\0ev\0"
     "on_actionStatistiques_triggered\0"
     "on_tri_valeur_currentIndexChanged\0"
-    "index\0"
+    "index"
 };
 #undef QT_MOC_LITERAL
 
@@ -77,18 +78,18 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x0a,
-       3,    0,   75,    2, 0x08,
-       4,    0,   76,    2, 0x08,
-       5,    0,   77,    2, 0x08,
-       6,    0,   78,    2, 0x08,
-       7,    0,   79,    2, 0x08,
-       8,    0,   80,    2, 0x08,
-       9,    0,   81,    2, 0x08,
-      10,    0,   82,    2, 0x08,
-      11,    1,   83,    2, 0x08,
-      14,    0,   86,    2, 0x08,
-      15,    1,   87,    2, 0x08,
+       1,    0,   74,    2, 0x0a /* Public */,
+       3,    0,   75,    2, 0x08 /* Private */,
+       4,    0,   76,    2, 0x08 /* Private */,
+       5,    0,   77,    2, 0x08 /* Private */,
+       6,    0,   78,    2, 0x08 /* Private */,
+       7,    0,   79,    2, 0x08 /* Private */,
+       8,    0,   80,    2, 0x08 /* Private */,
+       9,    0,   81,    2, 0x08 /* Private */,
+      10,    0,   82,    2, 0x08 /* Private */,
+      11,    1,   83,    2, 0x08 /* Private */,
+      14,    0,   86,    2, 0x08 /* Private */,
+      15,    1,   87,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -131,7 +132,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
 
 const QMetaObject MainWindow::staticMetaObject = {
     { &QMainWindow::staticMetaObject, qt_meta_stringdata_MainWindow.data,
-      qt_meta_data_MainWindow,  qt_static_metacall, 0, 0}
+      qt_meta_data_MainWindow,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -142,7 +143,7 @@ const QMetaObject *MainWindow::metaObject() const
 
 void *MainWindow::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata))
         return static_cast<void*>(const_cast< MainWindow*>(this));
     return QMainWindow::qt_metacast(_clname);
