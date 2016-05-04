@@ -12,6 +12,7 @@
 #include "trier.h"
 #include "recherchedialog.h"
 #include "stats.h"
+#include "aide.h"
 
 using namespace std;
 
@@ -284,4 +285,10 @@ void MainWindow::on_tri_valeur_currentIndexChanged(int index)
     } else {
         remplirListeWidget();
     }
+}
+
+void MainWindow::on_actionUtilisation_triggered()
+{
+    aide *a = new aide();
+    a->exec();
 }

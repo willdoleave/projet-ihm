@@ -51,6 +51,8 @@ private slots:
 
     void on_tri_valeur_currentIndexChanged(int index);
 
+    void on_actionUtilisation_triggered();
+
 private:
     Ui::MainWindow *ui;
 
