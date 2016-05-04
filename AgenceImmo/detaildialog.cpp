@@ -53,35 +53,24 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
     if (a.photoContractuelle.size()>0)
         ui->photo_contractuelle->setPixmap(QPixmap(a.photoContractuelle).scaled(QSize(400,400)));
 
-    if (a.photo1.size()>0 && a.photo1.toUtf8() != a.photoContractuelle.toUtf8())
-        ui->photo1->setPixmap(QPixmap(a.photo1).scaled(QSize(150,150)));
-    else
-        ui->photo1->setVisible(false);
+    ui->listWidget->clear();
+    ui->listWidget->setIconSize(QSize(128,128));
 
-    if (a.photo2.size()>0 && a.photo2.toUtf8() != a.photoContractuelle.toUtf8())
-        ui->photo2->setPixmap(QPixmap(a.photo2).scaled(QSize(150,150)));
-    else
-        ui->photo2->setVisible(false);
+    QListWidgetItem *list_item = new QListWidgetItem(0,0);
+    list_item->setIcon(QPixmap(a.photoContractuelle).scaled(QSize(128,128)));
 
-    if (a.photo3.size()>0 && a.photo3.toUtf8() != a.photoContractuelle.toUtf8())
-        ui->photo3->setPixmap(QPixmap(a.photo3).scaled(QSize(150,150)));
-    else
-        ui->photo3->setVisible(false);
+    list_item->setStatusTip(QString(a.photoContractuelle));
+    ui->listWidget->addItem(list_item);
 
-    if (a.photo4.size()>0 && a.photo4.toUtf8() != a.photoContractuelle.toUtf8())
-         ui->photo4->setPixmap(QPixmap(a.photo4).scaled(QSize(150,150)));
-    else
-        ui->photo4->setVisible(false);
+    //QMessageBox::information(this, "Information", QString::number(a.photos.length()) );
+    for (int i = 0; i < a.photos.length(); i++) {
+        list_item = new QListWidgetItem(0,0);
 
-    if (a.photoContractuelle.size()==0) {
-        ui->photo_contractuelle->setVisible(false);
+        list_item->setIcon(QPixmap(a.photos.value(i)).scaled(QSize(128,128)));
+
+        list_item->setStatusTip(QString(a.photos.value(i)));
+        ui->listWidget->addItem(list_item);
     }
-
-  //  ui->photo_contractuelle->setVisible(false);
-  //  ui->photo1->setVisible(false);
-  //  ui->photo2->setVisible(false);
-  //  ui->photo3->setVisible(false);
-
 
 
     QString titre_description;
@@ -103,7 +92,7 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
 
     ui->titre_description->setText(titre_description);
 
-
+    QObject::connect(ui->listWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(on_actionSwitch_Image_triggered()));
 }
 
 detaildialog::~detaildialog()
@@ -130,4 +119,11 @@ void detaildialog::on_bouton_vendre_clicked()
     qDebug() << ui->bouton_vendre->text();
     MainWindow *mw = (MainWindow*)this->parent();
 
+}
+
+void detaildialog::on_actionSwitch_Image_triggered()
+{
+    QListWidgetItem *wi = ui->listWidget->selectedItems().first();
+
+    ui->photo_contractuelle->setPixmap(QPixmap(wi->statusTip()).scaled(QSize(400,400)));
 }

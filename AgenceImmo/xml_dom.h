@@ -31,6 +31,7 @@ public:
     QDate dateCreation;
     // Nouvelles variables
     QDate dateModificationEtat;
+    QList<QString> photos;
 private:
 
 };

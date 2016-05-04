@@ -27,6 +27,8 @@ private slots:
 
     void on_bouton_vendre_clicked();
 
+    void on_actionSwitch_Image_triggered();
+
 private:
     Ui::detaildialog *ui;
 };

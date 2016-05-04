@@ -122,10 +122,19 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.prix = e.attribute("prix");
             a.titre = e.attribute("titre");
             a.description = e.attribute("description");
-            a.photo1 = e.attribute("photo1");
-            a.photo2 = e.attribute("photo2");
-            a.photo3 = e.attribute("photo3");
-            a.photo4 = e.attribute("photo4");
+
+            bool fini = false;
+            int i = 0;
+            while (!fini) {
+                if (e.hasAttribute("photo" + QString::number(i+1))) {
+                    a.photos.append(e.attribute("photo" + QString::number(i+1)));
+                    i++;
+                } else {
+                    fini = true;
+                }
+
+            }
+
             a.adresse = e.attribute("adresse");
             a.ville = e.attribute("ville");
             a.codePostal = e.attribute("codePostal");
@@ -167,10 +176,11 @@ bool xml_dom::save(QList<Annonce> *list_annonces)
         docElem.setAttribute("prix", a.prix);
         docElem.setAttribute("titre", a.titre);
         docElem.setAttribute("description",a.description);
-        docElem.setAttribute("photo1", a.photo1);
-        docElem.setAttribute("photo2", a.photo2);
-        docElem.setAttribute("photo3", a.photo3);
-        docElem.setAttribute("photo4", a.photo4);
+
+        for (int i = 0; i < a.photos.length(); i++) {
+            docElem.setAttribute("photo" + QString::number(i+1), a.photos.value(i));
+        }
+
         docElem.setAttribute("adresse", a.adresse);
         docElem.setAttribute("ville", a.ville);
         docElem.setAttribute("codePostal",a.codePostal);

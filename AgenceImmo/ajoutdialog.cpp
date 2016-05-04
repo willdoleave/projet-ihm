@@ -44,17 +44,6 @@ ajoutDialog::ajoutDialog(QWidget *parent, Annonce *a) :
     //ui->contractuelle4->setChecked(true);
 
 
-    if (a->photoContractuelle == a->photo1)
-        ui->contractuelle1->setChecked(true);
-    else if (a->photoContractuelle == a->photo2)
-        ui->contractuelle2->setChecked(true);
-    else if (a->photoContractuelle == a->photo3)
-        ui->contractuelle3->setChecked(true);
-    else if (a->photoContractuelle == a->photo4)
-        ui->contractuelle4->setChecked(true);
-    else ui->contractuelle1->setChecked(true);
-
-
     if (a->etat.toUtf8() == "Vente")
         ui->etat->setCurrentIndex(0);
     else if (a->etat.toUtf8() == "Location")
@@ -83,14 +72,6 @@ ajoutDialog::ajoutDialog(QWidget *parent, Annonce *a) :
 
     if(a->photo1.size()>0)
         ui->image1->setPixmap(QPixmap(a->photo1).scaled(QSize(128,128)));
-    if(a->photo2.size()>0)
-        ui->image2->setPixmap(QPixmap(a->photo2).scaled(QSize(128,128)));
-    if(a->photo3.size()>0)
-        ui->image3->setPixmap(QPixmap(a->photo3).scaled(QSize(128,128)));
-    if(a->photo4.size()>0)
-        ui->image4->setPixmap(QPixmap(a->photo4).scaled(QSize(128,128)));
-    //if (filephoto1.size()>0)
-    //    ui->image1->setPixmap(QPixmap(filephoto1).scaled(QSize(48,48)));
 
 }
 
@@ -114,14 +95,8 @@ void ajoutDialog::on_pushButton_2_clicked()
     ui->email->setText("");
     ui->superficie->setValue(0);
     ui->nombrePieces->setValue(0);
-    this->photo1 = QString("");
-    this->photo2 = QString("");
-    this->photo3 = QString("");
-    this->photo4 = QString("");
-    this->filephoto1 = QString("");
-    this->filephoto2 = QString("");
-    this->filephoto3 = QString("");
-    this->filephoto4 = QString("");
+    filePhoto.clear();
+    cheminPhoto.clear();
     ui->image1->setPixmap(QPixmap(":/images/img/camera.png"));
     close();
 }
@@ -129,16 +104,10 @@ void ajoutDialog::on_pushButton_2_clicked()
 void ajoutDialog::on_pushButton_clicked()
 {
     QString id = QDateTime::currentDateTime().toString("yyMMddHHmmss");
-    if (filephoto1.size()>=1) photo1 = QString("../upload/"+id+"photo1"+"."+QFileInfo(filephoto1).suffix()); else photo1 = QString("");
-    if (filephoto2.size()>=1) photo2 = QString("../upload/"+id+"photo2"+"."+QFileInfo(filephoto2).suffix()); else photo2 = QString("");
-    if (filephoto3.size()>=1) photo3 = QString("../upload/"+id+"photo3"+"."+QFileInfo(filephoto3).suffix()); else photo3 = QString("");
-    if (filephoto4.size()>=1) photo4 = QString("../upload/"+id+"photo4"+"."+QFileInfo(filephoto4).suffix()); else photo4 = QString("");
-    QString contractuelle;
-    if (ui->contractuelle1->isChecked()) contractuelle = photo1;
-    else if (ui->contractuelle2->isChecked()) contractuelle = photo2;
-    else if (ui->contractuelle3->isChecked()) contractuelle = photo3;
-    else if (ui->contractuelle1->isChecked()) contractuelle = photo4;
-    else contractuelle = QString("");
+    if (filephoto1.size()>=1) photo1 = QString("../upload/"+id+"photoContrac"+"."+QFileInfo(filephoto1).suffix()); else photo1 = QString("");
+    for (int i = 0; i< filePhoto.length(); i++) {
+        cheminPhoto.append(QString("../upload/"+id+"photo"+ QString::number(i+1) +"."+QFileInfo(filePhoto.value(i)).suffix()));
+    }
 
     MainWindow *mw = (MainWindow*)this->parent();
     Annonce a;
@@ -148,10 +117,7 @@ void ajoutDialog::on_pushButton_clicked()
     a.prix = ui->prix->text();
     a.titre = ui->titre->text();
     a.description = ui->description->toPlainText();
-    a.photo1 = photo1;
-    a.photo2 = photo2;
-    a.photo3 = photo3;
-    a.photo4 = photo4;
+    a.photos = cheminPhoto;
     a.adresse = ui->adresse->text();
     a.ville = ui->ville->text();
     a.codePostal = ui->codePostal->text();
@@ -161,7 +127,7 @@ void ajoutDialog::on_pushButton_clicked()
     a.mail = ui->email->text();
     a.superficie = ui->superficie->text();
     a.nbPiece = ui->nombrePieces->text();
-    a.photoContractuelle = contractuelle;
+    a.photoContractuelle = photo1;
     a.dateCreation = QDate::currentDate();
 
 
@@ -185,19 +151,14 @@ void ajoutDialog::on_pushButton_clicked()
             ui->email->setText("");
             ui->superficie->setValue(0);
             ui->nombrePieces->setValue(0);
-            this->photo1 = QString("");
-            this->photo2 = QString("");
-            this->photo3 = QString("");
-            this->photo4 = QString("");
 
-            if (filephoto1.size()>1) QFile::copy(filephoto1, QString("../upload/"+id+"photo1"+"."+QFileInfo(filephoto1).suffix()));
-            if (filephoto2.size()>1) QFile::copy(filephoto2, QString("../upload/"+id+"photo2"+"."+QFileInfo(filephoto2).suffix()));
-            if (filephoto3.size()>1) QFile::copy(filephoto3, QString("../upload/"+id+"photo3"+"."+QFileInfo(filephoto3).suffix()));
-            if (filephoto4.size()>1) QFile::copy(filephoto4, QString("../upload/"+id+"photo4"+"."+QFileInfo(filephoto4).suffix()));
-            this->filephoto1 = QString("");
-            this->filephoto2 = QString("");
-            this->filephoto3 = QString("");
-            this->filephoto4 = QString("");
+            QFile::copy(filephoto1, photo1);
+            for (int i = 0; i < filePhoto.length(); i++) {
+                QFile::copy(filePhoto.value(i), cheminPhoto.value(i));
+            }
+            filePhoto.clear();
+            cheminPhoto.clear();
+
             ui->image1->setPixmap(QPixmap(":/img/camera.png"));
             close();
 
@@ -236,25 +197,14 @@ void ajoutDialog::on_upload_image1_clicked()
 
 void ajoutDialog::on_upload_image2_clicked()
 {
-    filephoto2 = QFileDialog::getOpenFileName(this,
-    tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
-    if (filephoto2.size()>0)
-        ui->image2->setPixmap(QPixmap(filephoto2).scaled(QSize(120,120)));
-}
+    filePhoto.append(QFileDialog::getOpenFileName(this,
+    tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)")));
 
-void ajoutDialog::on_upload_image3_clicked()
-{
-    filephoto3 = QFileDialog::getOpenFileName(this,
-    tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
-    if (filephoto3.size()>0)
-        ui->image3->setPixmap(QPixmap(filephoto3).scaled(QSize(120,120)));
-}
+    ui->listWidget->setIconSize(QSize(128,128));
 
+    QListWidgetItem *list_item = new QListWidgetItem(0,0);
+    list_item->setIcon(QPixmap(filePhoto.last()).scaled(QSize(128,128)));
 
-void ajoutDialog::on_upload_image4_clicked()
-{
-    filephoto4 = QFileDialog::getOpenFileName(this,
-    tr("Open Image"), "..", tr("Image Files (*.png *.jpg *.bmp)"));
-    if (filephoto4.size()>0)
-        ui->image4->setPixmap(QPixmap(filephoto4).scaled(QSize(120,120)));
+    list_item->setStatusTip(QString(filePhoto.last()));
+    ui->listWidget->addItem(list_item);
 }

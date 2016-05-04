@@ -27,8 +27,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>868</width>
-           <height>718</height>
+           <width>852</width>
+           <height>731</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
@@ -428,40 +428,18 @@
                </widget>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="photos_supplementaires">
-                <item>
-                 <widget class="QLabel" name="photo1">
-                  <property name="text">
-                   <string>photo1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="photo2">
-                  <property name="text">
-                   <string>photo2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="photo3">
-                  <property name="text">
-                   <string>photo3</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="photo4">
-                  <property name="text">
-                   <string>photo4</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <layout class="QHBoxLayout" name="photos_supplementaires"/>
               </item>
              </layout>
             </item>
            </layout>
+          </item>
+          <item row="2" column="0">
+           <widget class="QListWidget" name="listWidget">
+            <property name="flow">
+             <enum>QListView::LeftToRight</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -508,6 +486,11 @@
     </widget>
    </item>
   </layout>
+  <action name="actionSwitch_Image">
+   <property name="text">
+    <string>Switch_Image</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
