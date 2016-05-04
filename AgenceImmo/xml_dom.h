@@ -29,7 +29,7 @@ public:
     QString nbPiece;
     QString photoContractuelle;
     QDate dateCreation;
-    QDate dateModification;
+    QDate dateModificationEtat;
 private:
 
 };
@@ -48,7 +48,6 @@ public:
                     std::string mail, std::string superficie, std::string nbPiece,
                     std::string contractuelle);
     bool listeElem(QList<Annonce> *list_annonces);
-    bool reecrireFichier(QList<Annonce> *list_annonces);
     bool open();
     bool save(QList<Annonce> *list_annonces);
 

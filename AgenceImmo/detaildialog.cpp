@@ -48,7 +48,7 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
 
     if (a.etat.toUtf8() == "Location")
         ui->bouton_vendre->setText("Louer");
-    else
+    else if (a.etat.toUtf8() == "Vente")
         ui->bouton_vendre->setText("Vendre");
 
     if (a.photoContractuelle.size()>0)
@@ -129,4 +129,6 @@ void detaildialog::on_bouton_vendre_clicked()
 {
     // Vendre un bien (ou le louer);
     qDebug() << ui->bouton_vendre->text();
+    MainWindow *mw = (MainWindow*)this->parent();
+
 }

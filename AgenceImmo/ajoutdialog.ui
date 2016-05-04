@@ -41,7 +41,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-52</y>
         <width>664</width>
         <height>741</height>
        </rect>
@@ -118,6 +118,16 @@
              <item>
               <property name="text">
                <string>Location</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Vendu</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Loué</string>
               </property>
              </item>
             </widget>

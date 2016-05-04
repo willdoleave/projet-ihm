@@ -55,10 +55,15 @@ ajoutDialog::ajoutDialog(QWidget *parent, Annonce *a) :
     else ui->contractuelle1->setChecked(true);
 
 
-    if (a->etat.toUtf8() == "Location")
-        ui->etat->setCurrentIndex(1);
-    else
+    if (a->etat.toUtf8() == "Vente")
         ui->etat->setCurrentIndex(0);
+    else if (a->etat.toUtf8() == "Location")
+        ui->etat->setCurrentIndex(1);
+    else if (a->etat.toUtf8() == "Vendu")
+        ui->etat->setCurrentIndex(3);
+    else if (a->etat.toUtf8() == "Loué")
+        ui->etat->setCurrentIndex(4);
+
 
     if (a->type.toUtf8() == "Maison")
         ui->type->setCurrentIndex(0);

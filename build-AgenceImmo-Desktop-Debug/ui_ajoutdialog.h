@@ -114,7 +114,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QStringLiteral("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 664, 741));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, -52, 664, 741));
         gridLayout_6 = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         label_17 = new QLabel(scrollAreaWidgetContents_2);
@@ -492,6 +492,8 @@ public:
         etat->insertItems(0, QStringList()
          << QApplication::translate("ajoutDialog", "Vente", 0)
          << QApplication::translate("ajoutDialog", "Location", 0)
+         << QApplication::translate("ajoutDialog", "Vendu", 0)
+         << QApplication::translate("ajoutDialog", "Lou\303\251", 0)
         );
         type->clear();
         type->insertItems(0, QStringList()

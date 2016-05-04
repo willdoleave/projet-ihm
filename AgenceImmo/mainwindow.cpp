@@ -11,6 +11,7 @@
 #include "detaildialog.h"
 #include "trier.h"
 #include "recherchedialog.h"
+#include "stats.h"
 
 using namespace std;
 
@@ -25,6 +26,12 @@ MainWindow::MainWindow(QWidget *parent) :
     Dom->listeElem(list_annonces);
     remplirListeWidget();
     QObject::connect(ui->listWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(on_actionExaminer_annonce_triggered()));
+
+
+       // Stats *s = new Stats(this);
+       // s->calcul();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -263,22 +270,18 @@ void MainWindow::on_actionModifier_triggered()
 
 void MainWindow::on_pushButton_clicked()
 {
-    /*
-    trier tri = trier();
-    QList<Annonce> listeTri = tri.triFusionPrix(*list_annonces, TYPE);
-    //afficher le resultat
-    for (int i = 0; i < listeTri.length(); i++) {
-        Annonce a = listeTri.value(i);
-
-        QMessageBox::information(this, "Information", "id = " + a.id + ", prix = " + a.prix + ", superficie = " + a.superficie + ", nbpiece = " + a.nbPiece + ", type = " + a.type);
-        //QMessageBox::information(this, "Information", "id = " + listeTri.length());
-    }
-    */
-    /*
     if (ui->tri_valeur->currentIndex() > 0) {
-        ui->tri_valeur->currentIndex();
-
+        trier *tri = new trier();
+        QList<Annonce> listeTri = tri->triFusionPrix(*list_annonces, ui->tri_valeur->currentIndex()-1);
+        remplirListeWidget(&listeTri);
     } else {
         remplirListeWidget();
-    }*/
+    }
+}
+
+void MainWindow::on_actionStatistiques_triggered()
+{
+    Stats *s = new Stats(this);
+    s->setWindowTitle("Statistiques");
+    s->exec();
 }

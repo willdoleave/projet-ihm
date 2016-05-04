@@ -105,37 +105,6 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
 }
 
 
-bool xml_dom::reecrireFichier(QList<Annonce> *list_annonces)
-{
-    QFile::resize(fileName,0);
-
-    //<?xml version='1.0' encoding='ISO-8859-1'?>
-    QFile file(fileName);
-    if (file.open(QIODevice::ReadWrite)) {
-        QTextStream stream(&file);
-        stream << "<?xml version='1.0' encoding=\"UTF-8\"?>" << endl;
-        stream << "<data>" << endl;
-        stream << "</data>" << endl;
-
-    }
-
-    file.close();
-
-    for (int i = 0; i < list_annonces->count(); i++) {
-        Annonce a = list_annonces->at(i);
-        this->ajoutElem(a.id.toStdString(),a.etat.toStdString(),a.type.toStdString(),
-                        a.prix.toStdString(), a.titre.toStdString(), a.description.toStdString(),
-                        a.photo1.toStdString(), a.photo2.toStdString(), a.photo3.toStdString(), a.photo4.toStdString(),
-                        a.adresse.toStdString(), a.ville.toStdString(), a.codePostal.toStdString(), a.nom.toStdString(),
-                        a.prenom.toStdString(), a.telephone.toStdString(), a.mail.toStdString(), a.superficie.toStdString(),
-                        a.nbPiece.toStdString(), a.photoContractuelle.toStdString()
-                        );
-    }
-
-
-    return true;
-}
-
 bool xml_dom::listeElem(QList<Annonce> *list_annonces)
 {
     open();
@@ -169,6 +138,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.photoContractuelle = e.attribute("photoContractuelle");
             //a.dateCreation = e.attribute("dateCreation").toStdString().c_str();
             a.dateCreation = QDate::fromString(e.attribute("dateCreation"),"dd/MM/yyyy");
+            a.dateModificationEtat = QDate::fromString(e.attribute("dateModificationEtat"),"dd/MM/yyyy");
             list_annonces->append(a);
         }
         noeud = noeud.nextSibling();
@@ -213,7 +183,7 @@ bool xml_dom::save(QList<Annonce> *list_annonces)
         docElem.setAttribute("photoContractuelle", a.photoContractuelle);
         //docElem.setAttribute("dateCreation",a.dateCreation.toStdString().c_str());
         docElem.setAttribute("dateCreation", a.dateCreation.toString("dd/MM/yyyy"));
-
+        docElem.setAttribute("dateModificationEtat", a.dateModificationEtat.toString("dd/MM/yyyy"));
         root.appendChild(docElem);
     }
 

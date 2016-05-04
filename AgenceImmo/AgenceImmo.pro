@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     xml_dom.cpp \
     detaildialog.cpp \
     modifierdialog.cpp \
-    trier.cpp
+    trier.cpp \
+    stats.cpp
 
 HEADERS  += mainwindow.h \
     recherchedialog.h \
@@ -28,13 +29,15 @@ HEADERS  += mainwindow.h \
     xml_dom.h \
     detaildialog.h \
     modifierdialog.h \
-    trier.h
+    trier.h \
+    stats.h
 
 FORMS    += mainwindow.ui \
     recherchedialog.ui \
     ajoutdialog.ui \
     detaildialog.ui \
-    modifierdialog.ui
+    modifierdialog.ui \
+    stats.ui
 
 RESOURCES += \
     resources.qrc
