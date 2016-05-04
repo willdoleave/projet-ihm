@@ -46,6 +46,11 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
     ui->email->setText(a.mail.toUtf8());
     ui->telephone->setText(a.telephone.toUtf8());
 
+    if (a.etat.toUtf8() == "Location")
+        ui->bouton_vendre->setText("Louer");
+    else
+        ui->bouton_vendre->setText("Vendre");
+
     if (a.photoContractuelle.size()>0)
         ui->photo_contractuelle->setPixmap(QPixmap(a.photoContractuelle).scaled(QSize(400,400)));
 
@@ -68,6 +73,10 @@ detaildialog::detaildialog(QWidget *parent, Annonce *aa) :
          ui->photo4->setPixmap(QPixmap(a.photo4).scaled(QSize(150,150)));
     else
         ui->photo4->setVisible(false);
+
+    if (a.photoContractuelle.size()==0) {
+        ui->photo_contractuelle->setVisible(false);
+    }
 
   //  ui->photo_contractuelle->setVisible(false);
   //  ui->photo1->setVisible(false);
@@ -114,4 +123,10 @@ void detaildialog::on_pushButton_2_clicked()
     MainWindow *mw = (MainWindow*)this->parent();
     close();
     mw->on_actionModifier_triggered();
+}
+
+void detaildialog::on_bouton_vendre_clicked()
+{
+    // Vendre un bien (ou le louer);
+    qDebug() << ui->bouton_vendre->text();
 }

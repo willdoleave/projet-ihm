@@ -130,6 +130,7 @@ QList<Annonce> rechercheDialog::rechercheAnnonce(QList<Annonce> listeAnnonces) {
     for (int i = 0; i < listeRecherche.length(); i++) {
         Annonce a = listeRecherche.value(i);
         if (dateAvant) {
+
             if (a.dateCreation > date) {
                 listeRecherche.removeAt(i);
                 i--;

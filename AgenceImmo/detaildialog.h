@@ -23,6 +23,8 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_bouton_vendre_clicked();
+
 private:
     Ui::detaildialog *ui;
 };

@@ -81,7 +81,8 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     write_elem.setAttribute("mail",mail.c_str());
     write_elem.setAttribute("superficie",superficie.c_str());
     write_elem.setAttribute("nbPiece",nbPiece.c_str());
-    //write_elem.setAttribute("dateCreation",QDate::currentDate().toString("dd/MM/yyyy"));
+    QString dt = QDate::currentDate().toString("dd/MM/yyyy");
+    write_elem.setAttribute("dateCreation",dt.toStdString().c_str());
     write_elem.setAttribute("photoContractuelle",contractuelle.c_str());
     docElem.appendChild(write_elem);// On associe write_elem à domElem.
     QString write_doc = this->dom.toString();
@@ -166,6 +167,7 @@ bool xml_dom::listeElem(QList<Annonce> *list_annonces)
             a.superficie = e.attribute("superficie");
             a.nbPiece = e.attribute("nbPiece");
             a.photoContractuelle = e.attribute("photoContractuelle");
+            //a.dateCreation = e.attribute("dateCreation").toStdString().c_str();
             a.dateCreation = QDate::fromString(e.attribute("dateCreation"),"dd/MM/yyyy");
             list_annonces->append(a);
         }
@@ -209,6 +211,7 @@ bool xml_dom::save(QList<Annonce> *list_annonces)
         docElem.setAttribute("superficie", a.superficie);
         docElem.setAttribute("nbPiece", a.nbPiece);
         docElem.setAttribute("photoContractuelle", a.photoContractuelle);
+        //docElem.setAttribute("dateCreation",a.dateCreation.toStdString().c_str());
         docElem.setAttribute("dateCreation", a.dateCreation.toString("dd/MM/yyyy"));
 
         root.appendChild(docElem);

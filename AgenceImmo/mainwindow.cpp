@@ -134,15 +134,6 @@ void MainWindow::remplirListeWidget()
     //if (ui->listWidget->size() == 0)
         //Dom->listeElem(list_annonces);
 
-    /*trier tri = trier();
-    QList<Annonce> listeTri = tri.triFusionPrix(*list_annonces, TYPE);
-    //afficher le resultat
-    for (int i = 0; i < listeTri.length(); i++) {
-        Annonce a = listeTri.value(i);
-        QMessageBox::information(this, "Information", "id = " + a.id + ", prix = " + a.prix + ", superficie = " + a.superficie + ", nbpiece = " + a.nbPiece + ", type = " + a.type);
-        //QMessageBox::information(this, "Information", "id = " + listeTri.length());
-    }*/
-
     ui->listWidget->clear();
     ui->listWidget->setIconSize(QSize(128,128));
     for (int i = 0; i < list_annonces->size(); i++) {
@@ -268,4 +259,26 @@ void MainWindow::on_actionModifier_triggered()
     ajout_dialog.exec();
     ui->actionAjouter_une_annonce->setEnabled(true);
 
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    /*
+    trier tri = trier();
+    QList<Annonce> listeTri = tri.triFusionPrix(*list_annonces, TYPE);
+    //afficher le resultat
+    for (int i = 0; i < listeTri.length(); i++) {
+        Annonce a = listeTri.value(i);
+
+        QMessageBox::information(this, "Information", "id = " + a.id + ", prix = " + a.prix + ", superficie = " + a.superficie + ", nbpiece = " + a.nbPiece + ", type = " + a.type);
+        //QMessageBox::information(this, "Information", "id = " + listeTri.length());
+    }
+    */
+    /*
+    if (ui->tri_valeur->currentIndex() > 0) {
+        ui->tri_valeur->currentIndex();
+
+    } else {
+        remplirListeWidget();
+    }*/
 }

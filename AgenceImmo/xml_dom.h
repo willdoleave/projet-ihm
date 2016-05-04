@@ -29,6 +29,7 @@ public:
     QString nbPiece;
     QString photoContractuelle;
     QDate dateCreation;
+    QDate dateModification;
 private:
 
 };

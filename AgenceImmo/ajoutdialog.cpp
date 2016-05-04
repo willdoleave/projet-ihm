@@ -157,6 +157,7 @@ void ajoutDialog::on_pushButton_clicked()
     a.superficie = ui->superficie->text();
     a.nbPiece = ui->nombrePieces->text();
     a.photoContractuelle = contractuelle;
+    a.dateCreation = QDate::currentDate();
 
 
     if (ajout) {

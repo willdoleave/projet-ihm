@@ -13,11 +13,15 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -42,6 +46,11 @@ public:
     QAction *actionExaminer_annonce;
     QWidget *centralWidget;
     QListWidget *listWidget;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label;
+    QComboBox *tri_valeur;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuFichier;
     QMenu *menuAide;
@@ -53,7 +62,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(688, 501);
+        MainWindow->resize(688, 549);
         MainWindow->setMinimumSize(QSize(586, 417));
         MainWindow->setMaximumSize(QSize(1000, 1000));
         actionSauvegarder = new QAction(MainWindow);
@@ -86,6 +95,7 @@ public:
         actionRecherche->setIcon(icon4);
         actionExporter = new QAction(MainWindow);
         actionExporter->setObjectName(QStringLiteral("actionExporter"));
+        actionExporter->setEnabled(true);
         QIcon icon5;
         icon5.addFile(QStringLiteral(":/images/img/export.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionExporter->setIcon(icon5);
@@ -128,7 +138,35 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         listWidget = new QListWidget(centralWidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 10, 621, 381));
+        listWidget->setGeometry(QRect(20, 60, 621, 391));
+        horizontalLayoutWidget = new QWidget(centralWidget);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(20, 0, 314, 61));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(horizontalLayoutWidget);
+        label->setObjectName(QStringLiteral("label"));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
+
+        horizontalLayout->addWidget(label);
+
+        tri_valeur = new QComboBox(horizontalLayoutWidget);
+        tri_valeur->setObjectName(QStringLiteral("tri_valeur"));
+
+        horizontalLayout->addWidget(tri_valeur);
+
+        pushButton = new QPushButton(horizontalLayoutWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setMaximumSize(QSize(50, 16777215));
+
+        horizontalLayout->addWidget(pushButton);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -153,20 +191,15 @@ public:
         menuBar->addAction(menuFichier->menuAction());
         menuBar->addAction(menuOutils->menuAction());
         menuBar->addAction(menuAide->menuAction());
-        menuFichier->addAction(actionImporter);
-        menuFichier->addAction(actionExporter);
         menuFichier->addSeparator();
-        menuFichier->addAction(actionAjouter_une_annonce);
         menuFichier->addSeparator();
         menuFichier->addAction(actionQuitter);
         menuAide->addAction(action_propos);
         menuAide->addAction(actionUtilisation);
+        menuOutils->addAction(actionAjouter_une_annonce);
         menuOutils->addAction(actionToutAfficher);
         menuOutils->addAction(actionRecherche);
         menuOutils->addAction(actionStatistiques);
-        toolBar_2->addAction(actionImporter);
-        toolBar_2->addAction(actionExporter);
-        toolBar_2->addSeparator();
         toolBar_2->addAction(actionAjouter_une_annonce);
         toolBar_2->addAction(actionSupprimerAnnonce);
         toolBar_2->addAction(actionModifier);
@@ -228,6 +261,16 @@ public:
         actionModifier->setShortcut(QApplication::translate("MainWindow", "Shift+M", 0));
         actionExaminer_annonce->setText(QApplication::translate("MainWindow", "Examiner l'annonce", 0));
         actionExaminer_annonce->setShortcut(QApplication::translate("MainWindow", "Return", 0));
+        label->setText(QApplication::translate("MainWindow", "Tri des r\303\251sultats", 0));
+        tri_valeur->clear();
+        tri_valeur->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Ne pas trier", 0)
+         << QApplication::translate("MainWindow", "Prix", 0)
+         << QApplication::translate("MainWindow", "Superficie", 0)
+         << QApplication::translate("MainWindow", "Nombre de pi\303\250ces", 0)
+         << QApplication::translate("MainWindow", "Type", 0)
+        );
+        pushButton->setText(QApplication::translate("MainWindow", "OK", 0));
         menuFichier->setTitle(QApplication::translate("MainWindow", "Fichier", 0));
         menuAide->setTitle(QApplication::translate("MainWindow", "Aide", 0));
         menuOutils->setTitle(QApplication::translate("MainWindow", "Outils", 0));

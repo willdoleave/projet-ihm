@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>688</width>
-    <height>501</height>
+    <height>549</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -30,11 +30,78 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>10</y>
+      <y>60</y>
       <width>621</width>
-      <height>381</height>
+      <height>391</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>314</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tri des résultats</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="tri_valeur">
+       <item>
+        <property name="text">
+         <string>Ne pas trier</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Prix</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Superficie</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nombre de pièces</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Type</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -53,10 +120,7 @@
     <property name="title">
      <string>Fichier</string>
     </property>
-    <addaction name="actionImporter"/>
-    <addaction name="actionExporter"/>
     <addaction name="separator"/>
-    <addaction name="actionAjouter_une_annonce"/>
     <addaction name="separator"/>
     <addaction name="actionQuitter"/>
    </widget>
@@ -71,6 +135,7 @@
     <property name="title">
      <string>Outils</string>
     </property>
+    <addaction name="actionAjouter_une_annonce"/>
     <addaction name="actionToutAfficher"/>
     <addaction name="actionRecherche"/>
     <addaction name="actionStatistiques"/>
@@ -96,9 +161,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionImporter"/>
-   <addaction name="actionExporter"/>
-   <addaction name="separator"/>
    <addaction name="actionAjouter_une_annonce"/>
    <addaction name="actionSupprimerAnnonce"/>
    <addaction name="actionModifier"/>
@@ -182,6 +244,9 @@
    </property>
   </action>
   <action name="actionExporter">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/images/img/export.png</normaloff>:/images/img/export.png</iconset>
