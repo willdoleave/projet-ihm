@@ -2,13 +2,8 @@
 #include "ui_stats.h"
 #include "mainwindow.h"
 #include <QDate>
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLineSeries>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QValueAxis>
+#include <QVector>
+#include "qcustomplot/qcustomplot.h"
 
 
 Stats::Stats(QWidget *parent) :
@@ -27,7 +22,7 @@ Stats::~Stats()
 void Stats::calcul()
 {
     MainWindow *mw = (MainWindow*)this->parent();
-    en_vente = 0; vendu = 0; en_location = 0; loue = 0;
+    en_vente = 0; vendus = 0; en_location = 0; loue = 0;
     QList<QString> listeType;
     QDate datedebut = ui->datedebut->date();
     QDate datefin = ui->datefin->date();
@@ -65,7 +60,7 @@ void Stats::calcul()
                 if (a.type == listeType.value(j)) {
                     if (a.etat == "Vente") en_vente++;
                     else if (a.etat == "Location") en_location++;
-                    else if (a.etat == "Vendu") vendu++;
+                    else if (a.etat == "Vendu") vendus++;
                     else if (a.etat == "Loué") loue++;
                 }
             }
@@ -73,8 +68,8 @@ void Stats::calcul()
     }
 
 
-    qDebug() << "Vendu :" << vendu << " Loué :" << loue << " En Vente : " << en_vente << " En Location :" << en_location;
-    ui->vendus->setText(QString::number(vendu));
+    qDebug() << "Vendu :" << vendus << " Loué :" << loue << " En Vente : " << en_vente << " En Location :" << en_location;
+    ui->vendus->setText(QString::number(vendus));
     ui->en_vente->setText(QString::number(en_vente));
     ui->loues->setText(QString::number(loue));
     ui->en_location->setText(QString::number(en_location));
@@ -84,61 +79,131 @@ void Stats::calcul()
 void Stats::on_pushButton_clicked()
 {
     this->calcul();
+    this->dessinerGraphique();
 
-    QBarSet *set0 = new QBarSet("Jane");
-    QBarSet *set1 = new QBarSet("John");
-    QBarSet *set2 = new QBarSet("Axel");
-    QBarSet *set3 = new QBarSet("Mary");
-    QBarSet *set4 = new QBarSet("Sam");
-
-    *set0 << 1 << 2 << 3 << 4 << 5 << 6;
-    *set1 << 5 << 0 << 0 << 4 << 0 << 7;
-    *set2 << 3 << 5 << 8 << 13 << 8 << 5;
-    *set3 << 5 << 6 << 7 << 3 << 4 << 5;
-    *set4 << 9 << 7 << 5 << 3 << 1 << 2;
-
-    QBarSeries *barseries = new QBarSeries();
-    barseries->append(set0);
-    barseries->append(set1);
-    barseries->append(set2);
-    barseries->append(set3);
-    barseries->append(set4);
-
-    QLineSeries *lineseries = new QLineSeries();
-    lineseries->setName("trend");
-    lineseries->append(QPoint(0, 4));
-    lineseries->append(QPoint(1, 15));
-    lineseries->append(QPoint(2, 20));
-    lineseries->append(QPoint(3, 4));
-    lineseries->append(QPoint(4, 12));
-    lineseries->append(QPoint(5, 17));
-
-    QChart *chart = new QChart();
-    chart->addSeries(barseries);
-    chart->addSeries(lineseries);
-    chart->setTitle("Line and barchart example");
-
-    QStringList categories;
-    categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
-    QBarCategoryAxis *axisX = new QBarCategoryAxis();
-    axisX->append(categories);
-    chart->setAxisX(axisX, lineseries);
-    chart->setAxisX(axisX, barseries);
-    axisX->setRange(QString("Jan"), QString("Jun"));
-
-    QValueAxis *axisY = new QValueAxis();
-    chart->setAxisY(axisY, lineseries);
-    chart->setAxisY(axisY, barseries);
-    axisY->setRange(0, 20);
-
-    chart->legend()->setVisible(true);
-    chart->legend()->setAlignment(Qt::AlignBottom);
-
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-
-    QMainWindow window;
-    window.setCentralWidget(chartView);
-    window.resize(440, 300);
-    window.show();
 }
+
+
+void Stats::dessinerGraphique()
+{
+    ui->customPlot->clearGraphs();
+    ui->customPlot->clearItems();
+    ui->customPlot->clearPlottables();
+
+    QCPBars *vente = new QCPBars(ui->customPlot->xAxis, ui->customPlot->yAxis);
+    QCPBars *vendu = new QCPBars(ui->customPlot->xAxis, ui->customPlot->yAxis);
+    QCPBars *location = new QCPBars(ui->customPlot->xAxis, ui->customPlot->yAxis);
+    QCPBars *loueg = new QCPBars(ui->customPlot->xAxis, ui->customPlot->yAxis);
+    ui->customPlot->addPlottable(vente);
+    ui->customPlot->addPlottable(vendu);
+    ui->customPlot->addPlottable(location);
+    ui->customPlot->addPlottable(loueg);
+
+
+    QPen pen;
+    pen.setWidth(1.5);
+    vente->setName("Vente");
+    pen.setColor(QColor(0,0,0));
+    vente->setPen(pen);
+    vente->setBrush(QColor(255,0,0));
+
+    vendu->setName("Vendu");
+    pen.setColor(QColor(0,0,0));
+    vendu->setPen(pen);
+    vendu->setBrush(QColor(0,255,0));
+
+    location->setName("Location");
+    pen.setColor(QColor(0,0,0));
+    location->setPen(pen);
+    location->setBrush(QColor(0,0,255));
+
+
+    loueg->setName("Loué");
+    pen.setColor(QColor(255,0,255));
+    loueg->setPen(pen);
+    loueg->setBrush(QColor(230,230,0));
+
+
+
+    QVector<double> ticks;
+    QVector<QString> labels;
+    ticks << 1 << 2 << 3 << 4;
+    labels << "Vente" << "Location" << "Vendu" << "Loué";
+    ui->customPlot->xAxis->setAutoTicks(false);
+    ui->customPlot->xAxis->setAutoTickLabels(false);
+    ui->customPlot->xAxis->setTickVector(ticks);
+    ui->customPlot->xAxis->setTickVectorLabels(labels);
+    ui->customPlot->xAxis->setTickLabelRotation(60);
+    ui->customPlot->xAxis->setSubTickCount(0);
+    ui->customPlot->xAxis->setTickLength(0, 4);
+    ui->customPlot->xAxis->grid()->setVisible(true);
+    ui->customPlot->xAxis->setRange(0, 8);
+
+    int myints[] = {loue,vendus,en_vente,en_location};
+    ui->customPlot->yAxis->setRange(0, *std::max_element(myints,myints+4));
+    ui->customPlot->yAxis->setPadding(5);
+    ui->customPlot->yAxis->setLabel("");
+    ui->customPlot->yAxis->grid()->setSubGridVisible(true);
+
+    QPen gridPen;
+    gridPen.setStyle(Qt::SolidLine);
+    gridPen.setColor(QColor(0,0,0,25));
+    ui->customPlot->yAxis->grid()->setPen(gridPen);
+    gridPen.setStyle(Qt::DotLine);
+    ui->customPlot->yAxis->grid()->setSubGridPen(gridPen);
+
+    QVector<double> datavente, datavendu, datalocation, dataloue;
+
+    dataloue << en_vente << en_location << vendus << loue;
+    datavendu << en_vente << en_location << vendus;
+    datalocation << en_vente << en_location;
+    datavente << en_vente;
+
+
+
+    vente->setData(ticks, datavente);
+    vendu->setData(ticks, datavendu);
+    loueg->setData(ticks, dataloue);
+    location->setData(ticks, datalocation);
+
+    ui->customPlot->legend->setVisible(true);
+    ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignCenter);
+    ui->customPlot->legend->setBrush(QColor(255,255,255,200));
+    QPen legendPen;
+    ui->customPlot->legend->setBorderPen(legendPen);
+    QFont legendFont = font();
+    legendFont.setPointSize(10);
+    ui->customPlot->legend->setFont(legendFont);
+    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
+
+    ui->customPlot->replot();
+    /*
+
+
+    // stack bars ontop of each other:
+    trouve->moveAbove(recherche);
+
+    // Add data:
+    QVector<double> datarecherche, datatrouve;
+    datarecherche  << cpt_vente << cpt_locat << cpt_rviag ;
+    datatrouve     << cpt_vendu << cpt_louee << cpt_vviag ;
+
+    recherche->setData(ticks, datarecherche);
+    trouve->setData(ticks, datatrouve);
+
+    // setup legend:
+    ui->widgetPlot->legend->setVisible(true);
+    ui->widgetPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignHCenter);
+    ui->widgetPlot->legend->setBrush(QColor(255, 255, 255, 200));
+    QPen legendPen;
+    legendPen.setColor(QColor(130, 130, 130, 200));
+    ui->widgetPlot->legend->setBorderPen(legendPen);
+    QFont legendFont = font();
+    legendFont.setPointSize(10);
+    ui->widgetPlot->legend->setFont(legendFont);
+    ui->widgetPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
+
+    ui->widgetPlot->replot();
+*/
+}
+

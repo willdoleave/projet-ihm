@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>642</width>
-    <height>594</height>
+    <width>723</width>
+    <height>669</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
     <rect>
      <x>50</x>
      <y>60</y>
-     <width>531</width>
+     <width>411</width>
      <height>80</height>
     </rect>
    </property>
@@ -93,7 +93,7 @@
     <rect>
      <x>50</x>
      <y>140</y>
-     <width>531</width>
+     <width>411</width>
      <height>110</height>
     </rect>
    </property>
@@ -176,8 +176,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>260</y>
+     <x>580</x>
+     <y>220</y>
      <width>99</width>
      <height>27</height>
     </rect>
@@ -189,20 +189,13 @@
   <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>310</y>
-     <width>381</width>
-     <height>80</height>
+     <x>480</x>
+     <y>110</y>
+     <width>201</width>
+     <height>96</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="1">
-     <widget class="QLabel" name="vendus">
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QLabel" name="en_vente">
       <property name="text">
@@ -238,7 +231,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
+    <item row="2" column="0">
      <widget class="QLabel" name="label_7">
       <property name="font">
        <font>
@@ -252,14 +245,14 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
-     <widget class="QLabel" name="loues">
+    <item row="0" column="1">
+     <widget class="QLabel" name="vendus">
       <property name="text">
        <string>0</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="3" column="0">
      <widget class="QLabel" name="label_9">
       <property name="font">
        <font>
@@ -273,8 +266,15 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="3">
+    <item row="3" column="1">
      <widget class="QLabel" name="en_location">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="loues">
       <property name="text">
        <string>0</string>
       </property>
@@ -282,7 +282,25 @@
     </item>
    </layout>
   </widget>
+  <widget class="QCustomPlot" name="customPlot" native="true">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>250</y>
+     <width>631</width>
+     <height>391</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot/qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

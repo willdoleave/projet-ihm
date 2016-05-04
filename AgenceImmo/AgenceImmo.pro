@@ -7,7 +7,7 @@
 QT       += core gui
 QT       += xml
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = AgenceImmo
 TEMPLATE = app
@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     detaildialog.cpp \
     modifierdialog.cpp \
     trier.cpp \
-    stats.cpp
+    stats.cpp \
+    qcustomplot/qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     recherchedialog.h \
@@ -30,7 +31,8 @@ HEADERS  += mainwindow.h \
     detaildialog.h \
     modifierdialog.h \
     trier.h \
-    stats.h
+    stats.h \
+    qcustomplot/qcustomplot.h
 
 FORMS    += mainwindow.ui \
     recherchedialog.ui \

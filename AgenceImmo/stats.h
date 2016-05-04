@@ -17,8 +17,9 @@ public:
     ~Stats();
 
     void calcul();
+    void dessinerGraphique();
 
-    int en_vente, vendu, en_location, loue;
+    int en_vente, vendus, en_location, loue;
 
 private slots:
     void on_pushButton_clicked();
