@@ -46,7 +46,7 @@ bool xml_dom::open()
     doc_xml.close();
     return true;
 }
-
+/*
 bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::string prix,
                         std::string titre, std::string description, std::string photo1,
                         std::string photo2,std::string photo3, std::string photo4,
@@ -103,7 +103,7 @@ bool xml_dom::ajoutElem(std::string id,std::string etat, std::string type, std::
     qDebug() << "Element ajouté";
    return true;
 }
-
+*/
 
 bool xml_dom::listeElem(QList<Annonce> *list_annonces)
 {

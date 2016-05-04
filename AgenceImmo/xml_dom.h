@@ -29,6 +29,7 @@ public:
     QString nbPiece;
     QString photoContractuelle;
     QDate dateCreation;
+    // Nouvelles variables
     QDate dateModificationEtat;
 private:
 
@@ -40,6 +41,7 @@ class xml_dom : public QWidget
 public:
     //QList<Annonce> *list_annonces;
     xml_dom();
+    /*
     bool ajoutElem( std::string id, std::string etat, std::string type, std::string prix,
                     std::string titre, std::string description, std::string photo1,
                     std::string photo2,std::string photo3, std::string photo4,
@@ -47,6 +49,7 @@ public:
                     std::string nom, std::string prenom, std::string telephone,
                     std::string mail, std::string superficie, std::string nbPiece,
                     std::string contractuelle);
+    */
     bool listeElem(QList<Annonce> *list_annonces);
     bool open();
     bool save(QList<Annonce> *list_annonces);

@@ -27,7 +27,6 @@ MainWindow::MainWindow(QWidget *parent) :
     remplirListeWidget();
     QObject::connect(ui->listWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(on_actionExaminer_annonce_triggered()));
 
-
        // Stats *s = new Stats(this);
        // s->calcul();
 
